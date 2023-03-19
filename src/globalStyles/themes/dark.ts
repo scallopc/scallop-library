@@ -1,0 +1,12 @@
+import colors from "../colors";
+
+const dark = {
+    title: "dark",
+
+    default: {
+        background: colors.backgroundDark,
+        color: colors.backgroundLight,
+    },
+};
+
+export default dark;
