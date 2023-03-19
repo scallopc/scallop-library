@@ -1,8 +1,3 @@
-
 export default function App() {
-  return (
-    <p>
-     page
-    </p>
-  );
+    return <p>page</p>;
 }
