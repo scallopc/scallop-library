@@ -2,11 +2,14 @@ import { ContainerMenuLateral, MenuContainer } from "./styles";
 import { HashRouter } from "react-router-dom";
 import MenuRoutes from "../../components/menuRoutes/menuRoutes";
 
-export default function MenuLateral() {
+export default function MenuLateral(props) {
+    const { switchTheme } = props;
+
     return (
         <HashRouter>
             <ContainerMenuLateral>
                 <MenuContainer>
+                    <p onClick={switchTheme}>Tema</p>
                     <MenuRoutes title="Home" to="/home" />
                     <MenuRoutes title="Avatar" to="/avatar" />
                     <MenuRoutes title="Breadcrumb" to="/breadcrumb" />

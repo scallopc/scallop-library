@@ -1,17 +1,16 @@
 const colors = {
-    backgroundLight: "#F9F9F9",
+    backgroundLight: "##fbfbfb",
     backgroundDark: "#112031",
     transparent: "transparent",
 
-    lightLowColor: "#e3e3e3 ",
+    lightLowColor: "#F9F9F9",
     lightMediumColor: "#999988",
     lightHighColor: "#ebebf0",
 
-    darkLowColor: "#8f90a6",
-    darkLow: "#313138",
-    darkMedium: "#555770",
+    darkLowColor: "#284462",
     darkMediumColor: "#0c0c10",
     darkHighColor: "#131317",
+
     darkHoverColor: "#31313805",
     darkHoverColorBorder: "#36363657",
 

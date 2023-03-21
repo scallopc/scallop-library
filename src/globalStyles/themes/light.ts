@@ -6,6 +6,7 @@ const light = {
     default: {
         background: colors.backgroundLight,
         color: colors.backgroundDark,
+        lowColor: colors.lightLowColor,
     },
 };
 

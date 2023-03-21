@@ -16,9 +16,9 @@ export const MenuContainer = styled.div`
     height: 100%;
     padding: 20px;
     overflow-y: auto;
-    box-shadow: 7px 1px 6px -2px #e3e3e3;
-    -webkit-box-shadow: 7px 1px 6px -2px #e3e3e3;
-    -moz-box-shadow: 7px 1px 6px -2px #e3e3e3;
+    box-shadow: 7px 1px 6px -2px ${(props) => props.theme.default.lightLowColor};
+    -webkit-box-shadow: 7px 1px 6px -2px ${(props) => props.theme.default.lightLowColor};
+    -moz-box-shadow: 7px 1px 6px -2px ${(props) => props.theme.default.lightLowColor};
 `;
 
 export const H4 = styled(Link)`
@@ -28,6 +28,6 @@ export const H4 = styled(Link)`
     color: ${(props) => props.theme.default.color};
 
     &:hover {
-        color: ${(props) => props.theme.button.bgBtnPrimary};
+        color: red;
     }
 `;

@@ -7,24 +7,23 @@ export const Content: any = styled.div`
     justify-content: center;
     padding: 15px;
     border-radius: 10px;
-    background: ${(props) => props.theme.default.bgAlternative1};
+    background: ${(props) => props.theme.default.lowColor};
+    box-shadow: 0px 0px 3px 1px ${(props) => props.theme.default.lowColor};
+    -webkit-box-shadow: 0px 0px 3px 1px
+        ${(props) => props.theme.default.lowColor};
+    -moz-box-shadow: 0px 0px 3px 1px ${(props) => props.theme.default.lowColor};
     width: 100%;
 `;
 
 export const H2: any = styled.h2`
-    color: inherit;
+    color: ${(props) => props.theme.default.lowColor};
 `;
 
 export const Detail: any = styled.div<any>`
-    color: ${(props) => props.theme.default.colorAlternative2};
+    color: red;
     font-size: 12px;
     line-height: 2;
     word-spacing: 5px;
-`;
-
-export const Link: any = styled.a`
-    text-decoration: none;
-    color: inherit;
 `;
 
 export const SmallDetail: any = styled.div`
@@ -66,7 +65,7 @@ export const DocumentationContainer: any = styled.div`
 `;
 
 export const H5: any = styled.h5`
-    color: ${(props) => props.theme.default.colorAlternative1};
+    color: blue;
     font-size: 14px;
 `;
 
@@ -81,7 +80,7 @@ export const TableRow: any = styled.div`
     grid-template-columns: repeat(3, 1fr);
     padding: 10px 0;
     gap: 5px;
-    border-bottom: 1px solid ${(props) => props.theme.line.color};
+    border-bottom: 1px solid aqua;
     font-size: 12px;
 
     &:last-of-type {

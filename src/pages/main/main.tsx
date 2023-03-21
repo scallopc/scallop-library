@@ -3,9 +3,11 @@ import { ContainerMain } from "./styles";
 import { Route, Switch } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "../views/home";
-import Avatar from "../../components/avatar/avatar";
+import AvatarsPageView from "../views/avatar";
 
-export default function MainComponents() {
+export default function MainComponents(props) {
+    const { theme } = props;
+
     useEffect(() => {
         if (window.location.hash == "#/") {
             window.location.href = window.location.origin + "#/home";
@@ -14,10 +16,10 @@ export default function MainComponents() {
 
     return (
         <ContainerMain>
-            <MenuLateral />
+            <MenuLateral switchTheme={(e) => theme(e.target.checked)} />
             <Switch>
                 <Route path="/home" component={Home} />
-                <Route path="/avatar" component={Avatar} />
+                <Route path="/avatar" component={AvatarsPageView} />
             </Switch>
         </ContainerMain>
     );

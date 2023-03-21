@@ -11,15 +11,12 @@ export const Container = styled.div`
     gap: 8px;
     align-items: center;
     transition: all 0.1s ease;
-    color: ${(props) => props.theme.default.color};
     padding-left: 5px;
+    color: ${(props) => props.theme.default.color};
+    font-size: 14px;
 
     &.active {
         border-left: 4px solid #5b8def;
         border-radius: 2px;
     }
-`;
-
-export const Title = styled.p`
-    font-size: 14px;
 `;
