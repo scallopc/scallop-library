@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { css } from "styled-components";
+import { scroll } from "./scroll";
 
 export default createGlobalStyle`
 
@@ -22,4 +23,6 @@ export default createGlobalStyle`
     text-decoration: none;
     color: initial;
   }
+
+  ${scroll}
 `;
