@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 
 export const ContainerMenuLateral = styled.div`
     height: 100%;
-    background: ${(props) => props.theme.default.bgAlternative1};
+    color: ${(props) => props.theme.default.color};
 `;
 
 export const MenuContainer = styled.div`
-    background: ${(props) => props.theme.default.bgAlternative1};
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -16,16 +15,16 @@ export const MenuContainer = styled.div`
     height: 100%;
     padding: 20px;
     overflow-y: auto;
-    box-shadow: 7px 1px 6px -2px ${(props) => props.theme.default.lightLowColor};
-    -webkit-box-shadow: 7px 1px 6px -2px ${(props) => props.theme.default.lightLowColor};
-    -moz-box-shadow: 7px 1px 6px -2px ${(props) => props.theme.default.lightLowColor};
+    box-shadow: 7px 1px 6px -2px ${(props) => props.theme.default.lowColor};
+    -webkit-box-shadow: 7px 1px 6px -2px ${(props) => props.theme.default.lowColor};
+    -moz-box-shadow: 7px 1px 6px -2px ${(props) => props.theme.default.lowColor};
 `;
 
 export const H4 = styled(Link)`
     cursor: pointer;
     font-weight: 500;
     text-decoration: none;
-    color: ${(props) => props.theme.default.color};
+    color: aqua;
 
     &:hover {
         color: red;
