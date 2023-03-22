@@ -4,8 +4,8 @@ const light = {
     title: "light",
 
     default: {
-        background: colors.backgroundLight,
-        color: colors.backgroundDark,
+        background: colors.lightHighColor,
+        color: colors.darkHighColor,
         lowColor: colors.lightLowColor,
     },
 };

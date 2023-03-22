@@ -12,7 +12,7 @@ export const Container = styled.div`
     align-items: center;
     transition: all 0.1s ease;
     padding-left: 5px;
-    color: ${(props) => props.theme.default.color};
+    color: ${(props: any) => props.theme.default.color};
     font-size: 14px;
 
     &.active {
