@@ -8,6 +8,10 @@ const dark = {
         color: colors.lightHighColor,
         lowColor: colors.darkLowColor,
     },
+    scroll: {
+        thumb: colors.darkLowColor,
+        thumbHover: colors.darkHighColor,
+    },
 };
 
 export default dark;
