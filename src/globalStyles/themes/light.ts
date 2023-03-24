@@ -7,8 +7,7 @@ const light = {
         background: colors.lightHighColor,
         color: colors.darkHighColor,
         lowColor: colors.lightLowColor,
-    },
-    scroll: {
+
         thumb: colors.lightLowColor,
         thumbHover: colors.lightHighColor,
     },
