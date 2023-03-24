@@ -17,12 +17,12 @@ export const scroll = css`
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: ${(props) => props.theme.scroll.thumb};
+        background: ${(props) => props.theme.default.thumb};
         border-radius: 10px;
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: ${(props) => props.theme.scroll.thumbHover};
+        background: ${(props) => props.theme.default.thumbHover};
     }
 `;
