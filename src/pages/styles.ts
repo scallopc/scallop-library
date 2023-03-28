@@ -16,11 +16,11 @@ export const Content: any = styled.div`
 `;
 
 export const H2: any = styled.h2`
-    color: ${(props) => props.theme.default.lowColor};
+    color: ${(props) => props.theme.default.color};
 `;
 
 export const Detail: any = styled.div<any>`
-    color: red;
+    color: ${(props) => props.theme.default.textDetail};
     font-size: 12px;
     line-height: 2;
     word-spacing: 5px;
@@ -65,7 +65,7 @@ export const DocumentationContainer: any = styled.div`
 `;
 
 export const H5: any = styled.h5`
-    color: blue;
+    color: ${(props) => props.theme.default.color};
     font-size: 14px;
 `;
 
