@@ -5,11 +5,12 @@ const light = {
 
     default: {
         background: colors.lightHighColor,
-        color: colors.darkHighColor,
+        color: colors.lightMediumColor,
         lowColor: colors.lightLowColor,
-
-        thumb: colors.lightLowColor,
+        thumb: colors.auxiliaryBlueLowColor,
         thumbHover: colors.lightHighColor,
+        shadow: colors.auxiliaryDisabledLowColor,
+        textDetail: colors.auxiliaryBlueMediumColor,
     },
 };
 

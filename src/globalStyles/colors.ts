@@ -1,10 +1,10 @@
 const colors = {
-    lightHighColor: "##fbfbfb",
+    lightHighColor: "#fbfbfb",
     darkHighColor: "#112031",
     transparent: "transparent",
 
     lightLowColor: "#F9F9F9",
-    lightMediumColor: "#999988",
+    lightMediumColor: "#dddddd",
 
     darkLowColor: "#284462",
     darkMediumColor: "#0c0c10",

@@ -9,6 +9,8 @@ const dark = {
         lowColor: colors.darkLowColor,
         thumb: colors.darkLowColor,
         thumbHover: colors.darkHighColor,
+        shadow: colors.darkLowColor,
+        textDetail: colors.auxiliaryBlueMediumColor,
     },
 };
 
