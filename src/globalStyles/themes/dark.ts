@@ -7,10 +7,12 @@ const dark = {
         background: colors.darkHighColor,
         color: colors.lightHighColor,
         lowColor: colors.darkLowColor,
-        thumb: colors.darkLowColor,
-        thumbHover: colors.darkHighColor,
         shadow: colors.darkLowColor,
         textDetail: colors.auxiliaryBlueMediumColor,
+        line: colors.auxiliaryDisabledLowColor,
+        //scrol
+        thumb: colors.darkLowColor,
+        thumbHover: colors.darkHighColor,
     },
 };
 

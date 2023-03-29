@@ -3,7 +3,7 @@ const colors = {
     darkHighColor: "#112031",
     transparent: "transparent",
 
-    lightLowColor: "#F9F9F9",
+    lightLowColor: "#ededed",
     lightMediumColor: "#dddddd",
 
     darkLowColor: "#284462",

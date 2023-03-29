@@ -5,12 +5,14 @@ const light = {
 
     default: {
         background: colors.lightHighColor,
-        color: colors.lightMediumColor,
+        color: colors.darkLowColor,
         lowColor: colors.lightLowColor,
+        textDetail: colors.auxiliaryBlueMediumColor,
+        shadow: colors.auxiliaryDisabledLowColor,
+        line: colors.auxiliaryDisabledLowColor,
+        //scrol
         thumb: colors.auxiliaryBlueLowColor,
         thumbHover: colors.lightHighColor,
-        shadow: colors.auxiliaryDisabledLowColor,
-        textDetail: colors.auxiliaryBlueMediumColor,
     },
 };
 
