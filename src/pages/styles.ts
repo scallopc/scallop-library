@@ -80,7 +80,7 @@ export const TableRow: any = styled.div`
     grid-template-columns: repeat(3, 1fr);
     padding: 10px 0;
     gap: 5px;
-    border-bottom: 1px solid aqua;
+    border-bottom: 1px solid ${(props) => props.theme.default.line};
     font-size: 12px;
 
     &:last-of-type {
