@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import { useEffect } from "react";
 import Home from "../views/home";
 import AvatarsPageView from "../views/avatar";
+import BreadcrumbsPageView from "../views/breadcrumbs";
 
 export default function MainComponents(props) {
     const { theme } = props;
@@ -20,6 +21,7 @@ export default function MainComponents(props) {
             <Switch>
                 <Route path="/home" component={Home} />
                 <Route path="/avatar" component={AvatarsPageView} />
+                <Route path="/breadcrumb" component={BreadcrumbsPageView} />
             </Switch>
         </ContainerMain>
     );
