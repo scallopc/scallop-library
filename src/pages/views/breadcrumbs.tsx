@@ -12,8 +12,10 @@ import {
 } from "../styles";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 
-export default function PageBreadcrumbs() {
+export default function BreadcrumbsPageView() {
     const breadcrumbs = "<Breadcrumbs />";
+    const breadcrumbsStatic =
+        "<Breadcrumbs static redirectTo={() => setInitialWorkspace(true)} homeName=Home />";
     return (
         <Container>
             <H2>Breadcrumbs</H2>
@@ -49,6 +51,16 @@ export default function PageBreadcrumbs() {
                         </Detail>
                     </Content>
                     <Content>
+                        <h3>Breadcrumb redirect to static</h3>
+                        <Breadcrumbs
+                            static
+                            redirectTo={() => console.log(true)}
+                            homeName="Home"
+                        />
+
+                        <Detail>{breadcrumbsStatic}</Detail>
+                    </Content>
+                    <Content>
                         <h3>Properties </h3>
                         <SmallDetail>Properties used here</SmallDetail>
                         <Table>
@@ -73,6 +85,19 @@ export default function PageBreadcrumbs() {
                                 <div>homeName</div>
                                 <div>string </div>
                                 <div>Set the fixed route name</div>
+                            </TableRow>
+                            <TableRow>
+                                <div>redirectTo</div>
+                                <div>function </div>
+                                <div>Insert fixed or Boolean routes</div>
+                            </TableRow>
+                            <TableRow>
+                                <div>static</div>
+                                <div>boolean </div>
+                                <div>
+                                    Defines the componentet as static, and needs
+                                    redirectTo to inform the route
+                                </div>
                             </TableRow>
                         </Table>
                     </Content>
