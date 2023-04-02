@@ -36,7 +36,10 @@ export function Breadcrumbs(props) {
                     <Icon className="icon-chevron" icon={faChevronRight} />
                 </Span>
             )}
-            {clearPathsSplitted?.map((path, index) => {
+            {props.static && (
+                <Span onClick={props.redirectTo}>{props.homeName}</Span>
+            )}
+            {clearPathsSplitted.map((path, index) => {
                 return (
                     <Span onClick={() => redirect(path)} key={index}>
                         {path}{" "}
