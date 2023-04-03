@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Home from "../views/home";
 import AvatarsPageView from "../views/avatar";
 import BreadcrumbsPageView from "../views/breadcrumbs";
+import ButtonsPageView from "../views/buttons";
 
 export default function MainComponents(props) {
     const { theme } = props;
@@ -22,6 +23,7 @@ export default function MainComponents(props) {
                 <Route path="/home" component={Home} />
                 <Route path="/avatar" component={AvatarsPageView} />
                 <Route path="/breadcrumb" component={BreadcrumbsPageView} />
+                <Route path="/button" component={ButtonsPageView} />
             </Switch>
         </ContainerMain>
     );

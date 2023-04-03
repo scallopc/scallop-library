@@ -10,9 +10,18 @@ const light = {
         textDetail: colors.auxiliaryBlueMediumColor,
         shadow: colors.auxiliaryDisabledLowColor,
         line: colors.auxiliaryDisabledLowColor,
+
         //scrol
         thumb: colors.auxiliaryBlueLowColor,
         thumbHover: colors.lightHighColor,
+
+        //buttons
+        buttonPrimary: colors.auxiliaryBlueHighColor,
+        buttonPrimaryHover: colors.auxiliaryBlueMediumColor,
+        buttonPrimaryFocus: colors.auxiliaryBlueLowColor,
+        buttonWhite: colors.lightHighColor,
+        buttonBorder: colors.darkHoverColorBorder,
+        buttonDisabled: colors.auxiliaryDisabledLowColor,
     },
 };
 
