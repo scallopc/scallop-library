@@ -13,7 +13,7 @@ const dark = {
 
         //scrol
         thumb: colors.darkLowColor,
-        thumbHover: colors.darkHighColor,
+        thumbHover: colors.auxiliaryBlueLowColor,
 
         //buttons
         buttonPrimary: colors.auxiliaryBlueHighColor,
