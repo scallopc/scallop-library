@@ -37,7 +37,7 @@ export default function Avatar({ size, image, active, label }: IAvatar) {
             return <FontAwesomeIcon icon={faUser} />;
         }
     };
-    //label
+    //label active
     const handleActive = () => {
         if (active) {
             return <LabelActive active={active} />;
