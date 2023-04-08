@@ -4,6 +4,7 @@ const dark = {
     title: "dark",
 
     default: {
+        //default
         background: colors.darkHighColor,
         color: colors.lightHighColor,
         lowColor: colors.darkLowColor,
