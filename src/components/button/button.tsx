@@ -24,13 +24,6 @@ export default function Button({
     onClick,
     icon,
     label,
-    type,
-    outline,
-    text,
-    danger,
-    small,
-    large,
-    primary,
     variant,
 }: IButton) {
     return (
