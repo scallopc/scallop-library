@@ -3,45 +3,50 @@ import styled, { css } from "styled-components";
 
 const ButtonVariant = {
     primary: css`
-        color: ${(props) => props.theme.buttonWhite};
+        color: ${(props) => props.theme.default.buttonWhite};
         background-color: ${(props) => props.theme.buttonPrimary};
         border: none;
         &:hover {
-            background-color: ${(props) => props.theme.buttonPrimaryHover};
+            background-color: ${(props) =>
+                props.theme.default.buttonPrimaryHover};
         }
         &:focus {
-            background-color: ${(props) => props.theme.buttonPrimaryFocus};
+            background-color: ${(props) =>
+                props.theme.default.buttonPrimaryFocus};
         }
     `,
     outline: css`
-        color: ${(props) => props.theme.buttonPrimary};
+        color: ${(props) => props.theme.default.buttonPrimary};
         background-color: transparent;
-        border: 1px solid ${(props) => props.theme.buttonPrimary};
+        border: 1px solid ${(props) => props.theme.default.buttonPrimary};
 
         &:hover {
-            background-color: ${(props) => props.theme.buttonPrimaryHover};
+            background-color: ${(props) =>
+                props.theme.default.buttonPrimaryHover};
             color: ${(props) => props.theme.buttonPrimary};
             border: 1px solid transparent;
         }
 
         &:focus {
-            background-color: ${(props) => props.theme.buttonPrimaryFocus};
-            color: ${(props) => props.theme.buttonWhite};
+            background-color: ${(props) =>
+                props.theme.default.buttonPrimaryFocus};
+            color: ${(props) => props.theme.default.buttonWhite};
         }
     `,
     text: css`
-        color: ${(props) => props.theme.buttonPrimary};
+        color: ${(props) => props.theme.default.buttonPrimary};
         background-color: transparent;
-        border: 1px solid ${(props) => props.theme.buttonBorder};
+        border: 1px solid ${(props) => props.theme.default.buttonBorder};
 
         &:hover {
-            background-color: ${(props) => props.theme.buttonPrimaryHover};
-            color: ${(props) => props.theme.buttonWhite};
+            background-color: ${(props) =>
+                props.theme.default.buttonPrimaryHover};
+            color: ${(props) => props.theme.default.buttonWhite};
             border: 1px solid transparent;
         }
     `,
     danger: css`
-        color: ${(props) => props.theme.buttonWhite};
+        color: ${(props) => props.theme.default.buttonWhite};
         background-color: #ff3b3b;
         border: none;
         &:hover {
@@ -55,13 +60,13 @@ const ButtonVariant = {
 
 const disabled = css`
     cursor: not-allowed;
-    background: ${(props) => props.theme.buttonDisabled};
+    background: ${(props) => props.theme.default.buttonDisabled};
     color: ${(props) => props.theme.buttonWhite};
     border: 1px solid;
 
     &:hover {
-        background: ${(props) => props.theme.buttonDisabled};
-        color: ${(props) => props.theme.buttonWhite};
+        background: ${(props) => props.theme.default.buttonDisabled};
+        color: ${(props) => props.theme.default.buttonWhite};
         border: 1px solid;
     }
 `;
