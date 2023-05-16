@@ -1,30 +1,25 @@
+import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { Container, Span } from "./styles";
 
 export type IButton = {
-    icon?: string;
-    size?: any;
+    children?: React.ReactNode;
+    icon?: any;
+    size?: string;
     isLoading?: boolean;
     onClick?: () => void;
     disabled?: boolean;
-    type?: any;
+    variant: "primary" | "outline" | "text" | "danger";
     label?: string;
-    primary?: boolean;
-    outline?: boolean;
-    text?: boolean;
-    danger?: boolean;
-    small?: boolean;
-    large?: boolean;
-    medium?: boolean;
-    variant?: "primary" | "outline" | "text" | "danger";
 };
 
 export default function Button({
     size,
     disabled,
+    variant = "primary",
+    isLoading = false,
     onClick,
     icon,
     label,
-    variant,
 }: IButton) {
     return (
         <Container

@@ -71,6 +71,18 @@ const disabled = css`
     }
 `;
 
+const danger = css`
+    color: ${(props) => props.theme.default.buttonWhite};
+    background-color: #ff3b3b;
+    border: none;
+    &:hover {
+        background-color: #de4747;
+    }
+    &:focus {
+        background-color: #de4747;
+    }
+`;
+
 export const Container = styled.button<IButton>`
     display: flex;
     align-items: center;
