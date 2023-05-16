@@ -3,7 +3,7 @@ const colors = {
     darkHighColor: "#112031",
     transparent: "transparent",
 
-    lightLowColor: "#ededed",
+    lightLowColor: "#fefefe",
     lightMediumColor: "#dddddd",
 
     darkLowColor: "#284462",
@@ -18,7 +18,6 @@ const colors = {
     auxiliaryBlue400: "#3E7BFA",
     auxiliaryBlue100: "#ccddff",
     auxiliaryDisabledLowColor: "#9fa8b2",
-    auxiliaryWhiteLowColor: "#fefefe",
     auxiliaryGrayLowColor: "#F3F3F3",
 };
 
