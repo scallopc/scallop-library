@@ -6,7 +6,7 @@ const colors = {
     lightLowColor: "#fefefe",
     lightMediumColor: "#dddddd",
 
-    darkLowColor: "#284462",
+    darkLowColor: "#1c2d40",
     darkMediumColor: "#0c0c10",
 
     darkHoverColor: "#31313805",
