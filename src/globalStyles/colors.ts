@@ -18,7 +18,7 @@ const colors = {
     auxiliaryBlue400: "#3E7BFA",
     auxiliaryBlue100: "#ccddff",
     auxiliaryDisabledLowColor: "#9fa8b2",
-    auxiliaryGrayLowColor: "#F3F3F3",
+    auxiliaryGrayLowColor: "#7d96b3",
 };
 
 export default colors;
