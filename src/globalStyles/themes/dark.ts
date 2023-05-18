@@ -6,7 +6,7 @@ const dark = {
     default: {
         //default
         background: colors.darkHighColor,
-        color: colors.lightHighColor,
+        color: colors.auxiliaryGrayLowColor,
         lowColor: colors.darkLowColor,
         shadow: colors.darkLowColor,
         textDetail: colors.auxiliaryBlueMediumColor,
