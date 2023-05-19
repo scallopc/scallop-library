@@ -16,7 +16,6 @@ export default function Button({
     size,
     disabled,
     variant = "primary",
-    isLoading = false,
     onClick,
     icon,
     label,
