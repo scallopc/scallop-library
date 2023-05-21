@@ -13,7 +13,7 @@ const colors = {
     darkHoverColorBorder: "#36363657",
 
     auxiliaryBlueLowColor: "#9dbff9",
-    auxiliaryBlueMediumColor: "#5b8def",
+    auxiliaryBlueMediumColor: "#1f426a",
     auxiliaryBlueHighColor: "#0063f7",
     auxiliaryBlue400: "#3E7BFA",
     auxiliaryBlue100: "#ccddff",
