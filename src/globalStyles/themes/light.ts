@@ -17,7 +17,7 @@ const light = {
         thumbHover: colors.auxiliaryBlueLowColor,
 
         //buttons
-        buttonPrimary: colors.auxiliaryBlueHighColor,
+        buttonPrimary: colors.auxiliaryBlueMediumColor,
         buttonPrimaryHover: colors.auxiliaryBlueMediumColor,
         buttonPrimaryFocus: colors.auxiliaryBlueLowColor,
         buttonWhite: colors.lightHighColor,
