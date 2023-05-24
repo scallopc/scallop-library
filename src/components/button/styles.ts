@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 const ButtonVariant = {
     primary: css`
         color: ${(props) => props.theme.default.buttonWhite};
-        background-color: ${(props) => props.theme.buttonPrimary};
+        background-color: ${(props) => props.theme.default.buttonPrimary};
         border: none;
         &:hover {
             background-color: ${(props) =>
@@ -16,7 +16,7 @@ const ButtonVariant = {
         }
     `,
     outline: css`
-        color: ${(props) => props.theme.default.buttonPrimary};
+        color: ${(props) => props.theme.default.buttonWhite};
         background-color: transparent;
         border: 1px solid ${(props) => props.theme.default.buttonPrimary};
 
@@ -34,7 +34,7 @@ const ButtonVariant = {
         }
     `,
     text: css`
-        color: ${(props) => props.theme.default.buttonPrimary};
+        color: ${(props) => props.theme.default.buttonWhite};
         background-color: transparent;
         border: 1px solid ${(props) => props.theme.default.buttonBorder};
 
@@ -61,13 +61,13 @@ const ButtonVariant = {
 const disabled = css`
     cursor: not-allowed;
     background: ${(props) => props.theme.default.buttonDisabled};
-    color: ${(props) => props.theme.buttonWhite};
-    border: 1px solid;
+    color: ${(props) => props.theme.default.buttonPrimaryHover};
+    border: 1px solid ${(props) => props.theme.default.buttonDisabled};
 
     &:hover {
         background: ${(props) => props.theme.default.buttonDisabled};
-        color: ${(props) => props.theme.default.buttonWhite};
-        border: 1px solid;
+        color: ${(props) => props.theme.default.buttonPrimaryHover};
+        border: 1px solid ${(props) => props.theme.default.buttonDisabled};
     }
 `;
 
