@@ -5,22 +5,22 @@ const light = {
 
     default: {
         //default
-        background: colors.lightHighColor,
+        background: colors.lightBlue200,
         color: colors.darkLowColor,
         lowColor: colors.lightLowColor,
-        textDetail: colors.auxiliaryBlueMediumColor,
+        textDetail: colors.auxiliaryBlue400,
         shadow: colors.auxiliaryDisabledLowColor,
         line: colors.auxiliaryDisabledLowColor,
 
         //scrol
-        thumb: colors.auxiliaryBlueLowColor,
-        thumbHover: colors.auxiliaryBlueLowColor,
+        thumb: colors.auxiliaryBlue200,
+        thumbHover: colors.auxiliaryBlue200,
 
         //buttons
-        buttonPrimary: colors.auxiliaryBlueMediumColor,
-        buttonPrimaryHover: colors.auxiliaryBlueMediumColor,
-        buttonPrimaryFocus: colors.auxiliaryBlueLowColor,
-        buttonWhite: colors.lightHighColor,
+        buttonPrimary: colors.auxiliaryBlue400,
+        buttonPrimaryHover: colors.auxiliaryBlue200,
+        buttonPrimaryFocus: colors.auxiliaryBlue200,
+        buttonWhite: colors.lightBlue200,
         buttonBorder: colors.darkHoverColorBorder,
         buttonDisabled: colors.auxiliaryDisabledLowColor,
     },

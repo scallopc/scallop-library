@@ -1,5 +1,5 @@
 const colors = {
-    lightHighColor: "#fbfbfb",
+    lightBlue200: "#DDE6ED",
     darkHighColor: "#112031",
     transparent: "transparent",
 
@@ -12,13 +12,16 @@ const colors = {
     darkHoverColor: "#31313805",
     darkHoverColorBorder: "#36363657",
 
-    auxiliaryBlueLowColor: "#9dbff9",
-    auxiliaryBlueMediumColor: "#1f426a",
-    auxiliaryBlueHighColor: "#0063f7",
-    auxiliaryBlue400: "#3E7BFA",
     auxiliaryBlue100: "#ccddff",
     auxiliaryDisabledLowColor: "#9fa8b2",
     auxiliaryGrayLowColor: "#7d96b3",
+
+    auxiliaryBlue200: "#526D82",
+    auxiliaryBlue300: "#394867",
+    auxiliaryBlue400: "#27374D",
+
+    auxiliaryGay200: "#9DB2BF",
+    auxiliaryGay300: "#9BA4B5",
 };
 
 export default colors;
