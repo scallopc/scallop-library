@@ -19,6 +19,7 @@ const colors = {
     auxiliaryBlue200: "#526D82",
     auxiliaryBlue300: "#394867",
     auxiliaryBlue400: "#27374D",
+    auxiliaryBlue600: "#181823",
 
     auxiliaryGay200: "#9DB2BF",
     auxiliaryGay300: "#9BA4B5",
