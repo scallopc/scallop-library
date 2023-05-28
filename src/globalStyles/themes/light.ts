@@ -13,13 +13,13 @@ const light = {
         line: colors.auxiliaryDisabledLowColor,
 
         //scrol
-        thumb: colors.auxiliaryBlue200,
-        thumbHover: colors.auxiliaryBlue200,
+        thumb: colors.auxiliaryBlue300,
+        thumbHover: colors.auxiliaryBlue300,
 
         //buttons
         buttonPrimary: colors.auxiliaryBlue400,
-        buttonPrimaryHover: colors.auxiliaryBlue200,
-        buttonPrimaryFocus: colors.auxiliaryBlue200,
+        buttonPrimaryHover: colors.auxiliaryBlue300,
+        buttonPrimaryFocus: colors.auxiliaryBlue300,
         buttonWhite: colors.lightBlue200,
         buttonBorder: colors.darkHoverColorBorder,
         buttonDisabled: colors.auxiliaryDisabledLowColor,
