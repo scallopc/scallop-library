@@ -15,10 +15,9 @@ export const MenuContainer = styled.div`
     height: 100%;
     padding: 20px;
     overflow-y: auto;
-    box-shadow: 1px 0px 5px 0px ${(props) => props.theme.default.lowColor};
-    -webkit-box-shadow: 1px 0px 5px 0px
-        ${(props) => props.theme.default.lowColor};
-    -moz-box-shadow: 1px 0px 5px 0px ${(props) => props.theme.default.lowColor};
+    box-shadow: 11px 2px 4px 0px ${(props) => props.theme.default.shadow};
+    -webkit-box-shadow: 1px 2px 4px 0px ${(props) => props.theme.default.shadow};
+    -moz-box-shadow: 1px 2px 4px 0px ${(props) => props.theme.default.shadow};
 `;
 
 export const H4 = styled(Link)`

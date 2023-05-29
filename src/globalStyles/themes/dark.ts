@@ -7,10 +7,10 @@ const dark = {
         //default
         background: colors.darkHighColor,
         color: colors.auxiliaryBlue100,
-        lowColor: colors.darkLowColor,
-        shadow: colors.darkLowColor,
+        lowColor: colors.auxiliaryBlue500,
+        shadow: colors.auxiliaryBlue600,
         textDetail: colors.auxiliaryBlue200,
-        line: colors.auxiliaryDisabledLowColor,
+        line: colors.auxiliaryGray500,
 
         //scrol
         thumb: colors.darkLowColor,
@@ -20,9 +20,9 @@ const dark = {
         buttonPrimary: colors.auxiliaryBlue400,
         buttonPrimaryHover: colors.auxiliaryBlue300,
         buttonPrimaryFocus: colors.auxiliaryBlue300,
-        buttonWhite: colors.lightBlue200,
+        buttonWhite: colors.auxiliaryGray500,
         buttonBorder: colors.darkHoverColorBorder,
-        buttonDisabled: colors.auxiliaryDisabledLowColor,
+        buttonDisabled: colors.auxiliaryGray500,
     },
 };
 
