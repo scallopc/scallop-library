@@ -10,7 +10,6 @@ const dark = {
         lowColor: colors.auxiliaryBlue500,
         shadow: colors.auxiliaryBlue600,
         textDetail: colors.auxiliaryBlue200,
-        line: colors.auxiliaryGray500,
 
         //scrol
         thumb: colors.darkLowColor,

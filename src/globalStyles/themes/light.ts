@@ -10,7 +10,6 @@ const light = {
         lowColor: colors.auxiliaryGray200,
         textDetail: colors.auxiliaryBlue400,
         shadow: colors.auxiliaryGray500,
-        line: colors.auxiliaryGray500,
 
         //scrol
         thumb: colors.auxiliaryBlue100,
