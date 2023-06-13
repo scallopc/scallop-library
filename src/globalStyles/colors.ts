@@ -1,6 +1,5 @@
 const colors = {
     darkHighColor: "#112031",
-    transparent: "transparent",
 
     darkLowColor: "#1c2d40",
 
