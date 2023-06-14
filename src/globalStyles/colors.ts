@@ -1,6 +1,4 @@
 const colors = {
-    darkHighColor: "#112031",
-
     darkLowColor: "#1c2d40",
 
     darkHoverColor: "#31313805",

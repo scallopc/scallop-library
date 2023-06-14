@@ -5,7 +5,7 @@ const dark = {
 
     default: {
         //default
-        background: colors.darkHighColor,
+        background: colors.auxiliaryBlue500,
         color: colors.auxiliaryBlue100,
         lowColor: colors.auxiliaryBlue500,
         shadow: colors.auxiliaryBlue600,
