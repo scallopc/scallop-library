@@ -5,20 +5,20 @@ const dark = {
 
     default: {
         //default
-        background: colors.auxiliaryBlue500,
-        color: colors.auxiliaryBlue100,
-        lowColor: colors.auxiliaryBlue500,
-        shadow: colors.auxiliaryBlue600,
-        textDetail: colors.auxiliaryBlue200,
+        background: colors.darkBlue500,
+        color: colors.darkBlue100,
+        lowColor: colors.darkBlue500,
+        shadow: colors.darkBlue600,
+        textDetail: colors.darkBlue200,
 
         //scrol
         thumb: colors.darkLowColor,
-        thumbHover: colors.auxiliaryBlue300,
+        thumbHover: colors.darkBlue300,
 
         //buttons
-        buttonPrimary: colors.auxiliaryBlue400,
-        buttonPrimaryHover: colors.auxiliaryBlue300,
-        buttonPrimaryFocus: colors.auxiliaryBlue300,
+        buttonPrimary: colors.darkBlue400,
+        buttonPrimaryHover: colors.darkBlue300,
+        buttonPrimaryFocus: colors.darkBlue300,
         buttonWhite: colors.auxiliaryGray500,
         buttonBorder: colors.darkHoverColorBorder,
         buttonDisabled: colors.auxiliaryGray500,
