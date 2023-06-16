@@ -9,7 +9,12 @@ const colors = {
     darkBlue300: "#4d718a",
     darkBlue400: "#365b73",
     darkBlue500: "#041822",
-    darkBlue600: "#063046",
+
+    lightBlue100: "#cee5f2",
+    lightBlue200: "#accbe1",
+    lightBlue300: "#7c98b3",
+    lightBlue400: "#637081",
+    lightBlue500: "#536b78",
 
     auxiliaryGray100: "#DDE6ED",
     auxiliaryGray200: "#c3d2dd",

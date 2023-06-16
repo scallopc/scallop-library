@@ -9,11 +9,7 @@ const light = {
         color: colors.darkLowColor,
         lowColor: colors.auxiliaryGray200,
         textDetail: colors.darkBlue400,
-        shadow: colors.auxiliaryGray500,
-
-        //scrol
-        thumb: colors.darkBlue100,
-        thumbHover: colors.darkBlue300,
+        shadow: colors.lightBlue500,
 
         //buttons
         buttonPrimary: colors.darkBlue400,
@@ -21,7 +17,12 @@ const light = {
         buttonPrimaryFocus: colors.darkBlue300,
         buttonWhite: colors.auxiliaryGray100,
         buttonBorder: colors.darkHoverColorBorder,
-        buttonDisabled: colors.auxiliaryGray500,
+        buttonDisabled: colors.lightBlue500,
+    },
+    scroll: {
+        //scrol
+        thumb: colors.darkBlue100,
+        thumbHover: colors.darkBlue300,
     },
 };
 
