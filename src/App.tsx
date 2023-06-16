@@ -13,13 +13,15 @@ export default function App(props) {
         setTheme(theme.title === "light" ? dark : light);
     };
     return (
-        <ThemeProvider theme={theme}>
-            <HashRouter>
-                <GlobalStyle />
-                <MainComponents theme={() => switchTheme()} />
-                {children}
-            </HashRouter>
-        </ThemeProvider>
+        <div>
+            <ThemeProvider theme={theme}>
+                <HashRouter>
+                    <GlobalStyle />
+                    <MainComponents theme={() => switchTheme()} />
+                    {children}
+                </HashRouter>
+            </ThemeProvider>
+        </div>
     );
 }
 //app component
