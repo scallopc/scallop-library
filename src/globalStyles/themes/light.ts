@@ -18,8 +18,6 @@ const light = {
         buttonWhite: colors.auxiliaryGray100,
         buttonBorder: colors.darkHoverColorBorder,
         buttonDisabled: colors.lightBlue500,
-    },
-    scroll: {
         //scrol
         thumb: colors.darkBlue100,
         thumbHover: colors.darkBlue300,
