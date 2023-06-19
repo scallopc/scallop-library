@@ -1,27 +1,27 @@
 import colors from "../colors";
 
 const dark = {
-    title: "dark",
+     title: "dark",
 
-    default: {
-        //default
-        background: colors.darkBlue500,
-        color: colors.darkBlue100,
-        lowColor: colors.darkBlue500,
-        shadow: colors.darkBlue500,
-        textDetail: colors.darkBlue200,
+     default: {
+          //default
+          background: colors.darkBlue400,
+          color: colors.darkBlue200,
+          lowColor: colors.darkBlue300,
+          shadow: colors.darkBlue300,
+          detail: "#bfc5ff",
 
-        //buttons
-        buttonPrimary: colors.darkBlue400,
-        buttonPrimaryHover: colors.darkBlue300,
-        buttonPrimaryFocus: colors.darkBlue300,
-        buttonWhite: colors.lightBlue500,
-        buttonBorder: colors.darkHoverColorBorder,
-        buttonDisabled: colors.lightBlue500,
-        //scrol
-        thumb: colors.darkLowColor,
-        thumbHover: colors.darkBlue300,
-    },
+          //buttons
+          buttonPrimaryBg: colors.darkBlue500,
+          buttonPrimaryHover: colors.darkBlue400,
+          buttonPrimaryFocus: colors.darkBlue400,
+          buttonPrimaryColor: colors.darkBlue200,
+          buttonBorder: "red",
+          buttonDisabled: colors.lightBlue500,
+          //scrol
+          thumb: "red",
+          thumbHover: colors.darkBlue300,
+     },
 };
 
 export default dark;
