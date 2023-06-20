@@ -1,4 +1,6 @@
-const colors = {
+import * as buttonsColors from "./buttonsColors";
+
+export const defaultColors = {
      darkBlue100: "#a1bbcd",
      darkBlue200: "#6a799d",
      darkBlue300: "#2e3951",
@@ -10,6 +12,8 @@ const colors = {
      lightBlue300: "#7c98b3",
      lightBlue400: "#637081",
      lightBlue500: "#536b78",
-};
 
-export default colors;
+     ...buttonsColors.buttonPrimaryColors,
+     ...buttonsColors.buttonOutlineColors,
+     ...buttonsColors.buttonDisabledColors,
+};

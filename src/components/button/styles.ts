@@ -3,76 +3,50 @@ import styled, { css } from "styled-components";
 
 const ButtonVariant = {
      primary: css`
-          color: ${(props) => props.theme.default.buttonPrimaryColor};
-          background-color: ${(props) => props.theme.default.buttonPrimaryBg};
+          color: ${(props) => props.theme.primary.color};
+          background-color: ${(props) => props.theme.primary.background};
           border: none;
+          transition: all 250ms linear;
           &:hover {
-               background-color: ${(props) =>
-                    props.theme.default.buttonPrimaryHover};
+               background-color: ${(props) => props.theme.primary.hover};
           }
           &:focus {
-               background-color: ${(props) =>
-                    props.theme.default.buttonPrimaryFocus};
+               background-color: ${(props) => props.theme.primary.focus};
           }
      `,
      outline: css`
-          color: ${(props) => props.theme.default.buttonPrimaryColor};
+          color: ${(props) => props.theme.outline.color};
           background-color: transparent;
-          border: 1px solid ${(props) => props.theme.default.buttonPrimaryBg};
+          border: 1px solid ${(props) => props.theme.outline.border};
 
           &:hover {
-               background-color: ${(props) =>
-                    props.theme.default.buttonPrimaryHover};
-               color: ${(props) => props.theme.buttonPrimaryBg};
+               background-color: ${(props) => props.theme.outline.hover};
+               color: ${(props) => props.theme.outline.colorHover};
                border: 1px solid transparent;
           }
 
           &:focus {
-               background-color: ${(props) =>
-                    props.theme.default.buttonPrimaryFocus};
-               color: ${(props) => props.theme.default.buttonPrimaryColor};
-          }
-     `,
-     text: css`
-          color: ${(props) => props.theme.default.buttonPrimaryColor};
-          background-color: transparent;
-          border: 1px solid ${(props) => props.theme.default.buttonBorder};
-
-          &:hover {
-               background-color: ${(props) =>
-                    props.theme.default.buttonPrimaryHover};
-               color: ${(props) => props.theme.default.buttonPrimaryColor};
-               border: 1px solid transparent;
-          }
-     `,
-     danger: css`
-          color: ${(props) => props.theme.default.buttonPrimaryColor};
-          background-color: #ff3b3b;
-          border: none;
-          &:hover {
-               background-color: #de4747;
-          }
-          &:focus {
-               background-color: #de4747;
+               background-color: ${(props) => props.theme.outline.focus};
+               color: ${(props) => props.theme.outline.colorHover};
           }
      `,
 };
 
-const disabled = css`
-     cursor: not-allowed;
-     background: ${(props) => props.theme.default.buttonDisabled};
-     color: ${(props) => props.theme.default.buttonPrimaryHover};
-     border: 1px solid ${(props) => props.theme.default.buttonDisabled};
+// const disabled = css`
+//      cursor: not-allowed;
+//      background: ${(props) => props.theme.buttonPrimary.disabled};
+//      color: ${(props) => props.theme.buttonPrimary.hover};
+//      border: 1px solid ${(props) => props.theme.buttonPrimary.disabled};
 
-     &:hover {
-          background: ${(props) => props.theme.default.buttonDisabled};
-          color: ${(props) => props.theme.default.buttonPrimaryHover};
-          border: 1px solid ${(props) => props.theme.default.buttonDisabled};
-     }
-`;
+//      &:hover {
+//           background: ${(props) => props.theme.buttonPrimary.disabled};
+//           color: ${(props) => props.theme.buttonPrimary.hover};
+//           border: 1px solid ${(props) => props.theme.buttonPrimary.disabled};
+//      }
+// `;
 
 const danger = css`
-     color: ${(props) => props.theme.default.buttonPrimaryColor};
+     color: ${(props) => props.theme.buttonPrimary.color};
      background-color: #ff3b3b;
      border: none;
      &:hover {
@@ -92,6 +66,7 @@ export const Container = styled.button<IButton>`
      letter-spacing: 0.2px;
      border-radius: 4px;
      width: fit-content;
+     transition: all 150ms linear;
      padding: ${(props) =>
                props.size === "small"
                     ? "6px"
@@ -107,7 +82,6 @@ export const Container = styled.button<IButton>`
                : "40px"};
      cursor: pointer;
      outline: none;
-     transition: all 0.2s;
      font-size: ${(props) =>
           props.size === "small"
                ? "10px"
@@ -115,7 +89,6 @@ export const Container = styled.button<IButton>`
                ? "12px"
                : "14px"};
      ${(props) => props.variant && ButtonVariant[props.variant]}
-     ${(props) => props.disabled && disabled}
 `;
 
 export const Span = styled.span`
