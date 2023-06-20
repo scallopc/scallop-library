@@ -1,27 +1,23 @@
-import colors from "../colors";
+import { defaultColors } from "../colors/defaultColors";
+import { darkButton } from "../components/buttons";
 
 const dark = {
      title: "dark",
 
      default: {
           //default
-          background: colors.darkBlue400,
-          color: colors.darkBlue200,
-          lowColor: colors.darkBlue300,
-          shadow: colors.darkBlue300,
+          background: defaultColors.darkBlue400,
+          color: defaultColors.darkBlue200,
+          lowColor: defaultColors.darkBlue300,
+          shadow: defaultColors.darkBlue300,
           detail: "#bfc5ff",
 
-          //buttons
-          buttonPrimaryBg: colors.darkBlue500,
-          buttonPrimaryHover: colors.darkBlue400,
-          buttonPrimaryFocus: colors.darkBlue400,
-          buttonPrimaryColor: colors.darkBlue200,
-          buttonBorder: "red",
-          buttonDisabled: colors.lightBlue500,
           //scrol
           thumb: "red",
-          thumbHover: colors.darkBlue300,
+          thumbHover: defaultColors.darkBlue300,
      },
+
+     ...darkButton,
 };
 
 export default dark;
