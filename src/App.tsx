@@ -7,21 +7,21 @@ import usePersistedState from "./utils/usePersistedState";
 import dark from "./globalStyles/themes/dark";
 
 export default function App(props) {
-    const [theme, setTheme] = usePersistedState("", light);
-    const { children } = props;
-    const switchTheme = () => {
-        setTheme(theme.title === "light" ? dark : light);
-    };
-    return (
-        <div>
-            <ThemeProvider theme={theme}>
-                <HashRouter>
-                    <GlobalStyle />
-                    <MainComponents theme={() => switchTheme()} />
-                    {children}
-                </HashRouter>
-            </ThemeProvider>
-        </div>
-    );
+     const [theme, setTheme] = usePersistedState("", light);
+     const { children } = props;
+     const switchTheme = () => {
+          setTheme(theme.title === "light" ? dark : light);
+     };
+     return (
+          <div>
+               <ThemeProvider theme={dark}>
+                    <HashRouter>
+                         <GlobalStyle />
+                         <MainComponents theme={() => switchTheme()} />
+                         {children}
+                    </HashRouter>
+               </ThemeProvider>
+          </div>
+     );
 }
 //app component

@@ -1,17 +1,6 @@
-export const buttonPrimaryColors = {
-     darkPrimary100: "#bfc3cd",
-     darkPrimary200: "#307ce9",
-     darkPrimary300: "#3066e9",
-};
-
-export const buttonOutlineColors = {
-     darkOutline100: "#bfc3cd",
-     darkOutline200: "#307ce9",
-     darkOutline300: "#3066e9",
-};
-
-export const buttonDisabledColors = {
-     darkOutline100: "#bfc3cd",
-     darkOutline200: "#307ce9",
-     darkOutline300: "#3066e9",
+export const buttonColors = {
+     white100: "#f5f7fb",
+     blue200: "#3e7bfabd",
+     blue300: "#3E7BFA",
+     blue400: "#3568D4",
 };

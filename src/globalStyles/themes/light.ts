@@ -6,15 +6,17 @@ const light = {
 
      default: {
           //default
-          background: "aqua",
-          color: "red",
-          lowColor: defaultColors.darkBlue400,
-          detail: defaultColors.darkBlue400,
-          shadow: defaultColors.lightBlue500,
+          background: defaultColors.lightBlue100,
+          title: defaultColors.lightBlue500,
+          color: defaultColors.lightBlue400,
+          lowColor: defaultColors.lightBlue200,
+          lowBackground: defaultColors.lightBlue300,
+          detail: defaultColors.lightBlue400,
+          shadow: defaultColors.lightBlueOpacity,
 
           //scrol
-          thumb: defaultColors.darkBlue100,
-          thumbHover: defaultColors.darkBlue300,
+          thumb: defaultColors.lightBlueOpacity,
+          thumbHover: defaultColors.lightBlue300,
      },
 
      ...lightButton,
