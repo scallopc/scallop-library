@@ -8,15 +8,15 @@ export const Content: any = styled.div`
      padding: 15px;
      border-radius: 10px;
      background: ${(props) => props.theme.default.lowColor};
-     box-shadow: 0px 0px 5px 0px ${(props) => props.theme.default.shadow};
-     -webkit-box-shadow: 0px 0px 5px 0px
+     box-shadow: 0px 0px 1px 0px ${(props) => props.theme.default.shadow};
+     -webkit-box-shadow: 0px 0px 1px 0px
           ${(props) => props.theme.default.shadow};
-     -moz-box-shadow: 0px 0px 5px 0px ${(props) => props.theme.default.shadow};
+     -moz-box-shadow: 0px 0px 1px 0px ${(props) => props.theme.default.shadow};
      width: 100%;
 `;
 
 export const H2: any = styled.h2`
-     color: ${(props) => props.theme.default.color};
+     color: ${(props) => props.theme.default.title};
 `;
 
 export const Detail: any = styled.div<any>`
@@ -24,6 +24,9 @@ export const Detail: any = styled.div<any>`
      font-size: 12px;
      line-height: 2;
      word-spacing: 5px;
+     background: ${(props) => props.theme.default.lowBackground};
+     padding: 10px;
+     border-radius: 4px;
 `;
 
 export const SmallDetail: any = styled.div`
@@ -65,7 +68,7 @@ export const DocumentationContainer: any = styled.div`
 `;
 
 export const H5: any = styled.h5`
-     color: ${(props) => props.theme.default.color};
+     color: ${(props) => props.theme.default.title};
      font-size: 14px;
 `;
 

@@ -1,52 +1,51 @@
 import { IButton } from "./button";
 import styled, { css } from "styled-components";
 
-const ButtonVariant = {
-     primary: css`
-          color: ${(props) => props.theme.primary.color};
-          background-color: ${(props) => props.theme.primary.background};
-          border: none;
-          transition: all 250ms linear;
-          &:hover {
-               background-color: ${(props) => props.theme.primary.hover};
-          }
-          &:focus {
-               background-color: ${(props) => props.theme.primary.focus};
-          }
-     `,
-     outline: css`
-          color: ${(props) => props.theme.outline.color};
-          background-color: transparent;
-          border: 1px solid ${(props) => props.theme.outline.border};
+const primary = css`
+     color: ${(props) => props.theme.primary.color};
+     background-color: ${(props) => props.theme.primary.background};
+     border: none;
+     transition: all 250ms linear;
+     &:hover {
+          background-color: ${(props) => props.theme.primary.hover};
+     }
+     &:focus {
+          background-color: ${(props) => props.theme.primary.focus};
+     }
+`;
 
-          &:hover {
-               background-color: ${(props) => props.theme.outline.hover};
-               color: ${(props) => props.theme.outline.colorHover};
-               border: 1px solid transparent;
-          }
+const outline = css`
+     color: ${(props) => props.theme.outline.color};
+     background-color: transparent;
+     border: 1px solid ${(props) => props.theme.outline.border};
 
-          &:focus {
-               background-color: ${(props) => props.theme.outline.focus};
-               color: ${(props) => props.theme.outline.colorHover};
-          }
-     `,
-};
+     &:hover {
+          background-color: ${(props) => props.theme.outline.hover};
+          color: ${(props) => props.theme.outline.colorHover};
+          border: 1px solid transparent;
+     }
 
-// const disabled = css`
-//      cursor: not-allowed;
-//      background: ${(props) => props.theme.buttonPrimary.disabled};
-//      color: ${(props) => props.theme.buttonPrimary.hover};
-//      border: 1px solid ${(props) => props.theme.buttonPrimary.disabled};
+     &:focus {
+          background-color: ${(props) => props.theme.outline.focus};
+          color: ${(props) => props.theme.outline.colorHover};
+     }
+`;
 
-//      &:hover {
-//           background: ${(props) => props.theme.buttonPrimary.disabled};
-//           color: ${(props) => props.theme.buttonPrimary.hover};
-//           border: 1px solid ${(props) => props.theme.buttonPrimary.disabled};
-//      }
-// `;
+const disabled = css`
+     cursor: not-allowed;
+     background: ${(props) => props.theme.outline.focus};
+     color: ${(props) => props.theme.outline.focus};
+     border: 1px solid ${(props) => props.theme.outline.focus};
+
+     &:hover {
+          background: ${(props) => props.theme.outline.focus};
+          color: ${(props) => props.theme.outline.focus};
+          border: 1px solid ${(props) => props.theme.outline.focus};
+     }
+`;
 
 const danger = css`
-     color: ${(props) => props.theme.buttonPrimary.color};
+     color: ${(props) => props.theme.outline.focus};
      background-color: #ff3b3b;
      border: none;
      &:hover {
@@ -58,7 +57,8 @@ const danger = css`
 `;
 
 export const Container = styled.button<IButton>`
-     display: flex;
+     display: ${(props) =>
+          props.icon || (props.isLoading && props.label) ? "flex" : "block"};
      align-items: center;
      justify-content: center;
      gap: 4px;
@@ -88,7 +88,10 @@ export const Container = styled.button<IButton>`
                : props.size === "medium"
                ? "12px"
                : "14px"};
-     ${(props) => props.variant && ButtonVariant[props.variant]}
+     ${(props) => props.disabled && disabled}
+     ${(props) => props.danger && danger}
+     ${(props) => props.primary && primary}
+     ${(props) => props.outline && outline}
 `;
 
 export const Span = styled.span`
