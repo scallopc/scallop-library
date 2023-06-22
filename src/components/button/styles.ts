@@ -1,7 +1,7 @@
 import { IButton } from "./button";
 import styled, { css } from "styled-components";
 
-const primary = css`
+const primary = (props: IButton) => css`
      color: ${(props) => props.theme.primary.color};
      background-color: ${(props) => props.theme.primary.background};
      border: none;
@@ -12,9 +12,10 @@ const primary = css`
      &:focus {
           background-color: ${(props) => props.theme.primary.focus};
      }
+     ${props.disabled && disabled}
 `;
 
-const outline = css`
+const outline = (props: IButton) => css`
      color: ${(props) => props.theme.outline.color};
      background-color: transparent;
      border: 1px solid ${(props) => props.theme.outline.border};
@@ -29,22 +30,11 @@ const outline = css`
           background-color: ${(props) => props.theme.outline.focus};
           color: ${(props) => props.theme.outline.colorHover};
      }
+
+     ${props.disabled && disabled}
 `;
 
-const disabled = css`
-     cursor: not-allowed;
-     background: ${(props) => props.theme.outline.focus};
-     color: ${(props) => props.theme.outline.focus};
-     border: 1px solid ${(props) => props.theme.outline.focus};
-
-     &:hover {
-          background: ${(props) => props.theme.outline.focus};
-          color: ${(props) => props.theme.outline.focus};
-          border: 1px solid ${(props) => props.theme.outline.focus};
-     }
-`;
-
-const danger = css`
+const danger = (props: IButton) => css`
      color: ${(props) => props.theme.outline.focus};
      background-color: #ff3b3b;
      border: none;
@@ -54,11 +44,45 @@ const danger = css`
      &:focus {
           background-color: #de4747;
      }
+
+     ${props.disabled && disabled}
+`;
+
+const disabled = css`
+     cursor: not-allowed;
+     background: ${(props) => props.theme.disabled.background};
+     color: ${(props) => props.theme.disabled.color};
+     border: 1px solid ${(props) => props.theme.disabled.border};
+
+     &:hover {
+          background: ${(props) => props.theme.disabled.background};
+          color: ${(props) => props.theme.disabled.color};
+          border: 1px solid ${(props) => props.theme.disabled.border};
+     }
+`;
+
+// Estilos para os diferentes tamanhos
+const smallStyles = css`
+     padding: 6px 24px;
+     height: 24px;
+     font-size: 10px;
+`;
+
+const mediumStyles = css`
+     padding: 8px 24px;
+     height: 32px;
+     font-size: 14px;
+`;
+
+const largeStyles = css`
+     padding: 10px 24px;
+     height: 40px;
+     font-size: 14px;
 `;
 
 export const Container = styled.button<IButton>`
      display: ${(props) =>
-          props.icon || (props.isLoading && props.label) ? "flex" : "block"};
+          props.label && (props.isLoading || props.icon) ? "flex" : "block"};
      align-items: center;
      justify-content: center;
      gap: 4px;
@@ -67,31 +91,15 @@ export const Container = styled.button<IButton>`
      border-radius: 4px;
      width: fit-content;
      transition: all 150ms linear;
-     padding: ${(props) =>
-               props.size === "small"
-                    ? "6px"
-                    : props.size === "medium"
-                    ? "8px"
-                    : "10px"}
-          24px;
-     height: ${(props) =>
-          props.size === "small"
-               ? "24px"
-               : props.size === "medium"
-               ? "32px"
-               : "40px"};
      cursor: pointer;
      outline: none;
-     font-size: ${(props) =>
-          props.size === "small"
-               ? "10px"
-               : props.size === "medium"
-               ? "12px"
-               : "14px"};
-     ${(props) => props.disabled && disabled}
      ${(props) => props.danger && danger}
      ${(props) => props.primary && primary}
      ${(props) => props.outline && outline}
+     ${(props) => props.disabled && disabled}
+     ${(props) => props.size === "small" && smallStyles}
+  ${(props) => props.size === "medium" && mediumStyles}
+  ${(props) => props.size === "large" && largeStyles}
 `;
 
 export const Span = styled.span`

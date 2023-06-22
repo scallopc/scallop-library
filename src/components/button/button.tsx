@@ -1,6 +1,12 @@
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { Container, Span } from "./styles";
 
+export type IButtonType = {
+     primary?: boolean;
+     outline?: boolean;
+     danger?: boolean;
+     ghost?: boolean;
+};
 export type IButton = {
      children?: React.ReactNode;
      icon?: any;
