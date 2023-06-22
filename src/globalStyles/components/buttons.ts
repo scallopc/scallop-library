@@ -15,6 +15,11 @@ export const darkButton = {
           focus: defaultColors.blue200,
           border: defaultColors.blue300,
      },
+     disabled: {
+          background: defaultColors.white300,
+          color: defaultColors.blue100,
+          border: "transparent",
+     },
 };
 
 export const lightButton = {
@@ -31,5 +36,10 @@ export const lightButton = {
           hover: defaultColors.blue200,
           focus: defaultColors.blue400,
           border: defaultColors.blue300,
+     },
+     disabled: {
+          background: defaultColors.white300,
+          color: defaultColors.blue100,
+          border: "transparent",
      },
 };
