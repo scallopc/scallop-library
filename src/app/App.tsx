@@ -2,9 +2,9 @@ import { ThemeProvider } from "styled-components";
 import light from "./globalStyles/themes/light";
 import { HashRouter } from "react-router-dom";
 import GlobalStyle from "./globalStyles/globalStyle";
-import MainComponents from "./pages/main/main";
-import usePersistedState from "./utils/usePersistedState";
 import dark from "./globalStyles/themes/dark";
+import usePersistedState from "./shared/hooks/usePersistedState";
+import Routes from "./routes/routes";
 
 export default function App(props) {
      const [theme, setTheme] = usePersistedState("", light);
@@ -17,11 +17,10 @@ export default function App(props) {
                <ThemeProvider theme={dark}>
                     <HashRouter>
                          <GlobalStyle />
-                         <MainComponents theme={() => switchTheme()} />
+                         <Routes theme={() => switchTheme()} />
                          {children}
                     </HashRouter>
                </ThemeProvider>
           </div>
      );
 }
-//app component

@@ -1,4 +1,4 @@
-import Button from "../../components/button/button";
+import Button from "../../shared/components/button/button";
 import {
      Box,
      Container,
@@ -12,7 +12,7 @@ import {
      TableRow,
 } from "../styles";
 
-export default function ButtonsPageView() {
+export function ButtonsPageView() {
      const primary = '<Button primary size="small" label="button name" />';
      const outline = '<Button outline size="medium" label="button name" />';
      const text = '<Button text size="large" />';
