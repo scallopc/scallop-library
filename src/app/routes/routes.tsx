@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { ContainerMain } from "./styles";
-import { ButtonsPageView, Home, MenuLateral } from "../pages";
+import { ButtonsPageView, Home } from "../pages";
+import { MenuLateral } from "../pages/_components";
 
 export default function Routes(props) {
      const { theme } = props;
