@@ -1,6 +1,6 @@
-import MenuRoutes from "../../../shared/components/menuRoutes/menuRoutes";
-import { ContainerMenuLateral, MenuContainer } from "./styles";
 import { HashRouter } from "react-router-dom";
+import { MenuRoutes } from "../../../shared/components";
+import { ContainerMenuLateral, MenuContainer } from "./styles";
 
 export function MenuLateral(props) {
      const { switchTheme } = props;

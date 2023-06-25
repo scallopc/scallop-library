@@ -1,4 +1,4 @@
-import Button from "../../shared/components/button/button";
+import { Button } from "../../shared/components";
 import {
      Box,
      Container,
@@ -31,13 +31,9 @@ export function ButtonsPageView() {
                               <h3>Primary</h3>
                               <Detail> {primary}</Detail>
                               <div className="flex align-items-center gap-2">
-                                   <Button primary size="small" label="Small" />
-                                   <Button
-                                        primary
-                                        size="medium"
-                                        label="Medium"
-                                   />
-                                   <Button primary size="large" label="Large" />
+                                   <Button primary sm label="Small" />
+                                   <Button primary md label="Medium" />
+                                   <Button primary lg label="Large" />
                               </div>
                          </Content>
                          <Content>
@@ -48,13 +44,9 @@ export function ButtonsPageView() {
                               </SmallDetail>
                               <Detail> {outline}</Detail>
                               <div className="flex align-items-center gap-2">
-                                   <Button outline size="small" label="Small" />
-                                   <Button
-                                        outline
-                                        size="medium"
-                                        label="Medium"
-                                   />
-                                   <Button outline size="large" label="Large" />
+                                   <Button outline sm label="Small" />
+                                   <Button outline md label="Medium" />
+                                   <Button outline lg label="Large" />
                               </div>
                          </Content>
                          <Content>
@@ -65,9 +57,9 @@ export function ButtonsPageView() {
                               </SmallDetail>
                               <Detail> {text}</Detail>
                               <div className="flex align-items-center gap-2">
-                                   <Button ghost size="small" label="Small" />
-                                   <Button ghost size="medium" label="Medium" />
-                                   <Button ghost size="large" label="Large" />
+                                   <Button ghost sm label="Small" />
+                                   <Button ghost md label="Medium" />
+                                   <Button ghost lg label="Large" />
                               </div>
                          </Content>
                          <Content>
@@ -82,14 +74,14 @@ export function ButtonsPageView() {
                               <div className="flex align-items-center gap-2">
                                    <Button
                                         outline
-                                        size="medium"
+                                        md
                                         icon="fa-regular fa-plus"
                                         label="Medium"
                                    />
                                    <Button
                                         primary
+                                        md
                                         icon="fa-regular fa-plus"
-                                        size="medium"
                                    />
                               </div>
                          </Content>
@@ -102,10 +94,10 @@ export function ButtonsPageView() {
                               <div className="flex align-items-center gap-2">
                                    <Button
                                         primary
-                                        disabled
-                                        size="medium"
+                                        md
                                         icon="fa-regular fa-plus"
                                         label="Medium"
+                                        disabled
                                    />
                               </div>
                          </Content>

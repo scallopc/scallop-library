@@ -1,4 +1,4 @@
-import { IButton } from "./button";
+import { IButton } from "./model";
 import styled, { css } from "styled-components";
 
 const primary = (props: IButton) => css`
@@ -62,19 +62,19 @@ const disabled = css`
 `;
 
 // Estilos para os diferentes tamanhos
-const smallStyles = css`
+const smallStyles = (props: IButton) => css`
      padding: 6px 24px;
      height: 24px;
      font-size: 10px;
 `;
 
-const mediumStyles = css`
+const mediumStyles = (props: IButton) => css`
      padding: 8px 24px;
      height: 32px;
      font-size: 14px;
 `;
 
-const largeStyles = css`
+const largeStyles = (props: IButton) => css`
      padding: 10px 24px;
      height: 40px;
      font-size: 14px;
@@ -97,9 +97,9 @@ export const Container = styled.button<IButton>`
      ${(props) => props.primary && primary}
      ${(props) => props.outline && outline}
      ${(props) => props.disabled && disabled}
-     ${(props) => props.size === "small" && smallStyles}
-  ${(props) => props.size === "medium" && mediumStyles}
-  ${(props) => props.size === "large" && largeStyles}
+     ${(props) => props.sm && smallStyles}
+     ${(props) => props.md && mediumStyles}
+     ${(props) => props.lg && largeStyles}
 `;
 
 export const Span = styled.span`

@@ -1,7 +1,7 @@
 import { defaultColors } from "../colors/defaultColors";
-import { lightButton } from "../components/buttons";
+import { lightButton } from "../componentsTheme/buttonsTheme";
 
-const light = {
+export const light = {
      title: "light",
 
      default: {
@@ -21,5 +21,3 @@ const light = {
 
      ...lightButton,
 };
-
-export default light;

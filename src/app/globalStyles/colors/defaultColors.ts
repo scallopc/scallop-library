@@ -15,6 +15,4 @@ export const defaultColors = {
      lightBlue400: "#555770",
      lightBlue500: "#3E7BFA",
      lightBlueOpacity: "#8890956e",
-
-     ...buttonColors,
 };

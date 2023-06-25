@@ -1,7 +1,7 @@
-import { defaultColors } from "../colors/defaultColors";
-import { darkButton } from "../components/buttons";
+import { defaultColors } from "../colors";
+import { darkButton } from "../componentsTheme/buttonsTheme";
 
-const dark = {
+export const dark = {
      title: "dark",
 
      default: {
@@ -21,5 +21,3 @@ const dark = {
 
      ...darkButton,
 };
-
-export default dark;
