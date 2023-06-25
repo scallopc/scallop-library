@@ -1,10 +1,9 @@
-import { ThemeProvider } from "styled-components";
-import light from "./globalStyles/themes/light";
-import { HashRouter } from "react-router-dom";
-import GlobalStyle from "./globalStyles/globalStyle";
-import dark from "./globalStyles/themes/dark";
-import usePersistedState from "./shared/hooks/usePersistedState";
 import Routes from "./routes/routes";
+import GlobalStyle from "./globalStyles/globalStyle";
+import { dark, light } from "./globalStyles/themes";
+import { usePersistedState } from "./shared/hooks";
+import { ThemeProvider } from "styled-components";
+import { HashRouter } from "react-router-dom";
 
 export default function App(props) {
      const [theme, setTheme] = usePersistedState("", light);
@@ -14,7 +13,7 @@ export default function App(props) {
      };
      return (
           <div>
-               <ThemeProvider theme={dark}>
+               <ThemeProvider theme={theme}>
                     <HashRouter>
                          <GlobalStyle />
                          <Routes theme={() => switchTheme()} />
