@@ -1,37 +1,55 @@
-import { IButton } from "./model";
+import { IButton } from "./buttons.model";
 import styled, { css } from "styled-components";
 
 const primary = (props: IButton) => css`
      color: ${(props) => props.theme.primary.color};
-     background-color: ${(props) => props.theme.primary.background};
+     background-color: ${(props) =>
+          props.disabled
+               ? props.theme.primary.disabled
+               : props.theme.primary.background};
      border: none;
      transition: all 250ms linear;
      &:hover {
-          background-color: ${(props) => props.theme.primary.hover};
+          background-color: ${(props) =>
+               props.disabled
+                    ? props.theme.primary.disabled
+                    : props.theme.primary.hover};
      }
      &:focus {
           background-color: ${(props) => props.theme.primary.focus};
      }
-     ${props.disabled && disabled}
 `;
 
 const outline = (props: IButton) => css`
-     color: ${(props) => props.theme.outline.color};
+     color: ${(props) =>
+          props.disabled
+               ? props.theme.outline.disabled
+               : props.theme.outline.color};
      background-color: transparent;
-     border: 1px solid ${(props) => props.theme.outline.border};
+     border: 1px solid
+          ${(props) =>
+               props.disabled
+                    ? props.theme.outline.disabled
+                    : props.theme.outline.border};
 
      &:hover {
-          background-color: ${(props) => props.theme.outline.hover};
-          color: ${(props) => props.theme.outline.colorHover};
-          border: 1px solid transparent;
+          background-color: ${(props) =>
+               props.disabled ? "transparent" : props.theme.outline.hover};
+          color: ${(props) =>
+               props.disabled
+                    ? props.theme.outline.disabled
+                    : props.theme.outline.colorHover};
+          border: 1px solid
+               ${(props) =>
+                    props.disabled
+                         ? props.theme.outline.disabled
+                         : "transparent"};
      }
 
      &:focus {
           background-color: ${(props) => props.theme.outline.focus};
           color: ${(props) => props.theme.outline.colorHover};
      }
-
-     ${props.disabled && disabled}
 `;
 
 const danger = (props: IButton) => css`
@@ -43,21 +61,6 @@ const danger = (props: IButton) => css`
      }
      &:focus {
           background-color: #de4747;
-     }
-
-     ${props.disabled && disabled}
-`;
-
-const disabled = css`
-     cursor: not-allowed;
-     background: ${(props) => props.theme.disabled.background};
-     color: ${(props) => props.theme.disabled.color};
-     border: 1px solid ${(props) => props.theme.disabled.border};
-
-     &:hover {
-          background: ${(props) => props.theme.disabled.background};
-          color: ${(props) => props.theme.disabled.color};
-          border: 1px solid ${(props) => props.theme.disabled.border};
      }
 `;
 
@@ -91,12 +94,11 @@ export const Container = styled.button<IButton>`
      border-radius: 4px;
      width: fit-content;
      transition: all 150ms linear;
-     cursor: pointer;
+     cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
      outline: none;
      ${(props) => props.danger && danger}
      ${(props) => props.primary && primary}
      ${(props) => props.outline && outline}
-     ${(props) => props.disabled && disabled}
      ${(props) => props.sm && smallStyles}
      ${(props) => props.md && mediumStyles}
      ${(props) => props.lg && largeStyles}

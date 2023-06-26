@@ -1,11 +1,12 @@
-import { buttonColors, defaultColors } from "../colors";
+import { buttonColors, defaultColors, blueColors } from "../colors";
 
 export const darkButton = {
      primary: {
-          background: buttonColors.blue300,
-          color: buttonColors.white100,
-          hover: buttonColors.blue200,
-          focus: buttonColors.blue400,
+          background: blueColors.blue600,
+          color: defaultColors.lightBlue100,
+          hover: blueColors.blue500,
+          focus: blueColors.blue400,
+          disabled: blueColors.blue300,
      },
      outline: {
           background: defaultColors.darkBlue500,
@@ -14,32 +15,25 @@ export const darkButton = {
           hover: buttonColors.blue200,
           focus: buttonColors.blue200,
           border: buttonColors.blue300,
-     },
-     disabled: {
-          background: buttonColors.white300,
-          color: buttonColors.blue100,
-          border: "transparent",
+          disabled: blueColors.blue300,
      },
 };
 
 export const lightButton = {
      primary: {
-          background: buttonColors.blue300,
-          color: buttonColors.white100,
-          hover: buttonColors.blue200,
-          focus: buttonColors.blue400,
+          background: blueColors.blue600,
+          color: defaultColors.lightBlue100,
+          hover: blueColors.blue500,
+          focus: blueColors.blue400,
+          disabled: blueColors.blue300,
      },
      outline: {
           background: defaultColors.darkBlue500,
-          color: buttonColors.blue300,
-          colorHover: buttonColors.white100,
-          hover: buttonColors.blue200,
-          focus: buttonColors.blue400,
-          border: buttonColors.blue300,
-     },
-     disabled: {
-          background: buttonColors.white300,
-          color: buttonColors.blue100,
-          border: "transparent",
+          color: blueColors.blue600,
+          colorHover: defaultColors.lightBlue100,
+          hover: blueColors.blue500,
+          focus: blueColors.blue400,
+          border: blueColors.blue600,
+          disabled: blueColors.blue300,
      },
 };
