@@ -13,14 +13,6 @@ import {
 } from "../styles";
 
 export function ButtonsPageView() {
-     const primary = '<Button primary size="small" label="button name" />';
-     const outline = '<Button outline size="medium" label="button name" />';
-     const text = '<Button text size="large" />';
-     const textIcon =
-          '<Button text size="small" label="button name" icon="fa-regular fa-plus" />';
-     const disabled =
-          '<Button primary size="small" label="button name" disabled />';
-
      return (
           <Container>
                <H2>Button</H2>
@@ -29,7 +21,11 @@ export function ButtonsPageView() {
                     <DocumentationContainer>
                          <Content>
                               <h3>Primary</h3>
-                              <Detail> {primary}</Detail>
+                              <Detail>
+                                   <pre style={{ whiteSpace: "inherit" }}>
+                                        {` <Button primary sm label="Small" />`}
+                                   </pre>
+                              </Detail>
                               <div className="flex align-items-center gap-2">
                                    <Button primary sm label="Small" />
                                    <Button primary md label="Medium" />
@@ -42,7 +38,12 @@ export function ButtonsPageView() {
                                    Outline buttons display a border without a
                                    background initially
                               </SmallDetail>
-                              <Detail> {outline}</Detail>
+                              <Detail>
+                                   {" "}
+                                   <pre style={{ whiteSpace: "inherit" }}>
+                                        {` <Button outline md label="Medium" />`}
+                                   </pre>
+                              </Detail>
                               <div className="flex align-items-center gap-2">
                                    <Button outline sm label="Small" />
                                    <Button outline md label="Medium" />
@@ -50,12 +51,16 @@ export function ButtonsPageView() {
                               </div>
                          </Content>
                          <Content>
-                              <h3>Text</h3>
+                              <h3>Ghost</h3>
                               <SmallDetail>
                                    Text buttons are displayed as textual
                                    elements
                               </SmallDetail>
-                              <Detail> {text}</Detail>
+                              <Detail>
+                                   <pre style={{ whiteSpace: "inherit" }}>
+                                        {`  <Button ghost md label="Medium" />`}
+                                   </pre>
+                              </Detail>
                               <div className="flex align-items-center gap-2">
                                    <Button ghost sm label="Small" />
                                    <Button ghost md label="Medium" />
@@ -70,7 +75,16 @@ export function ButtonsPageView() {
                                    The library used for icons
                                    is"FontAwesomeIcon"
                               </SmallDetail>
-                              <Detail> {textIcon}</Detail>
+                              <Detail>
+                                   <pre style={{ whiteSpace: "inherit" }}>
+                                        {`<Button
+                                        outline
+                                        md
+                                        icon="fa-regular fa-plus"
+                                        label="Medium"
+                                      />`}
+                                   </pre>
+                              </Detail>
                               <div className="flex align-items-center gap-2">
                                    <Button
                                         outline
@@ -78,6 +92,26 @@ export function ButtonsPageView() {
                                         icon="fa-regular fa-plus"
                                         label="Medium"
                                    />
+                              </div>
+                         </Content>
+                         <Content>
+                              <h3>Only icon</h3>
+                              <SmallDetail>
+                                   {" "}
+                                   To display only an icon, do not insert label.
+                                   The library used for icons
+                                   is"FontAwesomeIcon"
+                              </SmallDetail>
+                              <Detail>
+                                   <pre style={{ whiteSpace: "inherit" }}>
+                                        {` <Button
+                                        primary
+                                        md
+                                        icon="fa-regular fa-plus"
+                                   />`}
+                                   </pre>
+                              </Detail>
+                              <div className="flex align-items-center gap-2">
                                    <Button
                                         primary
                                         md
@@ -90,7 +124,17 @@ export function ButtonsPageView() {
                               <SmallDetail>
                                    To set the button as disabled
                               </SmallDetail>
-                              <Detail>{disabled}</Detail>
+                              <Detail>
+                                   <pre style={{ whiteSpace: "inherit" }}>
+                                        {`<Button
+                                        primary
+                                        md
+                                        icon="fa-regular fa-plus"
+                                        label="Medium"
+                                        disabled
+                                        />`}
+                                   </pre>
+                              </Detail>
                               <div className="flex align-items-center gap-2">
                                    <Button
                                         primary
@@ -99,6 +143,15 @@ export function ButtonsPageView() {
                                         label="Medium"
                                         disabled
                                    />
+                              </div>
+                              <Detail>
+                                   <pre style={{ whiteSpace: "inherit" }}>
+                                        {`
+                                         <Button outline md label="Medium" disabled />`}
+                                   </pre>
+                              </Detail>
+                              <div className="flex align-items-center gap-2">
+                                   <Button outline md label="Medium" disabled />
                               </div>
                          </Content>
 
@@ -137,7 +190,7 @@ export function ButtonsPageView() {
                                         <div>string</div>
                                         <div>
                                              Size of the element, valid options
-                                             are "small", "medium" and "large"
+                                             are "sm", "md" and "lg"
                                         </div>
                                    </TableRow>
                               </Table>

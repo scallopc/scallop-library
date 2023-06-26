@@ -13,7 +13,7 @@ export default function App(props) {
      };
      return (
           <div>
-               <ThemeProvider theme={theme}>
+               <ThemeProvider theme={light}>
                     <HashRouter>
                          <GlobalStyle />
                          <Routes theme={() => switchTheme()} />

@@ -1,6 +1,6 @@
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { Container, Span } from "./styles";
-import { IButton } from "./model";
+import { IButton } from "./buttons.model";
 
 export function Button({
      sm,
