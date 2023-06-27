@@ -1,5 +1,5 @@
 import { IconName } from "@fortawesome/fontawesome-svg-core";
-import { Container, Span } from "./styles";
+import { Container } from "./styles";
 import { IButton } from "./buttons.model";
 
 export function Button({
@@ -15,9 +15,16 @@ export function Button({
      icon,
      label,
      isLoading,
+     rounded,
 }: IButton) {
      return (
           <Container
+               onClick={onClick}
+               label={label}
+               icon={icon}
+               disabled={disabled}
+               isLoading={isLoading}
+               rounded={rounded}
                primary={primary}
                outline={outline}
                danger={danger}
@@ -25,14 +32,9 @@ export function Button({
                sm={sm}
                md={md}
                lg={lg}
-               icon={icon}
-               label={label}
-               isLoading={isLoading}
-               disabled={disabled}
-               onClick={onClick}
           >
                <i className={icon} />
-               <Span>{label}</Span>
+               <span>{label}</span>
           </Container>
      );
 }

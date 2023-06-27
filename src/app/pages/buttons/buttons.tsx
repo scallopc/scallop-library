@@ -11,6 +11,15 @@ import {
      Table,
      TableRow,
 } from "../styles";
+import {
+     BtnText,
+     BtnOutline,
+     BtnPrimary,
+     BtnRounded,
+     BtnDisabled,
+     BtnOnlyIcon,
+     BtnWithIcon,
+} from "./buttonsType";
 
 export function ButtonsPageView() {
      return (
@@ -19,142 +28,13 @@ export function ButtonsPageView() {
                <Box>
                     <H5>Documentation</H5>
                     <DocumentationContainer>
-                         <Content>
-                              <h3>Primary</h3>
-                              <Detail>
-                                   <pre style={{ whiteSpace: "inherit" }}>
-                                        {` <Button primary sm label="Small" />`}
-                                   </pre>
-                              </Detail>
-                              <div className="flex align-items-center gap-2">
-                                   <Button primary sm label="Small" />
-                                   <Button primary md label="Medium" />
-                                   <Button primary lg label="Large" />
-                              </div>
-                         </Content>
-                         <Content>
-                              <h3>Outline</h3>
-                              <SmallDetail>
-                                   Outline buttons display a border without a
-                                   background initially
-                              </SmallDetail>
-                              <Detail>
-                                   {" "}
-                                   <pre style={{ whiteSpace: "inherit" }}>
-                                        {` <Button outline md label="Medium" />`}
-                                   </pre>
-                              </Detail>
-                              <div className="flex align-items-center gap-2">
-                                   <Button outline sm label="Small" />
-                                   <Button outline md label="Medium" />
-                                   <Button outline lg label="Large" />
-                              </div>
-                         </Content>
-                         <Content>
-                              <h3>Ghost</h3>
-                              <SmallDetail>
-                                   Text buttons are displayed as textual
-                                   elements
-                              </SmallDetail>
-                              <Detail>
-                                   <pre style={{ whiteSpace: "inherit" }}>
-                                        {`  <Button ghost md label="Medium" />`}
-                                   </pre>
-                              </Detail>
-                              <div className="flex align-items-center gap-2">
-                                   <Button ghost sm label="Small" />
-                                   <Button ghost md label="Medium" />
-                                   <Button ghost lg label="Large" />
-                              </div>
-                         </Content>
-                         <Content>
-                              <h3>With icon</h3>
-                              <SmallDetail>
-                                   {" "}
-                                   To display only an icon, do not insert label.
-                                   The library used for icons
-                                   is"FontAwesomeIcon"
-                              </SmallDetail>
-                              <Detail>
-                                   <pre style={{ whiteSpace: "inherit" }}>
-                                        {`<Button
-                                        outline
-                                        md
-                                        icon="fa-regular fa-plus"
-                                        label="Medium"
-                                      />`}
-                                   </pre>
-                              </Detail>
-                              <div className="flex align-items-center gap-2">
-                                   <Button
-                                        outline
-                                        md
-                                        icon="fa-regular fa-plus"
-                                        label="Medium"
-                                   />
-                              </div>
-                         </Content>
-                         <Content>
-                              <h3>Only icon</h3>
-                              <SmallDetail>
-                                   {" "}
-                                   To display only an icon, do not insert label.
-                                   The library used for icons
-                                   is"FontAwesomeIcon"
-                              </SmallDetail>
-                              <Detail>
-                                   <pre style={{ whiteSpace: "inherit" }}>
-                                        {` <Button
-                                        primary
-                                        md
-                                        icon="fa-regular fa-plus"
-                                   />`}
-                                   </pre>
-                              </Detail>
-                              <div className="flex align-items-center gap-2">
-                                   <Button
-                                        primary
-                                        md
-                                        icon="fa-regular fa-plus"
-                                   />
-                              </div>
-                         </Content>
-                         <Content>
-                              <h3>Disabled</h3>
-                              <SmallDetail>
-                                   To set the button as disabled
-                              </SmallDetail>
-                              <Detail>
-                                   <pre style={{ whiteSpace: "inherit" }}>
-                                        {`<Button
-                                        primary
-                                        md
-                                        icon="fa-regular fa-plus"
-                                        label="Medium"
-                                        disabled
-                                        />`}
-                                   </pre>
-                              </Detail>
-                              <div className="flex align-items-center gap-2">
-                                   <Button
-                                        primary
-                                        md
-                                        icon="fa-regular fa-plus"
-                                        label="Medium"
-                                        disabled
-                                   />
-                              </div>
-                              <Detail>
-                                   <pre style={{ whiteSpace: "inherit" }}>
-                                        {`
-                                         <Button outline md label="Medium" disabled />`}
-                                   </pre>
-                              </Detail>
-                              <div className="flex align-items-center gap-2">
-                                   <Button outline md label="Medium" disabled />
-                              </div>
-                         </Content>
-
+                         <BtnPrimary />
+                         <BtnOutline />
+                         <BtnText />
+                         <BtnWithIcon />
+                         <BtnOnlyIcon />
+                         <BtnRounded />
+                         <BtnDisabled />
                          <br />
                          <Content>
                               <h3>Properties </h3>
