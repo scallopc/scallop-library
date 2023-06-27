@@ -14,10 +14,10 @@ type IButtonSize = {
 export type IButton = IButtonType &
      IButtonSize & {
           children?: React.ReactNode;
-          icon?: any;
-          size?: string;
-          isLoading?: boolean;
           onClick?: () => void;
-          disabled?: boolean;
+          icon?: any;
           label?: string;
+          isLoading?: boolean;
+          disabled?: boolean;
+          rounded?: boolean;
      };

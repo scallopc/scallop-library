@@ -91,7 +91,7 @@ export const Container = styled.button<IButton>`
      gap: 4px;
      font-weight: 500;
      letter-spacing: 0.2px;
-     border-radius: 4px;
+     border-radius: ${(props) => (props.rounded ? "100px" : "4px")};
      width: fit-content;
      transition: all 150ms linear;
      cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
@@ -102,9 +102,4 @@ export const Container = styled.button<IButton>`
      ${(props) => props.sm && smallStyles}
      ${(props) => props.md && mediumStyles}
      ${(props) => props.lg && largeStyles}
-`;
-
-export const Span = styled.span`
-     position: relative;
-     top: 1px;
 `;
