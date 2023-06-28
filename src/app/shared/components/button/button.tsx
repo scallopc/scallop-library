@@ -9,7 +9,7 @@ export function Button({
      primary = true,
      outline,
      danger,
-     ghost,
+     text,
      onClick,
      disabled,
      icon,
@@ -28,7 +28,7 @@ export function Button({
                primary={primary}
                outline={outline}
                danger={danger}
-               ghost={ghost}
+               text={text}
                sm={sm}
                md={md}
                lg={lg}

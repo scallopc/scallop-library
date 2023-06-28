@@ -18,6 +18,8 @@ export function BtnDisabled() {
                               />`}
                          <br />
                          {` <Button outline md label="Medium" disabled />`}
+                         <br />
+                         {`  <Button text md label="Medium" disabled />`}
                     </pre>
                </Detail>
                <div className="flex align-items-center gap-2">
@@ -29,6 +31,7 @@ export function BtnDisabled() {
                          disabled
                     />
                     <Button outline md label="Medium" disabled />
+                    <Button text md label="Medium" disabled />
                </div>
           </Content>
      );

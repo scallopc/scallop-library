@@ -2,7 +2,7 @@ type IButtonType = {
      primary?: boolean;
      outline?: boolean;
      danger?: boolean;
-     ghost?: boolean;
+     text?: boolean;
 };
 
 type IButtonSize = {
