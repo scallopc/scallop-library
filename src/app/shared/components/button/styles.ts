@@ -1,6 +1,7 @@
 import { IButton } from "./buttons.model";
 import styled, { css } from "styled-components";
 
+// Estilos para os diferentes tipos
 const primary = (props: IButton) => css`
      color: ${(props) => props.theme.primary.color};
      background-color: ${(props) =>
@@ -52,8 +53,28 @@ const outline = (props: IButton) => css`
      }
 `;
 
+const text = (props: IButton) => css`
+     color: ${(props) =>
+          props.disabled ? props.theme.text.disabled : props.theme.text.color};
+     background-color: transparent;
+
+     &:hover {
+          background-color: ${(props) =>
+               props.disabled ? "transparent" : props.theme.text.hover};
+          color: ${(props) =>
+               props.disabled
+                    ? props.theme.text.disabled
+                    : props.theme.text.colorHover};
+     }
+
+     &:focus {
+          background-color: transparent;
+          border: 1px solid ${(props) => props.theme.text.disabled};
+     }
+`;
+
 const danger = (props: IButton) => css`
-     color: ${(props) => props.theme.outline.focus};
+     color: ${(props) => props.theme.text.focus};
      background-color: #ff3b3b;
      border: none;
      &:hover {
@@ -99,6 +120,7 @@ export const Container = styled.button<IButton>`
      ${(props) => props.danger && danger}
      ${(props) => props.primary && primary}
      ${(props) => props.outline && outline}
+     ${(props) => props.text && text}
      ${(props) => props.sm && smallStyles}
      ${(props) => props.md && mediumStyles}
      ${(props) => props.lg && largeStyles}

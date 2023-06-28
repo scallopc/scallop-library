@@ -11,13 +11,13 @@ export function BtnText() {
                </SmallDetail>
                <Detail>
                     <pre style={{ whiteSpace: "inherit" }}>
-                         {`  <Button ghost md label="Medium" />`}
+                         {`  <Button text md label="Medium" />`}
                     </pre>
                </Detail>
                <div className="flex align-items-center gap-2">
-                    <Button ghost sm label="Small" />
-                    <Button ghost md label="Medium" />
-                    <Button ghost lg label="Large" />
+                    <Button text sm label="Small" />
+                    <Button text md label="Medium" />
+                    <Button text lg label="Large" />
                </div>
           </Content>
      );

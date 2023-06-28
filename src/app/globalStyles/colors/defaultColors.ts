@@ -1,5 +1,3 @@
-import { buttonColors } from "./buttonsColors";
-
 export const defaultColors = {
      darkBlue100: "#8591ad",
      darkBlue200: "#6a799d",
