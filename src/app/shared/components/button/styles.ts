@@ -57,6 +57,7 @@ const text = (props: IButton) => css`
      color: ${(props) =>
           props.disabled ? props.theme.text.disabled : props.theme.text.color};
      background-color: transparent;
+     border: 1px solid transparent;
 
      &:hover {
           background-color: ${(props) =>
