@@ -73,6 +73,13 @@ export function ButtonsPageView() {
                                              are "sm", "md" and "lg"
                                         </div>
                                    </TableRow>
+                                   <TableRow>
+                                        <div>rounded</div>
+                                        <div>boolean</div>
+                                        <div>
+                                             Defines if the button is rounded
+                                        </div>
+                                   </TableRow>
                               </Table>
                          </Content>
                     </DocumentationContainer>
