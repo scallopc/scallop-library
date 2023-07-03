@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { Table, Column, TreeTable } from "../../shared/components";
 import {
      Container,
      Box,
@@ -10,9 +12,7 @@ import {
      TableRow,
      H2,
 } from "../styles";
-import { Table, Columns } from "../../shared/components";
 
-import { useEffect, useState } from "react";
 //   import users from "../service/users";
 
 //   import axios from "axios";
@@ -54,6 +54,37 @@ export function TablePageView() {
           },
      ];
 
+     const columnsTree = [
+          { field: "name", header: "Name", expander: true },
+          { field: "id", header: "ID" },
+     ];
+
+     const nodes = [
+          {
+               id: 1,
+               name: "Node 1",
+               children: [
+                    {
+                         id: 2,
+                         name: "Node 1.1",
+                    },
+                    {
+                         id: 3,
+                         name: "Node 1.2",
+                         children: [
+                              {
+                                   id: 4,
+                                   name: "Node 1.2.1",
+                              },
+                         ],
+                    },
+               ],
+          },
+          {
+               id: 5,
+               name: "Node 2",
+          },
+     ];
      return (
           <Container>
                <H2>Table</H2>
@@ -64,15 +95,26 @@ export function TablePageView() {
                               <h3>Basic</h3>
                               <Detail></Detail>
 
-                              <Table data={data}>
+                              <Table value={data}>
                                    {columns.map((col) => (
-                                        <Columns
+                                        <Column
                                              key={col.field}
                                              field={col.field}
                                              header={col.header}
                                         />
                                    ))}
                               </Table>
+
+                              <TreeTable value={nodes}>
+                                   {columnsTree.map((col, i) => (
+                                        <Column
+                                             key={col.field}
+                                             field={col.field}
+                                             header={col.header}
+                                             expander={col.expander}
+                                        />
+                                   ))}
+                              </TreeTable>
                          </Content>
                     </DocumentationContainer>
                </Box>

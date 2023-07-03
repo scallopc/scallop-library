@@ -1,36 +1,25 @@
-import { Container, Image } from "./styles";
-import TableHeader from "./tableHeader";
-import TableRows from "./tableRows";
+import { Container, DataCell, HeaderCell, Image } from "../styles";
+import { TableProps } from "../table.model";
 
-type ColumnProps = {
-     field: string;
-     header: string;
-};
-
-type TableProps = {
-     data: Record<string, any>[];
-     children: React.ReactElement<ColumnProps>[];
-};
-
-export function Table({ data, children }: TableProps) {
+export function Table({ value, children }: TableProps) {
      return (
           <Container>
                <thead>
                     <tr>
                          {children.map((column) => (
-                              <th key={column.props.field}>
+                              <HeaderCell key={column.props.field}>
                                    {column.props.header}
-                              </th>
+                              </HeaderCell>
                          ))}
                     </tr>
                </thead>
                <tbody>
-                    {data.map((row, rowIndex) => (
+                    {value.map((row, rowIndex) => (
                          <tr key={rowIndex}>
                               {children.map((column, colIndex) => (
-                                   <td key={colIndex}>
+                                   <DataCell key={colIndex}>
                                         {row[column.props.field]}
-                                   </td>
+                                   </DataCell>
                               ))}
                          </tr>
                     ))}
