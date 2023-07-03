@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { ContainerMain } from "./styles";
-import { ButtonsPageView, Home } from "../pages";
+import { ButtonsPageView, Home, TablePageView } from "../pages";
 import { MenuLateral } from "../pages/_components";
 
 export default function Routes(props) {
@@ -19,6 +19,7 @@ export default function Routes(props) {
                <Switch>
                     <Route path="/home" component={Home} />
                     <Route path="/button" component={ButtonsPageView} />
+                    <Route path="/table" component={TablePageView} />
                </Switch>
           </ContainerMain>
      );
