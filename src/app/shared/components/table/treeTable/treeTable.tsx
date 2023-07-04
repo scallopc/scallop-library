@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TreeNode, TreeTableProps } from "../table.model";
+import { ColumnProps, TreeNode, TreeTableProps } from "../table.model";
 import { Container, DataCell, IndentedCell } from "../styles";
 
 export function TreeTable({
@@ -7,6 +7,11 @@ export function TreeTable({
      children,
      indentLevel = 0,
 }: TreeTableProps) {
+     const columns = React.Children.toArray(children) as React.ReactElement<
+          ColumnProps,
+          string | ((props: any) => JSX.Element)
+     >[];
+
      const [expandedNodes, setExpandedNodes] = useState<number[]>([]);
 
      const toggleNode = (nodeId: number) => {
@@ -21,8 +26,8 @@ export function TreeTable({
           return nodes.map((node) => (
                <React.Fragment key={node.id}>
                     <tr>
-                         {children.map((column, index) => {
-                              const { field, expander } = column.props;
+                         {columns.map((column, index) => {
+                              const { field, expander, body } = column.props;
                               return (
                                    <React.Fragment key={field}>
                                         {index === 0 ? (
@@ -45,11 +50,15 @@ export function TreeTable({
                                                                       : "+"}
                                                             </button>
                                                        )}
-                                                  {node[field]}
+                                                  {body
+                                                       ? body(node)
+                                                       : node[field]}
                                              </IndentedCell>
                                         ) : (
                                              <DataCell key={field}>
-                                                  {node[field]}
+                                                  {body
+                                                       ? body(node)
+                                                       : node[field]}
                                              </DataCell>
                                         )}
                                    </React.Fragment>
@@ -67,7 +76,7 @@ export function TreeTable({
           <Container>
                <thead>
                     <tr>
-                         {children.map((column, index) => {
+                         {columns.map((column, index) => {
                               const { field, header } = column.props;
                               return <th key={field}>{header}</th>;
                          })}

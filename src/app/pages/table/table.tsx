@@ -26,9 +26,20 @@ export function TablePageView() {
      //     .then((res) => setDataTable(res.data))
      //     .catch((err) => console.log(err));
      // }, []);
+
+     const handleColStatus = (col) => {
+          return (
+               <>
+                    <span>
+                         {col?.name} <i className="fa-regular fa-user" />
+                    </span>
+               </>
+          );
+     };
+
      const columns = [
           { field: "code", header: "Code" },
-          { field: "name", header: "Name" },
+          { field: "name", header: "Name", body: handleColStatus },
           { field: "category", header: "Category" },
           { field: "quantity", header: "Quantity" },
      ];
@@ -55,7 +66,12 @@ export function TablePageView() {
      ];
 
      const columnsTree = [
-          { field: "name", header: "Name", expander: true },
+          {
+               field: "name",
+               header: "Name",
+               expander: true,
+               body: handleColStatus,
+          },
           { field: "id", header: "ID" },
      ];
 
@@ -85,6 +101,16 @@ export function TablePageView() {
                name: "Node 2",
           },
      ];
+
+     const actionTemplate = () => {
+          return (
+               <div className="flex flex-wrap gap-2">
+                    <button type="button"> oi</button>
+                    <button type="button">teste</button>
+               </div>
+          );
+     };
+
      return (
           <Container>
                <H2>Table</H2>
@@ -96,13 +122,15 @@ export function TablePageView() {
                               <Detail></Detail>
 
                               <Table value={data}>
-                                   {columns.map((col) => (
+                                   {columns.map((col, i) => (
                                         <Column
-                                             key={col.field}
+                                             key={i}
                                              field={col.field}
                                              header={col.header}
+                                             body={col.body}
                                         />
                                    ))}
+                                   <Column key="action" body={actionTemplate} />
                               </Table>
 
                               <TreeTable value={nodes}>
@@ -112,8 +140,10 @@ export function TablePageView() {
                                              field={col.field}
                                              header={col.header}
                                              expander={col.expander}
+                                             body={col.body}
                                         />
                                    ))}
+                                   <Column key="action" body={actionTemplate} />
                               </TreeTable>
                          </Content>
                     </DocumentationContainer>

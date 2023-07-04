@@ -1,22 +1,24 @@
 export type ColumnProps = {
-     field: string;
-     header: string;
+     field?: string;
+     header?: string;
      expander?: boolean;
+     body?: (data?: any) => React.ReactNode;
+     children?: any;
 };
 
 export type TreeNode = {
      id: number;
      name: string;
-     children?: TreeNode[];
+     children?: any;
 };
 
 export type TreeTableProps = {
      value: TreeNode[];
-     children: React.ReactElement<ColumnProps>[];
+     children: any;
      indentLevel?: number;
 };
 
 export type TableProps = {
      value: Record<string, any>[];
-     children: React.ReactElement<ColumnProps>[];
+     children?: any;
 };
