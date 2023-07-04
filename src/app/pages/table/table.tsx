@@ -26,9 +26,20 @@ export function TablePageView() {
      //     .then((res) => setDataTable(res.data))
      //     .catch((err) => console.log(err));
      // }, []);
+
+     const handleColStatus = (col) => {
+          return (
+               <>
+                    <span>
+                         {col?.name} <i className="fa-regular fa-user" />
+                    </span>
+               </>
+          );
+     };
+
      const columns = [
           { field: "code", header: "Code" },
-          { field: "name", header: "Name" },
+          { field: "name", header: "Name", body: handleColStatus },
           { field: "category", header: "Category" },
           { field: "quantity", header: "Quantity" },
      ];
@@ -55,7 +66,12 @@ export function TablePageView() {
      ];
 
      const columnsTree = [
-          { field: "name", header: "Name", expander: true },
+          {
+               field: "name",
+               header: "Name",
+               expander: true,
+               body: handleColStatus,
+          },
           { field: "id", header: "ID" },
      ];
 
@@ -105,39 +121,30 @@ export function TablePageView() {
                               <h3>Basic</h3>
                               <Detail></Detail>
 
-                              {/* <Table value={data}>
-                                   {columns.map((col) => (
-                                        <Column
-                                             key={col.field}
-                                             field={col.field}
-                                             header={col.header}
-                                        />
-                                        ))}
-                                        <Column key="action" body={actionTemplate} />
-                              </Table> */}
-
                               <Table value={data}>
-                                   {columns.map((col) => (
+                                   {columns.map((col, i) => (
                                         <Column
-                                             key={col.field}
+                                             key={i}
                                              field={col.field}
                                              header={col.header}
+                                             body={col.body}
                                         />
                                    ))}
+                                   <Column key="action" body={actionTemplate} />
                               </Table>
 
-                              {/* <TreeTable value={nodes}>
+                              <TreeTable value={nodes}>
                                    {columnsTree.map((col, i) => (
                                         <Column
                                              key={col.field}
                                              field={col.field}
                                              header={col.header}
                                              expander={col.expander}
+                                             body={col.body}
                                         />
                                    ))}
                                    <Column key="action" body={actionTemplate} />
-                                   ,
-                              </TreeTable> */}
+                              </TreeTable>
                          </Content>
                     </DocumentationContainer>
                </Box>
