@@ -85,6 +85,16 @@ export function TablePageView() {
                name: "Node 2",
           },
      ];
+
+     const actionTemplate = () => {
+          return (
+               <div className="flex flex-wrap gap-2">
+                    <button type="button"> oi</button>
+                    <button type="button">teste</button>
+               </div>
+          );
+     };
+
      return (
           <Container>
                <H2>Table</H2>
@@ -94,6 +104,17 @@ export function TablePageView() {
                          <Content>
                               <h3>Basic</h3>
                               <Detail></Detail>
+
+                              {/* <Table value={data}>
+                                   {columns.map((col) => (
+                                        <Column
+                                             key={col.field}
+                                             field={col.field}
+                                             header={col.header}
+                                        />
+                                        ))}
+                                        <Column key="action" body={actionTemplate} />
+                              </Table> */}
 
                               <Table value={data}>
                                    {columns.map((col) => (
@@ -105,7 +126,7 @@ export function TablePageView() {
                                    ))}
                               </Table>
 
-                              <TreeTable value={nodes}>
+                              {/* <TreeTable value={nodes}>
                                    {columnsTree.map((col, i) => (
                                         <Column
                                              key={col.field}
@@ -114,7 +135,9 @@ export function TablePageView() {
                                              expander={col.expander}
                                         />
                                    ))}
-                              </TreeTable>
+                                   <Column key="action" body={actionTemplate} />
+                                   ,
+                              </TreeTable> */}
                          </Content>
                     </DocumentationContainer>
                </Box>
