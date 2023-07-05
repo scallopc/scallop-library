@@ -3,29 +3,40 @@ import { Table, Column, TreeTable } from "../../shared/components";
 import {
      Container,
      Box,
-     Components,
      Content,
      H5,
      DocumentationContainer,
-     SmallDetail,
      Detail,
-     TableRow,
      H2,
 } from "../styles";
 
-//   import users from "../service/users";
-
-//   import axios from "axios";
+import { getUsersService, NodesService } from "../../shared/service";
 
 export function TablePageView() {
      const [dataTable, setDataTable] = useState([]);
+     const [dataTreeTable, setDataTreeTable] = useState([]);
 
-     // console.log(dataTable);
-     // useEffect(() => {
-     //   axios("https://jsonplaceholder.typicode.com/users")
-     //     .then((res) => setDataTable(res.data))
-     //     .catch((err) => console.log(err));
-     // }, []);
+     useEffect(() => {
+          handleDataTable();
+          handleDataTreeTable();
+     }, []);
+
+     const handleDataTable = () => {
+          getUsersService()
+               .then((res: any) => {
+                    setDataTable(res.data);
+               })
+               .catch(() => {});
+     };
+
+     const handleDataTreeTable = () => {
+          NodesService.getTreeTableNodes()
+               .then((res: any) => {
+                    console.log(res);
+                    setDataTreeTable(res);
+               })
+               .catch(() => {});
+     };
 
      const handleColStatus = (col) => {
           return (
@@ -38,31 +49,10 @@ export function TablePageView() {
      };
 
      const columns = [
-          { field: "code", header: "Code" },
+          { field: "username", header: "Username" },
           { field: "name", header: "Name", body: handleColStatus },
-          { field: "category", header: "Category" },
-          { field: "quantity", header: "Quantity" },
-     ];
-
-     const data = [
-          {
-               code: "001",
-               name: "Product 1",
-               category: "Category A",
-               quantity: 10,
-          },
-          {
-               code: "002",
-               name: "Product 2",
-               category: "Category B",
-               quantity: 15,
-          },
-          {
-               code: "003",
-               name: "Product 3",
-               category: "Category C",
-               quantity: 20,
-          },
+          { field: "email", header: "Email" },
+          { field: "website", header: "Site" },
      ];
 
      const columnsTree = [
@@ -70,35 +60,71 @@ export function TablePageView() {
                field: "name",
                header: "Name",
                expander: true,
-               body: handleColStatus,
           },
-          { field: "id", header: "ID" },
+          { field: "size", header: "Type" },
+          { field: "type", header: "Size" },
      ];
 
      const nodes = [
           {
-               id: 1,
-               name: "Node 1",
+               key: "0",
+               data: {
+                    name: "Applications",
+                    size: "100kb",
+                    type: "Folder",
+               },
                children: [
                     {
-                         id: 2,
-                         name: "Node 1.1",
-                    },
-                    {
-                         id: 3,
-                         name: "Node 1.2",
+                         key: "0-0",
+                         data: {
+                              name: "React",
+                              size: "25kb",
+                              type: "Folder",
+                         },
                          children: [
                               {
-                                   id: 4,
-                                   name: "Node 1.2.1",
+                                   key: "0-0-0",
+                                   data: {
+                                        name: "react.app",
+                                        size: "10kb",
+                                        type: "Application",
+                                   },
+                              },
+                              {
+                                   key: "0-0-1",
+                                   data: {
+                                        name: "native.app",
+                                        size: "10kb",
+                                        type: "Application",
+                                   },
+                              },
+                              {
+                                   key: "0-0-2",
+                                   data: {
+                                        name: "mobile.app",
+                                        size: "5kb",
+                                        type: "Application",
+                                   },
                               },
                          ],
                     },
+                    {
+                         key: "0-1",
+                         data: {
+                              name: "editor.app",
+                              size: "25kb",
+                              type: "Application",
+                         },
+                    },
+                    {
+                         key: "0-2",
+                         data: {
+                              name: "settings.app",
+                              size: "50kb",
+                              type: "Application",
+                         },
+                    },
                ],
-          },
-          {
-               id: 5,
-               name: "Node 2",
           },
      ];
 
@@ -121,10 +147,10 @@ export function TablePageView() {
                               <h3>Basic</h3>
                               <Detail></Detail>
 
-                              <Table value={data}>
+                              <Table value={dataTable}>
                                    {columns.map((col, i) => (
                                         <Column
-                                             key={i}
+                                             key={col.field}
                                              field={col.field}
                                              header={col.header}
                                              body={col.body}
@@ -133,14 +159,13 @@ export function TablePageView() {
                                    <Column key="action" body={actionTemplate} />
                               </Table>
 
-                              <TreeTable value={nodes}>
+                              <TreeTable value={dataTreeTable}>
                                    {columnsTree.map((col, i) => (
                                         <Column
                                              key={col.field}
                                              field={col.field}
                                              header={col.header}
                                              expander={col.expander}
-                                             body={col.body}
                                         />
                                    ))}
                                    <Column key="action" body={actionTemplate} />

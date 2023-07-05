@@ -10,6 +10,7 @@ export type TreeNode = {
      id: number;
      name: string;
      children?: any;
+     data?: any;
 };
 
 export type TreeTableProps = {
