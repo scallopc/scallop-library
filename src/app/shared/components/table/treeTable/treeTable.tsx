@@ -30,7 +30,7 @@ export function TreeTable({
 
      const renderTree = (nodes: TreeNode[], indentLevel: number) => {
           return nodes.map((node) => (
-               <React.Fragment key={node.id}>
+               <React.Fragment key={node.key}>
                     <tr>
                          {columns.map((column, index) => {
                               const { field, expander, body } = column.props;
@@ -50,12 +50,16 @@ export function TreeTable({
                                                                  <i
                                                                       onClick={() =>
                                                                            toggleNode(
-                                                                                node.id
+                                                                                node
+                                                                                     .data
+                                                                                     .id
                                                                            )
                                                                       }
                                                                       className={
                                                                            expandedNodes.includes(
-                                                                                node.id
+                                                                                node
+                                                                                     .data
+                                                                                     .id
                                                                            )
                                                                                 ? "fa-solid fa-chevron-down"
                                                                                 : "fa-solid fa-chevron-right"
@@ -68,7 +72,7 @@ export function TreeTable({
                                                        : fieldValue}
                                              </IndentedCell>
                                         ) : (
-                                             <DataCell key={field}>
+                                             <DataCell key={index}>
                                                   {body
                                                        ? body(node)
                                                        : fieldValue}
@@ -78,7 +82,7 @@ export function TreeTable({
                               );
                          })}
                     </tr>
-                    {expandedNodes.includes(node.id) &&
+                    {expandedNodes.includes(node.data.id) &&
                          node.children &&
                          renderTree(node.children, indentLevel + 1)}
                </React.Fragment>
