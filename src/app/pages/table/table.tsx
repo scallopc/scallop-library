@@ -32,7 +32,6 @@ export function TablePageView() {
      const handleDataTreeTable = () => {
           NodesService.getTreeTableNodes()
                .then((res: any) => {
-                    console.log(res);
                     setDataTreeTable(res);
                })
                .catch(() => {});
@@ -40,11 +39,9 @@ export function TablePageView() {
 
      const handleColStatus = (col) => {
           return (
-               <>
-                    <span>
-                         {col?.name} <i className="fa-regular fa-user" />
-                    </span>
-               </>
+               <span>
+                    {col?.name} <i className="fa-regular fa-user" />
+               </span>
           );
      };
 
@@ -63,69 +60,6 @@ export function TablePageView() {
           },
           { field: "size", header: "Type" },
           { field: "type", header: "Size" },
-     ];
-
-     const nodes = [
-          {
-               key: "0",
-               data: {
-                    name: "Applications",
-                    size: "100kb",
-                    type: "Folder",
-               },
-               children: [
-                    {
-                         key: "0-0",
-                         data: {
-                              name: "React",
-                              size: "25kb",
-                              type: "Folder",
-                         },
-                         children: [
-                              {
-                                   key: "0-0-0",
-                                   data: {
-                                        name: "react.app",
-                                        size: "10kb",
-                                        type: "Application",
-                                   },
-                              },
-                              {
-                                   key: "0-0-1",
-                                   data: {
-                                        name: "native.app",
-                                        size: "10kb",
-                                        type: "Application",
-                                   },
-                              },
-                              {
-                                   key: "0-0-2",
-                                   data: {
-                                        name: "mobile.app",
-                                        size: "5kb",
-                                        type: "Application",
-                                   },
-                              },
-                         ],
-                    },
-                    {
-                         key: "0-1",
-                         data: {
-                              name: "editor.app",
-                              size: "25kb",
-                              type: "Application",
-                         },
-                    },
-                    {
-                         key: "0-2",
-                         data: {
-                              name: "settings.app",
-                              size: "50kb",
-                              type: "Application",
-                         },
-                    },
-               ],
-          },
      ];
 
      const actionTemplate = () => {
