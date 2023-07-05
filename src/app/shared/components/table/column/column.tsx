@@ -13,5 +13,5 @@ export function Column({
           return null; // O componente Column não renderiza nada diretamente se houver um template body definido
      }
 
-     return <HeaderCell>{header}</HeaderCell>;
+     return null;
 }

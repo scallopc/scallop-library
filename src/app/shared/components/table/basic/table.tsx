@@ -13,10 +13,10 @@ export function Table({ value, children }: TableProps) {
           <Container>
                <thead>
                     <tr>
-                         {columns.map((column) => (
-                              <Column key={column.props.field}>
+                         {columns.map((column, i) => (
+                              <HeaderCell key={i}>
                                    {column.props.header}
-                              </Column>
+                              </HeaderCell>
                          ))}
                     </tr>
                </thead>

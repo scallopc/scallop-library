@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { ColumnProps, TreeNode, TreeTableProps } from "../table.model";
-import { Container, DataCell, IndentedCell } from "../styles";
+import {
+     Container,
+     DataCell,
+     HeaderCell,
+     IconExpander,
+     IndentedCell,
+} from "../styles";
 
 export function TreeTable({
      value,
@@ -28,37 +34,44 @@ export function TreeTable({
                     <tr>
                          {columns.map((column, index) => {
                               const { field, expander, body } = column.props;
+                              const fieldValue = field
+                                   ? node.data[field]
+                                   : null;
+
                               return (
-                                   <React.Fragment key={field}>
+                                   <React.Fragment key={index}>
                                         {index === 0 ? (
                                              <IndentedCell
                                                   indentLevel={indentLevel}
                                              >
                                                   {expander &&
                                                        node.children && (
-                                                            <button
-                                                                 onClick={() =>
-                                                                      toggleNode(
-                                                                           node.id
-                                                                      )
-                                                                 }
-                                                            >
-                                                                 {expandedNodes.includes(
-                                                                      node.id
-                                                                 )
-                                                                      ? "-"
-                                                                      : "+"}
-                                                            </button>
+                                                            <IconExpander>
+                                                                 <i
+                                                                      onClick={() =>
+                                                                           toggleNode(
+                                                                                node.id
+                                                                           )
+                                                                      }
+                                                                      className={
+                                                                           expandedNodes.includes(
+                                                                                node.id
+                                                                           )
+                                                                                ? "fa-solid fa-chevron-down"
+                                                                                : "fa-solid fa-chevron-right"
+                                                                      }
+                                                                 />
+                                                            </IconExpander>
                                                        )}
                                                   {body
                                                        ? body(node)
-                                                       : node[field]}
+                                                       : fieldValue}
                                              </IndentedCell>
                                         ) : (
                                              <DataCell key={field}>
                                                   {body
                                                        ? body(node)
-                                                       : node[field]}
+                                                       : fieldValue}
                                              </DataCell>
                                         )}
                                    </React.Fragment>
@@ -78,7 +91,9 @@ export function TreeTable({
                     <tr>
                          {columns.map((column, index) => {
                               const { field, header } = column.props;
-                              return <th key={field}>{header}</th>;
+                              return (
+                                   <HeaderCell key={index}>{header}</HeaderCell>
+                              );
                          })}
                     </tr>
                </thead>
