@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ColumnProps } from "../table.model";
 import { HeaderCell } from "../styles";
 
@@ -8,10 +8,44 @@ export function Column({
      expander,
      body,
      children,
+     sortable,
+     onClick,
+     sortField,
 }: ColumnProps) {
+     const [sortDirection, setSortDirection] = useState<"asc" | "desc" | null>(
+          null
+     );
+     const iconDefault = <i className="fa-solid fa-arrow-right-arrow-left" />;
+     const iconAsc = <i className="fa-solid fa-arrow-up-short-wide" />;
+     const iconDesc = <i className="fa-solid fa-arrow-down-short-wide" />;
+
      if (body) {
           return null; // O componente Column não renderiza nada diretamente se houver um template body definido
      }
 
-     return null;
+     const handleSortClick = () => {
+          onClick();
+          if (sortField === field) {
+               setSortDirection((prevSortDirection) => {
+                    if (prevSortDirection === "asc") {
+                         return "desc";
+                    } else if (prevSortDirection === "desc") {
+                         return "asc";
+                    } else {
+                         return "asc";
+                    }
+               });
+          }
+     };
+
+     const SortIcon = sortDirection === "asc" ? iconAsc : iconDesc;
+
+     return (
+          <HeaderCell onClick={() => handleSortClick()}>
+               {header}
+               {sortable && (
+                    <span>{sortDirection ? SortIcon : iconDefault}</span>
+               )}
+          </HeaderCell>
+     );
 }

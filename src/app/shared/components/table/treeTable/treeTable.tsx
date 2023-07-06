@@ -7,18 +7,34 @@ import {
      IconExpander,
      IndentedCell,
 } from "../styles";
+import { Paginator } from "../../paginator/paginator";
 
 export function TreeTable({
      value,
      children,
      indentLevel = 0,
+     paginator,
+     rows,
 }: TreeTableProps) {
      const columns = React.Children.toArray(children) as React.ReactElement<
           ColumnProps,
           string | ((props: any) => JSX.Element)
      >[];
-
      const [expandedNodes, setExpandedNodes] = useState<number[]>([]);
+
+     // Lógica para controlar a página atual e total de páginas
+     const [currentPage, setCurrentPage] = useState(1);
+     const pageSize = rows ?? 10;
+     const totalRows = value?.length;
+     const totalPages = Math.ceil(totalRows / pageSize);
+
+     const handlePageChange = (page: number) => {
+          setCurrentPage(page);
+     };
+     // Lógica para paginar os dados com base na página atual
+     const startIndex = (currentPage - 1) * pageSize;
+     const endIndex = startIndex + pageSize;
+     const paginatedData = value?.slice(startIndex, endIndex);
 
      const toggleNode = (nodeId: number) => {
           if (expandedNodes.includes(nodeId)) {
@@ -101,7 +117,20 @@ export function TreeTable({
                          })}
                     </tr>
                </thead>
-               <tbody>{renderTree(value, indentLevel)}</tbody>
+               <tbody>{renderTree(paginatedData, indentLevel)}</tbody>
+               {paginator && (
+                    <tfoot>
+                         <tr>
+                              <td colSpan={columns.length}>
+                                   <Paginator
+                                        currentPage={currentPage}
+                                        totalPages={totalPages}
+                                        onChangePage={handlePageChange}
+                                   />
+                              </td>
+                         </tr>
+                    </tfoot>
+               )}
           </Container>
      );
 }
