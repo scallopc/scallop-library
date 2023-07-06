@@ -4,6 +4,9 @@ export type ColumnProps = {
      expander?: boolean;
      body?: (data?: any) => React.ReactNode;
      children?: any;
+     sortField?: any;
+     sortable?: boolean;
+     onClick?: () => void;
 };
 
 export type TreeNode = {
@@ -18,10 +21,13 @@ export type TreeTableProps = {
      value: TreeNode[];
      children: any;
      indentLevel?: number;
-     parentIndex?: any;
+     paginator?: any;
+     rows?: any;
 };
 
 export type TableProps = {
      value: Record<string, any>[];
      children?: any;
+     paginator?: any;
+     rows?: any;
 };

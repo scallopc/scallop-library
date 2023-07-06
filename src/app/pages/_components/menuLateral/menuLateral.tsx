@@ -21,7 +21,7 @@ export function MenuLateral(props) {
                          <MenuRoutes title="Heading" to="/heading" />
                          <MenuRoutes title="Inputs" to="/inputs" />
                          <MenuRoutes title="Line" to="/line" />
-                         <MenuRoutes title="Pagination" to="/pagination" />
+                         <MenuRoutes title="Paginator" to="/paginator" />
                          <MenuRoutes title="Progress" to="/progress" />
                          <MenuRoutes title="Radio" to="/radio" />
                          <MenuRoutes title="Table" to="/table" />

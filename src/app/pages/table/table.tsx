@@ -10,7 +10,7 @@ import {
      H2,
 } from "../styles";
 
-import { getUsersService, NodesService } from "../../shared/service";
+import { getRandomUserService, NodesService } from "../../shared/service";
 
 export function TablePageView() {
      const [dataTable, setDataTable] = useState([]);
@@ -22,9 +22,10 @@ export function TablePageView() {
      }, []);
 
      const handleDataTable = () => {
-          getUsersService()
+          getRandomUserService()
                .then((res: any) => {
-                    setDataTable(res.data);
+                    const data = res.data.results;
+                    setDataTable(data);
                })
                .catch(() => {});
      };
@@ -40,16 +41,20 @@ export function TablePageView() {
      const handleColStatus = (col) => {
           return (
                <span>
-                    {col?.name} <i className="fa-regular fa-user" />
+                    {col?.name?.first} <i className="fa-regular fa-user" />
                </span>
           );
      };
 
+     const handleColPicture = (col) => {
+          return <img src={col?.picture?.thumbnail} />;
+     };
+
      const columns = [
-          { field: "username", header: "Username" },
           { field: "name", header: "Name", body: handleColStatus },
-          { field: "email", header: "Email" },
-          { field: "website", header: "Site" },
+          { field: "cell", header: "Contato" },
+          { field: "email", header: "@" },
+          { field: "", header: "Picture", body: handleColPicture },
      ];
 
      const columnsTree = [
@@ -81,19 +86,24 @@ export function TablePageView() {
                               <h3>Basic</h3>
                               <Detail></Detail>
 
-                              <Table value={dataTable}>
+                              <Table value={dataTable} paginator rows={5}>
                                    {columns.map((col, i) => (
                                         <Column
-                                             key={col.field}
+                                             key={i}
                                              field={col.field}
                                              header={col.header}
                                              body={col.body}
+                                             sortable
                                         />
                                    ))}
                                    <Column key="action" body={actionTemplate} />
                               </Table>
 
-                              <TreeTable value={dataTreeTable}>
+                              <TreeTable
+                                   value={dataTreeTable}
+                                   paginator
+                                   rows={5}
+                              >
                                    {columnsTree.map((col, i) => (
                                         <Column
                                              key={col.field}
