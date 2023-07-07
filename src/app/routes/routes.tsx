@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { ContainerMain } from "./styles";
-import { ButtonsPageView, Home, TablePageView } from "../pages";
-import { MenuLateral } from "../pages/_components";
+import { ButtonsPageView, Home, TablePageView, MenuLateral } from "../pages";
 import PagePaginator from "../pages/pagePaginator/pagePaginator";
 
 export default function Routes(props) {
