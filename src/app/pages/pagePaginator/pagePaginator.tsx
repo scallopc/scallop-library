@@ -16,9 +16,15 @@ import { Paginator } from "../../shared/components";
 export default function PagePaginator() {
      const [currentPage, setCurrentPage] = useState(1);
      const totalPages = 10;
+     const [currentPageText, setCurrentPageText] = useState(1);
+     const totalPagesText = 10;
 
      const handlePageChange = (page) => {
           setCurrentPage(page);
+     };
+
+     const handlePageChangeText = (page) => {
+          setCurrentPageText(page);
      };
 
      return (
@@ -32,6 +38,14 @@ export default function PagePaginator() {
                                    currentPage={currentPage}
                                    totalPages={totalPages}
                                    onChangePage={handlePageChange}
+                              />
+                         </Content>
+                         <Content>
+                              <Paginator
+                                   text
+                                   currentPage={currentPageText}
+                                   totalPages={totalPagesText}
+                                   onChangePage={handlePageChangeText}
                               />
                          </Content>
                     </DocumentationContainer>
