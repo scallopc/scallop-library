@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "../styles";
+import { Container } from "../componentProperties/styles";
 
 export function Home() {
      return (

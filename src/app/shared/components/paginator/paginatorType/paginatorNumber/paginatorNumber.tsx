@@ -5,13 +5,16 @@ import { PaginatorProps } from "../../paginator.model";
 export function PaginatorNumber({
      currentPage,
      totalPages,
+     itemsPerPage,
      onChangePage,
 }: PaginatorProps) {
+     const totalPerPages = Math.ceil(totalPages / itemsPerPage);
+
      const isFirstPage = currentPage === 1;
-     const isLastPage = currentPage === totalPages;
+     const isLastPage = currentPage === totalPerPages;
 
      const handlePageChange = (page) => {
-          if (page >= 1 && page <= totalPages) {
+          if (page >= 1 && page <= totalPerPages) {
                onChangePage(page);
           }
      };
@@ -19,7 +22,7 @@ export function PaginatorNumber({
      const renderPageNumbers = () => {
           const pageNumbers = [];
           const startPage = Math.max(1, currentPage - 2);
-          const endPage = Math.min(startPage + 4, totalPages);
+          const endPage = Math.min(startPage + 4, totalPerPages);
 
           for (let i = startPage; i <= endPage; i++) {
                pageNumbers.push(
@@ -59,7 +62,9 @@ export function PaginatorNumber({
                          >
                               <i className="bi bi-chevron-right" />
                          </button>
-                         <button onClick={() => handlePageChange(totalPages)}>
+                         <button
+                              onClick={() => handlePageChange(totalPerPages)}
+                         >
                               <i className="bi bi-chevron-double-right" />
                          </button>
                     </>
