@@ -17,11 +17,10 @@ import { getRandomUserService } from "../../shared/service";
 
 export default function PagePaginator() {
      const [currentPage, setCurrentPage] = useState(1);
-     const totalPages = 10;
+     const itemsPerPage = 5;
      const [currentPageText, setCurrentPageText] = useState(1);
      const totalPagesText = 10;
-     const [data, setData] = useState<any>([]);
-     const namesPerPage = 5;
+     const [names, setNames] = useState<any>([]);
 
      useEffect(() => {
           handleDataTable();
@@ -31,8 +30,7 @@ export default function PagePaginator() {
           getRandomUserService()
                .then((res: any) => {
                     const data = res.data.results;
-                    console.log(data);
-                    setData(data);
+                    setNames(data);
                })
                .catch(() => {});
      };
@@ -95,14 +93,21 @@ export default function PagePaginator() {
                               />`}
                                    </pre>
                               </Detail>
-                              {data.map((item, i) => {
+                              {names.map((item, i) => {
                                    return <div key={i}>{item.name.first}</div>;
                               })}
                               <Paginator
                                    currentPage={currentPage}
-                                   totalPages={totalPages}
+                                   data={names}
+                                   itemsPerPage={itemsPerPage}
                                    onChangePage={handlePageChange}
                               />
+
+                              {/* <Paginator
+                                   currentPage={currentPage}
+                                   totalPages={totalPages}
+                                   onChangePage={handlePageChange}
+                              /> */}
                          </Content>
                          <Content>
                               <h3>Text</h3>
