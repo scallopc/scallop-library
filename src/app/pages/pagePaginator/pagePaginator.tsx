@@ -16,17 +16,24 @@ import ComponentProperties from "../componentProperties/componentProperties";
 import { getRandomUserService } from "../../shared/service";
 
 export default function PagePaginator() {
+     const [names, setNames] = useState<any>([]);
      const [currentPage, setCurrentPage] = useState(1);
      const itemsPerPage = 5;
+     const startIndex = (currentPage - 1) * itemsPerPage;
+     const endIndex = startIndex + itemsPerPage;
+     const displayedNames = names?.slice(startIndex, endIndex);
+
      const [currentPageText, setCurrentPageText] = useState(1);
-     const totalPagesText = 10;
-     const [names, setNames] = useState<any>([]);
+     const totalPagesText = 4;
+     const startIndexText = (currentPageText - 1) * totalPagesText;
+     const endIndexText = startIndexText + totalPagesText;
+     const displayedNamesText = names?.slice(startIndexText, endIndexText);
 
      useEffect(() => {
-          handleDataTable();
+          handleNamesList();
      }, []);
 
-     const handleDataTable = () => {
+     const handleNamesList = () => {
           getRandomUserService()
                .then((res: any) => {
                     const data = res.data.results;
@@ -52,12 +59,7 @@ export default function PagePaginator() {
           {
                name: "totalPages",
                type: "number",
-               description: "description",
-          },
-          {
-               name: "rows",
-               type: "number",
-               description: "Number of rows to display in new page",
+               description: "Number of items per page",
           },
           {
                name: "onChangePage",
@@ -86,6 +88,20 @@ export default function PagePaginator() {
                               <SmallDetail></SmallDetail>
                               <Detail>
                                    <pre style={{ whiteSpace: "inherit" }}>
+                                        {`const [names, setNames] = useState<any>([]);`}
+                                        <br />
+                                        {`const [currentPage, setCurrentPage] = useState(1);`}{" "}
+                                        <br />
+                                        {`const itemsPerPage = 5;`} <br />
+                                        {`const startIndex = (currentPage - 1) * itemsPerPage;`}{" "}
+                                        <br />
+                                        {`const endIndex = startIndex + itemsPerPage;`}{" "}
+                                        <br />
+                                        {`const displayedNames = names?.slice(startIndex,    <br />endIndex);`}
+                                   </pre>
+                              </Detail>
+                              <Detail>
+                                   <pre style={{ whiteSpace: "inherit" }}>
                                         {`<Paginator
                                    currentPage={currentPage}
                                    totalPages={totalPages}
@@ -93,24 +109,30 @@ export default function PagePaginator() {
                               />`}
                                    </pre>
                               </Detail>
-                              {names.map((item, i) => {
+                              {displayedNames?.map((item, i) => {
                                    return <div key={i}>{item.name.first}</div>;
                               })}
                               <Paginator
                                    currentPage={currentPage}
-                                   data={names}
-                                   itemsPerPage={itemsPerPage}
+                                   totalPages={itemsPerPage}
                                    onChangePage={handlePageChange}
                               />
-
-                              {/* <Paginator
-                                   currentPage={currentPage}
-                                   totalPages={totalPages}
-                                   onChangePage={handlePageChange}
-                              /> */}
                          </Content>
                          <Content>
                               <h3>Text</h3>
+                              <Detail>
+                                   <pre style={{ whiteSpace: "inherit" }}>
+                                        {`     const [currentPageText, setCurrentPageText] = useState(1);
+`}
+                                        <br />
+                                        {`const itemsPerPageText = 5;`} <br />
+                                        {`const startIndexText = (currentPageText - 1) * itemsPerPageText;`}{" "}
+                                        <br />
+                                        {`const endIndexText = startIndexText + itemsPerPageText;`}{" "}
+                                        <br />
+                                        {`const displayedNamesText = names?.slice(startIndexText, endIndexText);`}
+                                   </pre>
+                              </Detail>
                               <Detail>
                                    <pre style={{ whiteSpace: "inherit" }}>
                                         {`<Paginator
@@ -121,6 +143,9 @@ export default function PagePaginator() {
                                 />`}
                                    </pre>
                               </Detail>
+                              {displayedNamesText?.map((item, i) => {
+                                   return <div key={i}>{item.name.first}</div>;
+                              })}
                               <Paginator
                                    text
                                    currentPage={currentPageText}

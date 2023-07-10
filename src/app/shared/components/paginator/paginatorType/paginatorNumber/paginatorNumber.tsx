@@ -4,11 +4,9 @@ import { PaginatorProps } from "../../paginator.model";
 
 export function PaginatorNumber({
      currentPage,
-     data,
-     itemsPerPage,
+     totalPages,
      onChangePage,
 }: PaginatorProps) {
-     const totalPages = Math.ceil(data?.length / itemsPerPage);
      const isFirstPage = currentPage === 1;
      const isLastPage = currentPage === totalPages;
 
