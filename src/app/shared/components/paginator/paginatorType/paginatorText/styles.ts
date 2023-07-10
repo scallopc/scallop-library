@@ -17,12 +17,26 @@ export const PaginatorTextWrapper = styled.div`
           font-size: 12px;
           width: 36px;
           height: 36px;
-          background-color: #eceef1;
-          color: #3e7bfa;
+          background-color: #ffffff;
+          box-shadow: 0 0 4px 0px #b5b1b145;
+
+          &.disabled {
+               cursor: not-allowed;
+               background-color: #f3f3f3;
+          }
      }
 
      i {
+          color: #3e7bfa;
+          font-weight: 600;
+
+          &.bi::before,
+          [class^="bi-"]::before,
+          [class*=" bi-"]::before {
+               font-weight: 600 !important;
+          }
      }
+
      span {
           font-size: 12px;
      }
