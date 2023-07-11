@@ -16,20 +16,15 @@ export default function PageToggleSwitch() {
 
      const toggleData = [
           {
-               name: "currentPage",
-               type: "number",
-               description: "Current page of the item, the value starts at 1",
+               name: "checked",
+               type: "boolean",
+               description: "true or false",
           },
           {
-               name: "totalPages",
-               type: "number",
-               description: "Number of items per page",
-          },
-          {
-               name: "onChangePage",
+               name: "onChange",
                type: "event",
                description:
-                    "Callback to invoke when page changes, the event object contains information about the new state.",
+                    "Callback to invoke when there is a change in the switch, the purpose of the event is to bring the new information about the state.",
           },
      ];
 
@@ -39,7 +34,15 @@ export default function PageToggleSwitch() {
                <Box>
                     <H5>Documentation</H5>
                     <DocumentationContainer>
-                         <p>Toggle Switch is used as</p>
+                         <p>
+                              ToggleSwitch is a reusable component that displays
+                              a switch visually represented by a slider. It
+                              allows users to toggle between two states, usually
+                              represented by "on" and "off". The component can
+                              be used in web applications to provide an
+                              intuitive way to enable or disable a
+                              functionality, option or setting.
+                         </p>
 
                          <Content>
                               <h3>Basic</h3>
