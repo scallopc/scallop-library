@@ -4,8 +4,10 @@ import { dark, light } from "./globalStyles/themes";
 import { usePersistedState } from "./shared/hooks";
 import { ThemeProvider } from "styled-components";
 import { HashRouter } from "react-router-dom";
+import { useState } from "react";
 
 export default function App(props) {
+     //const [theme, setTheme] = useState(light);
      const [theme, setTheme] = usePersistedState("", light);
      const { children } = props;
      const switchTheme = () => {
@@ -16,7 +18,10 @@ export default function App(props) {
                <ThemeProvider theme={light}>
                     <HashRouter>
                          <GlobalStyle />
-                         <Routes theme={() => switchTheme()} />
+                         <Routes
+                              theme={() => switchTheme()}
+                              isChecked={theme}
+                         />
                          {children}
                     </HashRouter>
                </ThemeProvider>
