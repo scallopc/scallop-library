@@ -21,13 +21,16 @@ export default function PagePaginator() {
      const itemsPerPage = 5;
      const startIndex = (currentPage - 1) * itemsPerPage;
      const endIndex = startIndex + itemsPerPage;
+     const totalItems = names ? names.length : 0;
+     const totalPages = Math.ceil(totalItems / itemsPerPage);
      const displayedNames = names?.slice(startIndex, endIndex);
 
      const [currentPageText, setCurrentPageText] = useState(1);
-     const totalPagesText = 4;
-     const startIndexText = (currentPageText - 1) * totalPagesText;
-     const endIndexText = startIndexText + totalPagesText;
-     const displayedNamesText = names?.slice(startIndexText, endIndexText);
+     const itemPerPagesText = 4;
+     const startIndexText = (currentPageText - 1) * itemPerPagesText;
+     const endIndexText = startIndexText + itemPerPagesText;
+     const totalPagesText = Math.ceil(totalItems / itemPerPagesText);
+     const displayList = names?.slice(startIndexText, endIndexText);
 
      useEffect(() => {
           handleNamesList();
@@ -85,7 +88,6 @@ export default function PagePaginator() {
                          </p>
                          <Content>
                               <h3>Basic</h3>
-                              <SmallDetail></SmallDetail>
                               <Detail>
                                    <pre style={{ whiteSpace: "inherit" }}>
                                         {`const [names, setNames] = useState<any>([]);`}
@@ -97,15 +99,19 @@ export default function PagePaginator() {
                                         <br />
                                         {`const endIndex = startIndex + itemsPerPage;`}{" "}
                                         <br />
+                                        {` const totalItems = names ? names.length : 0;`}{" "}
+                                        <br />
+                                        {`const totalPages = Math.ceil(totalItems / itemsPerPage);`}{" "}
+                                        <br />
                                         {`const displayedNames = names?.slice(startIndex,    <br />endIndex);`}
                                    </pre>
                               </Detail>
                               <Detail>
                                    <pre style={{ whiteSpace: "inherit" }}>
                                         {`<Paginator
-                                   currentPage={currentPage}
-                                   totalPages={totalPages}
-                                   onChangePage={handlePageChange}
+                                  currentPage={currentPage}
+                                  totalPages={totalPages}
+                                  onChangePage={handlePageChange}
                               />`}
                                    </pre>
                               </Detail>
@@ -114,7 +120,7 @@ export default function PagePaginator() {
                               })}
                               <Paginator
                                    currentPage={currentPage}
-                                   totalPages={itemsPerPage}
+                                   totalPages={totalPages}
                                    onChangePage={handlePageChange}
                               />
                          </Content>
@@ -122,13 +128,16 @@ export default function PagePaginator() {
                               <h3>Text</h3>
                               <Detail>
                                    <pre style={{ whiteSpace: "inherit" }}>
-                                        {`     const [currentPageText, setCurrentPageText] = useState(1);
-`}
+                                        {`const [currentPageText, setCurrentPageText] = useState(1);`}{" "}
                                         <br />
-                                        {`const itemsPerPageText = 5;`} <br />
-                                        {`const startIndexText = (currentPageText - 1) * itemsPerPageText;`}{" "}
+                                        {`const totalPagesText = 4;`} <br />
+                                        {`const startIndexText = (currentPageText - 1) * totalPagesText;`}
                                         <br />
-                                        {`const endIndexText = startIndexText + itemsPerPageText;`}{" "}
+                                        {`const endIndexText = startIndexText + totalPagesText;`}{" "}
+                                        <br />
+                                        {` const totalItems = names ? names.length : 0;`}{" "}
+                                        <br />
+                                        {`const totalPagesText = Math.ceil(totalItems / itemPerPagesText);`}{" "}
                                         <br />
                                         {`const displayedNamesText = names?.slice(startIndexText, endIndexText);`}
                                    </pre>
@@ -138,12 +147,12 @@ export default function PagePaginator() {
                                         {`<Paginator
                                   text
                                   currentPage={currentPageText}
-                                  totalPages={totalPagesText}
-                                  onChangePage={handlePageChangeText}
+              totalPages={totalPagesText}
+              onChangePage={handlePageChangeText}
                                 />`}
                                    </pre>
                               </Detail>
-                              {displayedNamesText?.map((item, i) => {
+                              {displayList?.map((item, i) => {
                                    return <div key={i}>{item.name.first}</div>;
                               })}
                               <Paginator
