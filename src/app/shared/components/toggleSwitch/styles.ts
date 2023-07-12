@@ -25,5 +25,3 @@ export const SwitchSlider = styled.span<{ checked: boolean }>`
      transform: ${({ checked }) =>
           checked ? "translateX(20px)" : "translateX(0)"};
 `;
-
-//${(props) => props.danger && danger}
