@@ -1,5 +1,5 @@
 import { defaultColors } from "../colors";
-import { darkToggle, darkButton } from "../componentsTheme";
+import { darkToggle, darkButton, darkPaginator } from "../componentsTheme";
 
 export const dark = {
      title: "dark",
@@ -21,4 +21,5 @@ export const dark = {
 
      ...darkButton,
      ...darkToggle,
+     ...darkPaginator,
 };

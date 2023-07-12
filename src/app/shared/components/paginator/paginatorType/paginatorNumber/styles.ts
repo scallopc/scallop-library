@@ -18,12 +18,15 @@ export const PaginatorWrapper = styled.div`
           color: inherit;
 
           &:hover {
-               background-color: #e2eeff;
+               background-color: ${(props) =>
+                    props.theme.paginatorNumber.hover};
+               color: ${(props) => props.theme.paginatorNumber.colorHover};
           }
 
           &.active {
-               background-color: #eceef1;
-               color: #3e7bfa;
+               background-color: ${(props) =>
+                    props.theme.paginatorNumber.activeBg};
+               color: ${(props) => props.theme.paginatorNumber.activeColor};
           }
      }
 `;

@@ -17,17 +17,23 @@ export const PaginatorTextWrapper = styled.div`
           font-size: 12px;
           width: 36px;
           height: 36px;
-          background-color: #ffffff;
+          background-color: ${(props) => props.theme.paginatorText.background};
           box-shadow: 0 0 4px 0px #b5b1b145;
 
           &.disabled {
                cursor: not-allowed;
-               background-color: #f3f3f3;
+               opacity: 0.3;
+          }
+
+          &:hover {
+               // transition: all 2s ease-in;
+               background-color: ${(props) =>
+                    props.disabled ? "red" : props.theme.paginatorText.hover};
           }
      }
 
      i {
-          color: #3e7bfa;
+          color: ${(props) => props.theme.paginatorText.color};
           font-weight: 600;
 
           &.bi::before,

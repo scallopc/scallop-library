@@ -1,5 +1,5 @@
 import { defaultColors } from "../colors/defaultColors";
-import { lightToggle, lightButton } from "../componentsTheme";
+import { lightToggle, lightButton, lightPaginator } from "../componentsTheme";
 
 export const light = {
      title: "light",
@@ -21,4 +21,5 @@ export const light = {
 
      ...lightButton,
      ...lightToggle,
+     ...lightPaginator,
 };
