@@ -23,12 +23,16 @@ export const PaginatorTextWrapper = styled.div`
           &.disabled {
                cursor: not-allowed;
                opacity: 0.3;
+               &:hover {
+                    background-color: ${(props) =>
+                         props.theme.paginatorText.background};
+               }
           }
 
           &:hover {
                // transition: all 2s ease-in;
-               background-color: ${(props) =>
-                    props.disabled ? "red" : props.theme.paginatorText.hover};
+               background-color: ${(props) => props.theme.paginatorText.hover};
+               color: ${(props) => props.theme.paginatorText.hoverColor};
           }
      }
 
