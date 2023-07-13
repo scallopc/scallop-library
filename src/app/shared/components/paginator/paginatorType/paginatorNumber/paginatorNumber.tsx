@@ -37,33 +37,39 @@ export function PaginatorNumber({
 
      return (
           <PaginatorWrapper>
-               {!isFirstPage && (
-                    <>
-                         <button onClick={() => handlePageChange(1)}>
-                              {" "}
-                              <i className="bi bi-chevron-double-left" />
-                         </button>
+               <button
+                    onClick={() => handlePageChange(1)}
+                    disabled={isFirstPage}
+                    className={isFirstPage ? "disabled" : ""}
+               >
+                    {" "}
+                    <i className="bi bi-chevron-double-left" />
+               </button>
 
-                         <button
-                              onClick={() => handlePageChange(currentPage - 1)}
-                         >
-                              <i className="bi bi-chevron-left" />
-                         </button>
-                    </>
-               )}
+               <button
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={isFirstPage}
+                    className={isFirstPage ? "disabled" : ""}
+               >
+                    <i className="bi bi-chevron-left" />
+               </button>
+
                {renderPageNumbers()}
-               {!isLastPage && (
-                    <>
-                         <button
-                              onClick={() => handlePageChange(currentPage + 1)}
-                         >
-                              <i className="bi bi-chevron-right" />
-                         </button>
-                         <button onClick={() => handlePageChange(totalPages)}>
-                              <i className="bi bi-chevron-double-right" />
-                         </button>
-                    </>
-               )}
+
+               <button
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    disabled={isLastPage}
+                    className={isLastPage ? "disabled" : ""}
+               >
+                    <i className="bi bi-chevron-right" />
+               </button>
+               <button
+                    onClick={() => handlePageChange(totalPages)}
+                    disabled={isLastPage}
+                    className={isLastPage ? "disabled" : ""}
+               >
+                    <i className="bi bi-chevron-double-right" />
+               </button>
           </PaginatorWrapper>
      );
 }

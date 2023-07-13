@@ -15,7 +15,7 @@ export const PaginatorWrapper = styled.div`
           font-size: 12px;
           width: 36px;
           height: 36px;
-          color: inherit;
+          color: ${(props) => props.theme.paginatorNumber.color};
 
           &:hover {
                background-color: ${(props) =>
@@ -27,6 +27,17 @@ export const PaginatorWrapper = styled.div`
                background-color: ${(props) =>
                     props.theme.paginatorNumber.activeBg};
                color: ${(props) => props.theme.paginatorNumber.activeColor};
+          }
+
+          &.disabled {
+               cursor: not-allowed;
+               opacity: 0.3;
+
+               &:hover {
+                    background-color: transparent;
+                    color: ${(props) =>
+                         props.theme.paginatorNumber.activeColor};
+               }
           }
      }
 `;
