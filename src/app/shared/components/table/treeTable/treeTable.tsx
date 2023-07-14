@@ -4,10 +4,12 @@ import {
      Container,
      DataCell,
      HeaderCell,
+     HeaderCellTH,
      IconExpander,
      IndentedCell,
 } from "../styles";
 import { Paginator } from "../../paginator/paginator";
+import { Column } from "../column/column";
 
 export function TreeTable({
      value,
@@ -21,6 +23,7 @@ export function TreeTable({
           string | ((props: any) => JSX.Element)
      >[];
      const [expandedNodes, setExpandedNodes] = useState<number[]>([]);
+     const [sortField, setSortField] = useState<string | null>(null);
 
      // Lógica para controlar a página atual e total de páginas
      const [currentPage, setCurrentPage] = useState(1);
@@ -60,10 +63,10 @@ export function TreeTable({
                                              <IndentedCell
                                                   indentLevel={indentLevel}
                                              >
-                                                  {expander &&
-                                                       node.children && (
-                                                            <IconExpander>
-                                                                 <i
+                                                  <div className="flex align-items-center">
+                                                       {expander &&
+                                                            node.children && (
+                                                                 <IconExpander
                                                                       onClick={() =>
                                                                            toggleNode(
                                                                                 node
@@ -71,27 +74,33 @@ export function TreeTable({
                                                                                      .id
                                                                            )
                                                                       }
-                                                                      className={
-                                                                           expandedNodes.includes(
-                                                                                node
-                                                                                     .data
-                                                                                     .id
-                                                                           )
-                                                                                ? "fa-solid fa-chevron-down"
-                                                                                : "fa-solid fa-chevron-right"
-                                                                      }
-                                                                 />
-                                                            </IconExpander>
-                                                       )}
-                                                  {body
-                                                       ? body(node)
-                                                       : fieldValue}
+                                                                 >
+                                                                      <i
+                                                                           className={
+                                                                                expandedNodes.includes(
+                                                                                     node
+                                                                                          .data
+                                                                                          .id
+                                                                                )
+                                                                                     ? "fa-solid fa-chevron-down"
+                                                                                     : "fa-solid fa-chevron-right"
+                                                                           }
+                                                                      />
+                                                                 </IconExpander>
+                                                            )}
+
+                                                       {body
+                                                            ? body(node)
+                                                            : fieldValue}
+                                                  </div>
                                              </IndentedCell>
                                         ) : (
                                              <DataCell key={index}>
-                                                  {body
-                                                       ? body(node)
-                                                       : fieldValue}
+                                                  <div>
+                                                       {body
+                                                            ? body(node)
+                                                            : fieldValue}
+                                                  </div>
                                              </DataCell>
                                         )}
                                    </React.Fragment>
@@ -109,12 +118,18 @@ export function TreeTable({
           <Container>
                <thead>
                     <tr>
-                         {columns.map((column, index) => {
-                              const { field, header } = column.props;
-                              return (
-                                   <HeaderCell key={index}>{header}</HeaderCell>
-                              );
-                         })}
+                         {columns.map((column, i) => (
+                              <Column
+                                   key={i}
+                                   field={column.props.field}
+                                   header={column.props.header}
+                                   sortable={column.props.sortable}
+                                   sortField={sortField}
+                                   onClick={() =>
+                                        console.log(column.props.field)
+                                   }
+                              />
+                         ))}
                     </tr>
                </thead>
                <tbody>{renderTree(paginatedData, indentLevel)}</tbody>

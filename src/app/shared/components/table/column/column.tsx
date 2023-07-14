@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ColumnProps } from "../table.model";
-import { HeaderCell } from "../styles";
+import { HeaderCell, HeaderCellTH } from "../styles";
 
 export function Column({
      field,
@@ -41,11 +41,13 @@ export function Column({
      const SortIcon = sortDirection === "asc" ? iconAsc : iconDesc;
 
      return (
-          <HeaderCell onClick={() => handleSortClick()}>
-               {header}
-               {sortable && (
-                    <span>{sortDirection ? SortIcon : iconDefault}</span>
-               )}
-          </HeaderCell>
+          <HeaderCellTH onClick={() => handleSortClick()}>
+               <HeaderCell className={sortable ? "flexible" : ""}>
+                    {header}
+                    {sortable && (
+                         <span>{sortDirection ? SortIcon : iconDefault}</span>
+                    )}
+               </HeaderCell>
+          </HeaderCellTH>
      );
 }

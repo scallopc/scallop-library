@@ -1,4 +1,5 @@
 import { Button } from "../../shared/components";
+import Properties from "../properties/properties";
 import {
      Box,
      Container,
@@ -21,7 +22,16 @@ import {
      BtnWithIcon,
 } from "./buttonsType";
 
-export function ButtonsPageView() {
+export function PageButtons() {
+     const dataProps = [
+          {
+               name: " Lorem, ipsum",
+               type: " Lorem",
+               description:
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, aspernatur",
+          },
+     ];
+
      return (
           <Container>
                <H2>Button</H2>
@@ -36,7 +46,8 @@ export function ButtonsPageView() {
                          <BtnRounded />
                          <BtnDisabled />
                          <br />
-                         <Content>
+                         <Properties data={dataProps} />
+                         {/* <Content>
                               <h3>Properties </h3>
                               <SmallDetail>
                                    We use some attributes to compose the
@@ -81,7 +92,7 @@ export function ButtonsPageView() {
                                         </div>
                                    </TableRow>
                               </Table>
-                         </Content>
+                         </Content> */}
                     </DocumentationContainer>
                </Box>
           </Container>

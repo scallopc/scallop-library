@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Content, SmallDetail } from "../styles";
 import { Column, Table } from "../../shared/components";
 
-export default function ComponentProperties({ data }) {
+export default function Properties(props) {
+     const { data } = props;
+     const [dataProps, setDataProps] = useState<any>([]);
+
      const columnsProps = [
           { field: "name", header: "Name" },
           { field: "type", header: "Type" },
           { field: "description", header: "Description" },
      ];
+
+     const dataDefault = [
+          {
+               name: " Lorem, ipsum",
+               type: " Lorem",
+               description:
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, aspernatur",
+          },
+     ];
+
+     // handleData = () => {
+
+     // }
 
      return (
           <Content>

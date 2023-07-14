@@ -1,6 +1,6 @@
 export const defaultColors = {
      darkBlue100: "#8591ad",
-     darkBlue200: "#6a799d",
+     darkBlue200: "#3f485d",
      darkBlue300: "#2e3951",
      darkBlue400: "#212A3E",
      darkBlue500: "#1d2435",

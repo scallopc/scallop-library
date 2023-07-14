@@ -5,30 +5,35 @@ export const Container = styled.table`
      border-spacing: 0;
      padding: 10px;
      border-radius: 5px;
+     max-width: 100%;
 `;
 
-export const HeaderCell = styled.th`
+export const HeaderCellTH = styled.th`
      font-weight: 700;
-     color: #343a40;
-     border: 1px solid #dee2e6;
-     background: #f8f9fa;
+     color: ${(props) => props.theme.basicTable.ThColor};
+     border: 0;
+     background: ${(props) => props.theme.basicTable.ThBackground};
      border-width: 0 0 1px 0;
      padding: 1rem 1rem;
+`;
+
+export const HeaderCell = styled.div`
+     &.flexible {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+     }
 `;
 
 export const DataCell = styled.td`
-     border: 1px solid #dee2e6;
+     border: 1px solid ${(props) => props.theme.basicTable.border};
      border-width: 0 0 1px 0;
      padding: 1rem 1rem;
      font-size: 12px;
+     // background: #333d57;
 `;
 
-export const IndentedCell = styled.td`
-     border: 1px solid #dee2e6;
-     border-width: 0 0 1px 0;
-     font-size: 12px;
-     padding: 1rem 1rem;
-     display: flex; /* Adicione esta propriedade */
+export const IndentedCell = styled(DataCell)`
      ${(props) =>
           props.indentLevel &&
           css`
@@ -42,8 +47,8 @@ export const IconExpander = styled.span`
      margin-right: 10px;
      padding: 5px;
      border-radius: 50%;
-     width: 22px;
-     height: 22px;
+     width: 25px;
+     height: 25px;
      font-size: 14px;
      display: flex;
      align-items: center;
@@ -51,7 +56,7 @@ export const IconExpander = styled.span`
 
      &:hover,
      :focus {
-          background: #dee2e6;
+          background: ${(props) => props.theme.basicTable.hover};
      }
 `;
 

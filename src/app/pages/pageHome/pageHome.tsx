@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "../componentProperties/styles";
+import { Container } from "../properties/styles";
 
-export function Home() {
+export function PageHome() {
      return (
           <Container>
                Lorem ipsum dolor sit amet consectetur, adipisicing elit.

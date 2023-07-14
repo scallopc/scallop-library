@@ -30,7 +30,7 @@ export const PaginatorWrapper = styled.div`
           }
 
           &.disabled {
-               cursor: not-allowed;
+               cursor: context-menu;
                opacity: 0.3;
 
                &:hover {
