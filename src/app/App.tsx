@@ -5,13 +5,26 @@ import { usePersistedState } from "./shared/hooks";
 import { ThemeProvider } from "styled-components";
 import { HashRouter } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./i18n/index";
+import { useTranslation } from "react-i18next";
 
 export default function App(props) {
-     //const [theme, setTheme] = useState(light);
-     const [theme, setTheme] = usePersistedState("theme", light);
      const { children } = props;
-     const switchTheme = () => {
+     const {
+          t,
+          i18n: { changeLanguage, language },
+     } = useTranslation();
+     const [theme, setTheme] = usePersistedState("theme", light);
+     const [currentLanguage, setCurrentLanguage] = useState(language);
+
+     const handleTheme = () => {
           setTheme(theme.title === "light" ? dark : light);
+     };
+
+     const handleLanguage = () => {
+          const newLanguage = currentLanguage === "en" ? "ptBR" : "en";
+          changeLanguage(newLanguage);
+          setCurrentLanguage(newLanguage);
      };
 
      return (
@@ -20,8 +33,10 @@ export default function App(props) {
                     <HashRouter>
                          <GlobalStyle />
                          <Routes
-                              theme={() => switchTheme()}
+                              theme={() => handleTheme()}
                               isChecked={theme}
+                              setLanguage={() => handleLanguage()}
+                              isLanguageCheck={currentLanguage}
                          />
                          {children}
                     </HashRouter>

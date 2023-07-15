@@ -3,8 +3,9 @@ import { MenuRoutes, ToggleSwitch } from "../../shared/components";
 import { ContainerMenuLateral, MenuContainer } from "./styles";
 
 export function MenuLateral(props) {
-     const { switchTheme, isChecked } = props;
+     const { switchTheme, isChecked, setLanguage, isLanguageCheck } = props;
      const check = isChecked.title === "dark" ? true : false;
+     const checkLanguage = isLanguageCheck === "en" ? true : false;
 
      return (
           <HashRouter>
@@ -15,6 +16,13 @@ export function MenuLateral(props) {
                               <ToggleSwitch
                                    checked={check}
                                    onChange={switchTheme}
+                              />
+                         </div>
+                         <div className="flex gap-3">
+                              <p>en</p>
+                              <ToggleSwitch
+                                   checked={checkLanguage}
+                                   onChange={setLanguage}
                               />
                          </div>
 

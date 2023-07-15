@@ -7,7 +7,7 @@ import PageToggleSwitch from "../pages/pageToggleSwitch/pageToggleSwitch";
 import { PageButtons } from "../pages/pageButtons/pageButtons";
 
 export default function Routes(props) {
-     const { theme, isChecked } = props;
+     const { theme, isChecked, setLanguage, isLanguageCheck } = props;
 
      useEffect(() => {
           if (window.location.hash == "#/") {
@@ -20,6 +20,8 @@ export default function Routes(props) {
                <MenuLateral
                     isChecked={isChecked}
                     switchTheme={(e) => theme(e?.checked)}
+                    setLanguage={() => setLanguage()}
+                    isLanguageCheck={isLanguageCheck}
                />
                <Switch>
                     <Route path="/home" component={PageHome} />
