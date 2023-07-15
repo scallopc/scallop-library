@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Table, Column, TreeTable } from "../../shared/components";
+import { Table, Column, TreeTable, Button } from "../../shared/components";
 import {
      Container,
      Box,
@@ -11,8 +11,9 @@ import {
 } from "../styles";
 
 import { getRandomUserService, NodesService } from "../../shared/service";
+import Properties from "../properties/properties";
 
-export function TablePageView() {
+export function PageTable() {
      const [dataTable, setDataTable] = useState([]);
      const [dataTreeTable, setDataTreeTable] = useState([]);
 
@@ -40,7 +41,7 @@ export function TablePageView() {
 
      const handleColStatus = (col) => {
           return (
-               <span>
+               <span className="flex gap-1 align-items-center">
                     {col?.name?.first} <i className="fa-regular fa-user" />
                </span>
           );
@@ -70,8 +71,12 @@ export function TablePageView() {
      const actionTemplate = () => {
           return (
                <div className="flex flex-wrap gap-2">
-                    <button type="button"> oi</button>
-                    <button type="button">teste</button>
+                    <div className=" text-xl cursor-pointer">
+                         <i className="bi bi-pencil-square" />
+                    </div>
+                    <div className=" text-xl cursor-pointer">
+                         <i className="bi bi-trash" />
+                    </div>
                </div>
           );
      };
@@ -85,20 +90,23 @@ export function TablePageView() {
                          <Content>
                               <h3>Basic</h3>
                               <Detail></Detail>
-
-                              <Table value={dataTable} paginator rows={5}>
-                                   {columns.map((col, i) => (
+                              {dataTable.length > 0 && (
+                                   <Table value={dataTable} paginator rows={5}>
+                                        {columns.map((col, i) => (
+                                             <Column
+                                                  key={i}
+                                                  field={col.field}
+                                                  header={col.header}
+                                                  body={col.body}
+                                                  sortable
+                                             />
+                                        ))}
                                         <Column
-                                             key={i}
-                                             field={col.field}
-                                             header={col.header}
-                                             body={col.body}
-                                             sortable
+                                             key="action"
+                                             body={actionTemplate}
                                         />
-                                   ))}
-                                   <Column key="action" body={actionTemplate} />
-                              </Table>
-
+                                   </Table>
+                              )}
                               <TreeTable
                                    value={dataTreeTable}
                                    paginator
@@ -115,6 +123,8 @@ export function TablePageView() {
                                    <Column key="action" body={actionTemplate} />
                               </TreeTable>
                          </Content>
+                         <br />
+                         <Properties />
                     </DocumentationContainer>
                </Box>
           </Container>

@@ -16,7 +16,7 @@ export default function App(props) {
 
      return (
           <div>
-               <ThemeProvider theme={dark}>
+               <ThemeProvider theme={light}>
                     <HashRouter>
                          <GlobalStyle />
                          <Routes

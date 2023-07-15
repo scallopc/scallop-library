@@ -9,7 +9,7 @@ import {
      H5,
 } from "../styles";
 import { ToggleSwitch } from "../../shared/components";
-import ComponentProperties from "../componentProperties/componentProperties";
+import Properties from "../properties/properties";
 
 export default function PageToggleSwitch() {
      const [isChecked, setIsChecked] = useState(false);
@@ -74,7 +74,7 @@ export default function PageToggleSwitch() {
                          </Content>
 
                          <br />
-                         <ComponentProperties data={toggleData} />
+                         <Properties data={toggleData} />
                     </DocumentationContainer>
                </Box>
           </Container>

@@ -12,8 +12,8 @@ import {
      TableRow,
 } from "../styles";
 import { Paginator } from "../../shared/components";
-import ComponentProperties from "../componentProperties/componentProperties";
 import { getRandomUserService } from "../../shared/service";
+import Properties from "../properties/properties";
 
 export default function PagePaginator() {
      const [names, setNames] = useState<any>([]);
@@ -164,7 +164,7 @@ export default function PagePaginator() {
                          </Content>
 
                          <br />
-                         <ComponentProperties data={paginatorData} />
+                         <Properties data={paginatorData} />
                     </DocumentationContainer>
                </Box>
           </Container>
