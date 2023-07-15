@@ -4,7 +4,6 @@ import { Column, Table } from "../../shared/components";
 
 export default function Properties(props) {
      const { data } = props;
-     const [dataProps, setDataProps] = useState<any>([]);
 
      const columnsProps = [
           { field: "name", header: "Name" },
@@ -14,16 +13,12 @@ export default function Properties(props) {
 
      const dataDefault = [
           {
-               name: " Lorem, ipsum",
-               type: " Lorem",
+               name: "Lorem, ipsum",
+               type: "Lorem",
                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, aspernatur",
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
           },
      ];
-
-     // handleData = () => {
-
-     // }
 
      return (
           <Content>
@@ -31,7 +26,7 @@ export default function Properties(props) {
                <SmallDetail>
                     We use some attributes to compose the component
                </SmallDetail>
-               <Table value={data}>
+               <Table value={data ? data : dataDefault}>
                     {columnsProps.map((col, i) => (
                          <Column
                               key={i}

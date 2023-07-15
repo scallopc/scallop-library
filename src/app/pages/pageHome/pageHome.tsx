@@ -4,8 +4,7 @@ import { Container } from "../properties/styles";
 export function PageHome() {
      return (
           <Container>
-               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-               Voluptatum, perspiciatis.
+               <h1>where you can find anything you want</h1>
           </Container>
      );
 }

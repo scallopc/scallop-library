@@ -8,8 +8,7 @@ export function BtnWithIcon() {
                <h3>With icon</h3>
                <SmallDetail>
                     {" "}
-                    To display only an icon, do not insert label. The library
-                    used for icons is"FontAwesomeIcon"
+                    To display only an icon, do not insert label.
                </SmallDetail>
                <Detail>
                     <pre style={{ whiteSpace: "inherit" }}>

@@ -25,10 +25,60 @@ import {
 export function PageButtons() {
      const dataProps = [
           {
-               name: " Lorem, ipsum",
-               type: " Lorem",
+               name: "primary",
+               type: "boolean",
+               description: "Set button as primary, is default mode",
+          },
+          {
+               name: "outline",
+               type: "boolean",
+               description: "Set button as outline",
+          },
+          {
+               name: "text",
+               type: "boolean",
+               description: "Set button as text",
+          },
+          {
+               name: "rounded",
+               type: "boolean",
+               description: "Defines whether the button will be rounded",
+          },
+          {
+               name: "disabled",
+               type: "boolean",
+               description: "Sets the button to disabled",
+          },
+          {
+               name: "sm",
+               type: "boolean",
+               description: "Defines the size of the button for small",
+          },
+          {
+               name: "md",
+               type: "boolean",
                description:
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, aspernatur",
+                    "Defines the size of the button for medium, is default mode",
+          },
+          {
+               name: "lg",
+               type: "boolean",
+               description: "Defines the size of the button for large",
+          },
+          {
+               name: "icon",
+               type: "string",
+               description: "Defines the button icon",
+          },
+          {
+               name: "label",
+               type: "string",
+               description: "Set the button label",
+          },
+          {
+               name: "onClick",
+               type: "event",
+               description: "Action it should perform when clicked",
           },
      ];
 
@@ -47,52 +97,6 @@ export function PageButtons() {
                          <BtnDisabled />
                          <br />
                          <Properties data={dataProps} />
-                         {/* <Content>
-                              <h3>Properties </h3>
-                              <SmallDetail>
-                                   We use some attributes to compose the
-                                   component
-                              </SmallDetail>
-                              <Table>
-                                   <TableRow>
-                                        <b>Name</b>
-                                        <b>Type</b>
-                                        <b>Description</b>
-                                   </TableRow>
-                                   <TableRow>
-                                        <div>variant</div>
-                                        <div>string</div>
-                                        <div>
-                                             Defines the button type, valid
-                                             options are "primary", "outline"
-                                             and "text"
-                                        </div>
-                                   </TableRow>
-                                   <TableRow>
-                                        <div>disabled</div>
-                                        <div>boolean</div>
-                                        <div>
-                                             Defines if the button is disabled,
-                                             valid options are "true" or "false"
-                                        </div>
-                                   </TableRow>
-                                   <TableRow>
-                                        <div>size</div>
-                                        <div>string</div>
-                                        <div>
-                                             Size of the element, valid options
-                                             are "sm", "md" and "lg"
-                                        </div>
-                                   </TableRow>
-                                   <TableRow>
-                                        <div>rounded</div>
-                                        <div>boolean</div>
-                                        <div>
-                                             Defines if the button is rounded
-                                        </div>
-                                   </TableRow>
-                              </Table>
-                         </Content> */}
                     </DocumentationContainer>
                </Box>
           </Container>

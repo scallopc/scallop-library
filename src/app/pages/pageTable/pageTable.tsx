@@ -11,6 +11,7 @@ import {
 } from "../styles";
 
 import { getRandomUserService, NodesService } from "../../shared/service";
+import Properties from "../properties/properties";
 
 export function PageTable() {
      const [dataTable, setDataTable] = useState([]);
@@ -70,8 +71,12 @@ export function PageTable() {
      const actionTemplate = () => {
           return (
                <div className="flex flex-wrap gap-2">
-                    <Button primary label="Editar" />
-                    <Button outline label="Excluir" />
+                    <div className=" text-xl cursor-pointer">
+                         <i className="bi bi-pencil-square" />
+                    </div>
+                    <div className=" text-xl cursor-pointer">
+                         <i className="bi bi-trash" />
+                    </div>
                </div>
           );
      };
@@ -118,6 +123,8 @@ export function PageTable() {
                                    <Column key="action" body={actionTemplate} />
                               </TreeTable>
                          </Content>
+                         <br />
+                         <Properties />
                     </DocumentationContainer>
                </Box>
           </Container>
