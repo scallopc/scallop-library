@@ -1,19 +1,14 @@
 import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
 type Response<T> = [T, Dispatch<SetStateAction<T>>];
-//persisted theme
-export function usePersistedState<T>(
+
+export function usePersistedLanguage<T>(
      key: string,
      initialState: T
 ): Response<T> {
-     const [state, setState] = useState(() => {
+     const [state, setState] = useState<T>(() => {
           const storageValue = localStorage.getItem(key);
-
-          if (storageValue) {
-               return JSON.parse(storageValue);
-          } else {
-               return initialState;
-          }
+          return storageValue ? JSON.parse(storageValue) : initialState;
      });
 
      useEffect(() => {

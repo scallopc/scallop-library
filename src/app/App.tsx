@@ -1,10 +1,9 @@
 import Routes from "./routes/routes";
 import GlobalStyle from "./globalStyles/globalStyle";
 import { dark, light } from "./globalStyles/themes";
-import { usePersistedState } from "./shared/hooks";
+import { usePersistedTheme, usePersistedLanguage } from "./shared/hooks";
 import { ThemeProvider } from "styled-components";
 import { HashRouter } from "react-router-dom";
-import { useEffect, useState } from "react";
 import "./i18n/index";
 import { useTranslation } from "react-i18next";
 
@@ -14,8 +13,11 @@ export default function App(props) {
           t,
           i18n: { changeLanguage, language },
      } = useTranslation();
-     const [theme, setTheme] = usePersistedState("theme", light);
-     const [currentLanguage, setCurrentLanguage] = useState(language);
+     const [theme, setTheme] = usePersistedTheme("Theme", light);
+     const [currentLanguage, setCurrentLanguage] = usePersistedLanguage(
+          "Language",
+          language
+     );
 
      const handleTheme = () => {
           setTheme(theme.title === "light" ? dark : light);
