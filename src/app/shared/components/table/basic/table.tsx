@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Container, DataCell, HeaderCell, Image } from "../styles";
+import { Container, DataCellTD, HeaderCell, Image } from "../styles";
 import { ColumnProps, TableProps } from "../table.model";
 import { Column } from "../column/column";
 import { Paginator } from "../../paginator/paginator";
@@ -15,6 +15,7 @@ export function Table({ value, children, paginator, rows }: TableProps) {
      const pageSize = rows ?? 10;
      const totalRows = value?.length;
      const totalPages = Math.ceil(totalRows / pageSize);
+     // Sort
      const [sortField, setSortField] = useState<string | null>(null);
      const [sortDirection, setSortDirection] = useState<"asc" | "desc" | null>(
           null
@@ -26,14 +27,18 @@ export function Table({ value, children, paginator, rows }: TableProps) {
 
      //sort
      const handleSort = (field: string) => {
-          setSortField(field);
-          setSortDirection((prevSortDirection) => {
-               if (prevSortDirection === "asc") {
-                    return "desc";
-               } else {
-                    return "asc";
-               }
-          });
+          if (sortField === field) {
+               setSortDirection((prevSortDirection) => {
+                    if (prevSortDirection === "asc") {
+                         return "desc";
+                    } else {
+                         return "asc";
+                    }
+               });
+          } else {
+               setSortField(field);
+               setSortDirection("asc");
+          }
      };
 
      const columnValue = (data: any, field: string) => {
@@ -53,8 +58,6 @@ export function Table({ value, children, paginator, rows }: TableProps) {
           let data = value ?? [];
           // Ordenar os dados
           if (sortField) {
-               console.log(sortField);
-
                data = [...data].sort((a, b) => {
                     const valueA = columnValue(a, sortField);
                     const valueB = columnValue(b, sortField);
@@ -95,6 +98,7 @@ export function Table({ value, children, paginator, rows }: TableProps) {
                                    header={column.props.header}
                                    sortable={column.props.sortable}
                                    sortField={sortField}
+                                   sortDirection={sortDirection}
                                    onClick={() =>
                                         handleSort(column.props.field)
                                    }
@@ -106,11 +110,13 @@ export function Table({ value, children, paginator, rows }: TableProps) {
                     {sortedAndPaginatedData.map((row, rowIndex) => (
                          <tr key={rowIndex}>
                               {columns.map((column, colIndex) => (
-                                   <DataCell key={colIndex}>
-                                        {column.props.body
-                                             ? column.props.body(row)
-                                             : row[column.props.field]}
-                                   </DataCell>
+                                   <DataCellTD key={colIndex}>
+                                        <div className="flex align-items-center">
+                                             {column.props.body
+                                                  ? column.props.body(row)
+                                                  : row[column.props.field]}
+                                        </div>
+                                   </DataCellTD>
                               ))}
                          </tr>
                     ))}

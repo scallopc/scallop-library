@@ -18,14 +18,15 @@ export const HeaderCellTH = styled.th`
 `;
 
 export const HeaderCell = styled.div`
+     display: flex;
+     align-items: center;
+
      &.flexible {
-          display: flex;
-          align-items: center;
           gap: 5px;
      }
 `;
 
-export const DataCell = styled.td`
+export const DataCellTD = styled.td`
      border: 1px solid ${(props) => props.theme.basicTable.border};
      border-width: 0 0 1px 0;
      padding: 1rem 1rem;
@@ -33,7 +34,7 @@ export const DataCell = styled.td`
      // background: #333d57;
 `;
 
-export const IndentedCell = styled(DataCell)`
+export const IndentedCell = styled(DataCellTD)`
      ${(props) =>
           props.indentLevel &&
           css`

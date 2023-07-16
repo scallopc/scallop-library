@@ -29,8 +29,6 @@ export function Column({
                setSortDirection((prevSortDirection) => {
                     if (prevSortDirection === "asc") {
                          return "desc";
-                    } else if (prevSortDirection === "desc") {
-                         return "asc";
                     } else {
                          return "asc";
                     }
@@ -38,15 +36,19 @@ export function Column({
           }
      };
 
-     const SortIcon = sortDirection === "asc" ? iconAsc : iconDesc;
+     //  const SortIcon = sortDirection === "desc" ? iconAsc : iconDesc;
+     const SortIcon =
+          sortField === field
+               ? sortDirection === "asc"
+                    ? iconAsc
+                    : iconDesc
+               : iconDefault;
 
      return (
           <HeaderCellTH onClick={() => handleSortClick()}>
                <HeaderCell className={sortable ? "flexible" : ""}>
                     {header}
-                    {sortable && (
-                         <span>{sortDirection ? SortIcon : iconDefault}</span>
-                    )}
+                    {sortable && <span>{SortIcon}</span>}
                </HeaderCell>
           </HeaderCellTH>
      );
