@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { ColumnProps, TreeNode, TreeTableProps } from "../table.model";
-import {
-     Container,
-     DataCell,
-     HeaderCell,
-     HeaderCellTH,
-     IconExpander,
-     IndentedCell,
-} from "../styles";
+import { Container, DataCellTD, IconExpander, IndentedCell } from "../styles";
 import { Paginator } from "../../paginator/paginator";
 import { Column } from "../column/column";
 
@@ -95,13 +88,11 @@ export function TreeTable({
                                                   </div>
                                              </IndentedCell>
                                         ) : (
-                                             <DataCell key={index}>
-                                                  <div>
-                                                       {body
-                                                            ? body(node)
-                                                            : fieldValue}
-                                                  </div>
-                                             </DataCell>
+                                             <DataCellTD key={index}>
+                                                  {body
+                                                       ? body(node)
+                                                       : fieldValue}
+                                             </DataCellTD>
                                         )}
                                    </React.Fragment>
                               );

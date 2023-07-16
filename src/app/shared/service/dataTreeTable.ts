@@ -515,3 +515,56 @@ export const NodesService = {
           return Promise.resolve(this.getTreeNodesData());
      },
 };
+
+export const ProductService = {
+     getProductsData() {
+          return [
+               {
+                    id: "1000",
+                    name: "Bamboo Watch",
+                    description: "Ei letter",
+                    category: "Accessories",
+                    inventoryStatus: "COUTOFSTOCK",
+               },
+               {
+                    id: "1001",
+                    name: "Ai Watch",
+                    description: "Bi Product",
+                    category: "Clothing",
+                    inventoryStatus: "BINSTOCK",
+               },
+               {
+                    id: "1002",
+                    name: "Cow Band",
+                    description: "Di Description",
+                    category: "Fitness",
+                    inventoryStatus: "DLOWSTOCK",
+               },
+               {
+                    id: "1003",
+                    name: "De T-Shirt",
+                    description: "Cia desc",
+                    category: "Accessories",
+                    inventoryStatus: "EINSTOCK",
+               },
+               {
+                    id: "1004",
+                    name: "Elma chips",
+                    description: "Description",
+                    category: "Accessories",
+                    inventoryStatus: "FINSTOCK",
+               },
+               {
+                    id: "1005",
+                    name: "Facius Brown Purse",
+                    description: "Escription",
+                    category: "Clothing",
+                    inventoryStatus: "AINSTOCK",
+               },
+          ];
+     },
+
+     getProductsMini() {
+          return Promise.resolve(this.getProductsData());
+     },
+};

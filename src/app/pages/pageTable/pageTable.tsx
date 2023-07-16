@@ -10,23 +10,38 @@ import {
      H2,
 } from "../styles";
 
-import { getRandomUserService, NodesService } from "../../shared/service";
+import {
+     getRandomUserService,
+     NodesService,
+     getUserGithubService,
+     getBrokersService,
+     ProductService,
+} from "../../shared/service";
 import Properties from "../properties/properties";
 
 export function PageTable() {
      const [dataTable, setDataTable] = useState([]);
      const [dataTreeTable, setDataTreeTable] = useState([]);
+     const [brokers, setBrokers] = useState([]);
 
      useEffect(() => {
           handleDataTable();
           handleDataTreeTable();
+          handleBrokers();
      }, []);
 
      const handleDataTable = () => {
           getRandomUserService()
                .then((res: any) => {
-                    const data = res.data.results;
+                    const data = res.data.data;
                     setDataTable(data);
+               })
+               .catch(() => {});
+     };
+     const handleBrokers = () => {
+          ProductService.getProductsMini()
+               .then((res: any) => {
+                    setBrokers(res);
                })
                .catch(() => {});
      };
@@ -42,20 +57,40 @@ export function PageTable() {
      const handleColStatus = (col) => {
           return (
                <span className="flex gap-1 align-items-center">
-                    {col?.name?.first} <i className="fa-regular fa-user" />
+                    {col?.first_name} <i className="fa-regular fa-user" />
                </span>
           );
      };
 
      const handleColPicture = (col) => {
-          return <img src={col?.picture?.thumbnail} />;
+          return (
+               <div>
+                    <img
+                         style={{
+                              borderRadius: "50px",
+                              maxWidth: "100%",
+                              width: "50px",
+                              height: "50px",
+                              objectFit: "cover",
+                         }}
+                         src={col?.avatar}
+                    />
+               </div>
+          );
      };
 
+     const columnsTableHolidays = [
+          { field: "name", header: "Nome" },
+          { field: "description", header: "Descrição" },
+          { field: "category", header: "Categoria" },
+          { field: "inventoryStatus", header: "Status" },
+     ];
+
      const columns = [
-          { field: "name", header: "Name", body: handleColStatus },
-          { field: "cell", header: "Contato" },
+          { field: "first_name", header: "Nome", body: handleColStatus },
+          { field: "last_name", header: "Sobrenome" },
           { field: "email", header: "@" },
-          { field: "", header: "Picture", body: handleColPicture },
+          { field: "", header: "Avatar", body: handleColPicture },
      ];
 
      const columnsTree = [
@@ -88,6 +123,22 @@ export function PageTable() {
                     <H5>Documentation</H5>
                     <DocumentationContainer>
                          <Content>
+                              <h3>Teste sort</h3>
+                              {brokers.length > 0 && (
+                                   <Table value={brokers} paginator rows={6}>
+                                        {columnsTableHolidays.map((col, i) => (
+                                             <Column
+                                                  key={i}
+                                                  field={col.field}
+                                                  header={col.header}
+                                                  sortable
+                                             />
+                                        ))}
+                                   </Table>
+                              )}
+                         </Content>
+
+                         <Content>
                               <h3>Basic</h3>
                               <Detail></Detail>
                               {dataTable.length > 0 && (
@@ -107,6 +158,9 @@ export function PageTable() {
                                         />
                                    </Table>
                               )}
+                         </Content>
+                         <Content>
+                              <h3>TreeTable</h3>
                               <TreeTable
                                    value={dataTreeTable}
                                    paginator

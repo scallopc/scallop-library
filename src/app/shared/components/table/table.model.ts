@@ -5,6 +5,7 @@ export type ColumnProps = {
      body?: (data?: any) => React.ReactNode;
      children?: any;
      sortField?: any;
+     sortDirection?: any;
      sortable?: boolean;
      onClick?: () => void;
 };
