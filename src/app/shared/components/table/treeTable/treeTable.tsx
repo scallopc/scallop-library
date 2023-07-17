@@ -17,6 +17,9 @@ export function TreeTable({
      >[];
      const [expandedNodes, setExpandedNodes] = useState<number[]>([]);
      const [sortField, setSortField] = useState<string | null>(null);
+     const [sortDirection, setSortDirection] = useState<"asc" | "desc" | null>(
+          null
+     );
 
      // Lógica para controlar a página atual e total de páginas
      const [currentPage, setCurrentPage] = useState(1);
@@ -27,10 +30,47 @@ export function TreeTable({
      const handlePageChange = (page: number) => {
           setCurrentPage(page);
      };
-     // Lógica para paginar os dados com base na página atual
+
+     // Lógica para ordenar os dados por coluna
+     const handleSortClick = (field: string) => {
+          if (field === sortField) {
+               setSortDirection((prevSortDirection) =>
+                    prevSortDirection === "asc" ? "desc" : "asc"
+               );
+          } else {
+               setSortField(field);
+               setSortDirection("asc");
+          }
+     };
+
+     // Função para ordenar os dados com base no campo e direção de ordenação
+     const sortData = (
+          data: TreeNode[],
+          field: string | null,
+          direction: "asc" | "desc"
+     ) => {
+          if (field) {
+               return data.sort((a, b) => {
+                    const valueA = a.data[field];
+                    const valueB = b.data[field];
+                    if (valueA < valueB) {
+                         return direction === "asc" ? -1 : 1;
+                    } else if (valueA > valueB) {
+                         return direction === "asc" ? 1 : -1;
+                    } else {
+                         return 0;
+                    }
+               });
+          } else {
+               return data;
+          }
+     };
+
+     // Lógica para paginar e ordenar os dados com base na página atual e campo de ordenação
      const startIndex = (currentPage - 1) * pageSize;
      const endIndex = startIndex + pageSize;
-     const paginatedData = value?.slice(startIndex, endIndex);
+     const sortedData = sortData(value, sortField, sortDirection);
+     const paginatedData = sortedData?.slice(startIndex, endIndex);
 
      const toggleNode = (nodeId: number) => {
           if (expandedNodes.includes(nodeId)) {
@@ -116,8 +156,9 @@ export function TreeTable({
                                    header={column.props.header}
                                    sortable={column.props.sortable}
                                    sortField={sortField}
+                                   sortDirection={sortDirection}
                                    onClick={() =>
-                                        console.log(column.props.field)
+                                        handleSortClick(column.props.field)
                                    }
                               />
                          ))}

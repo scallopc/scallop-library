@@ -168,6 +168,7 @@ export function PageTable() {
                               >
                                    {columnsTree.map((col, i) => (
                                         <Column
+                                             sortable
                                              key={col.field}
                                              field={col.field}
                                              header={col.header}
