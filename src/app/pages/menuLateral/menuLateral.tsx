@@ -31,7 +31,7 @@ export function MenuLateral(props) {
                          {/* <MenuRoutes title="Breadcrumb" to="/breadcrumb" /> */}
                          <MenuRoutes title="Button" to="/button" />
                          {/* <MenuRoutes title="Cards" to="/cards" /> */}
-                         {/* <MenuRoutes title="ColorPicker" to="/color-picker" /> */}
+                         <MenuRoutes title="ColorPicker" to="/colorpicker" />
                          {/* <MenuRoutes title="Colors" to="/colors" /> */}
                          {/* <MenuRoutes title="Dropdown" to="/dropdown" /> */}
                          {/* <MenuRoutes title="Heading" to="/heading" /> */}

@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import { ContainerMain } from "./styles";
-import { MenuLateral, PageHome, PageTable } from "../pages";
-import PagePaginator from "../pages/pagePaginator/pagePaginator";
-import PageToggleSwitch from "../pages/pageToggleSwitch/pageToggleSwitch";
-import { PageButtons } from "../pages/pageButtons/pageButtons";
+import {
+     MenuLateral,
+     PageHome,
+     PageTable,
+     PageColorPicker,
+     PageButtons,
+     PageToggleSwitch,
+     PagePaginator,
+} from "../pages";
 
 export default function Routes(props) {
      const { theme, isChecked, setLanguage, isLanguageCheck } = props;
@@ -26,6 +31,7 @@ export default function Routes(props) {
                <Switch>
                     <Route path="/home" component={PageHome} />
                     <Route path="/button" component={PageButtons} />
+                    <Route path="/colorpicker" component={PageColorPicker} />
                     <Route path="/paginator" component={PagePaginator} />
                     <Route path="/table" component={PageTable} />
                     <Route path="/toggle-switch" component={PageToggleSwitch} />
