@@ -15,7 +15,7 @@ import { Paginator } from "../../shared/components";
 import { getRandomUserService } from "../../shared/service";
 import Properties from "../properties/properties";
 
-export default function PagePaginator() {
+export function PagePaginator() {
      const [names, setNames] = useState<any>([]);
      const [currentPage, setCurrentPage] = useState(1);
      const itemsPerPage = 5;

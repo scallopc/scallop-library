@@ -11,7 +11,7 @@ import {
 import { ToggleSwitch } from "../../shared/components";
 import Properties from "../properties/properties";
 
-export default function PageToggleSwitch() {
+export function PageToggleSwitch() {
      const [isChecked, setIsChecked] = useState(false);
 
      const toggleData = [
