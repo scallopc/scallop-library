@@ -6,6 +6,7 @@ interface HSL {
      hue: number;
      saturation: number;
      lightness: number;
+     opacity?: number;
 }
 
 interface ColorPickerComponentProps {
