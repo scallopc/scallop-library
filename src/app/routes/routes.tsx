@@ -9,6 +9,7 @@ import {
      PageButtons,
      PageToggleSwitch,
      PagePaginator,
+     PageCalendar,
 } from "../pages";
 
 export default function Routes(props) {
@@ -31,6 +32,7 @@ export default function Routes(props) {
                <Switch>
                     <Route path="/home" component={PageHome} />
                     <Route path="/button" component={PageButtons} />
+                    <Route path="/calendar" component={PageCalendar} />
                     <Route path="/colorpicker" component={PageColorPicker} />
                     <Route path="/paginator" component={PagePaginator} />
                     <Route path="/table" component={PageTable} />

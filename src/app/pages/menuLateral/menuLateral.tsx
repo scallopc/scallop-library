@@ -30,6 +30,7 @@ export function MenuLateral(props) {
                          {/* <MenuRoutes title="Avatar" to="/avatar" /> */}
                          {/* <MenuRoutes title="Breadcrumb" to="/breadcrumb" /> */}
                          <MenuRoutes title="Button" to="/button" />
+                         <MenuRoutes title="Calendar" to="/calendar" />
                          {/* <MenuRoutes title="Cards" to="/cards" /> */}
                          <MenuRoutes title="ColorPicker" to="/colorpicker" />
                          {/* <MenuRoutes title="Colors" to="/colors" /> */}
