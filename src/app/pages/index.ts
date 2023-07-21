@@ -5,3 +5,4 @@ export * from "./pageHome/pageHome";
 export * from "./pagePaginator/pagePaginator";
 export * from "./pageTable/pageTable";
 export * from "./pageToggleSwitch/pageToggleSwitch";
+export * from "./pageCalendar/pageCalendar";
