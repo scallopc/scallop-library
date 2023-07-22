@@ -53,41 +53,28 @@ export function Calendar() {
      const daysInCurrentMonth = getMonthDays(currentYear, currentMonth);
 
      return (
-          <div>
-               <h2>
-                    {monthsNames[currentMonth]} {currentYear}
-               </h2>
-               <table>
-                    <thead>
-                         <tr>
-                              <th>D</th>
-                              <th>S</th>
-                              <th>T</th>
-                              <th>Q</th>
-                              <th>Q</th>
-                              <th>S</th>
-                              <th>S</th>
-                         </tr>
-                    </thead>
-                    <tbody>
-                         {daysInCurrentMonth.map((dayInfo, index) => {
-                              return (
-                                   <td
-                                        key={index}
-                                        style={{
-                                             textAlign: "center",
-                                             backgroundColor:
-                                                  dayInfo.isCurrentMonth
-                                                       ? "white"
-                                                       : "#f2f2f2",
-                                        }}
-                                   >
-                                        {dayInfo.day > 0 ? dayInfo.day : ""}
-                                   </td>
-                              );
-                         })}
-                    </tbody>
-               </table>
+          <div className="wrapper">
+               <header>
+                    <p className="current-date">
+                         {monthsNames[currentMonth]} {currentYear}
+                    </p>
+                    <div className="icons">
+                         <i className="bi bi-chevron-left" />
+                         <i className="bi bi-chevron-right" />
+                    </div>
+               </header>
+               <div className="calendar">
+                    <ul className="weeks">
+                         <li>D</li>
+                         <li>S</li>
+                         <li>T</li>
+                         <li>Q</li>
+                         <li>Q</li>
+                         <li>S</li>
+                         <li>S</li>
+                    </ul>
+                    <ul className="days"></ul>
+               </div>
           </div>
      );
 }
