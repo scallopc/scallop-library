@@ -1,4 +1,5 @@
 import React from "react";
+import { CalendarContent, Icons, Wrapper } from "./styles";
 
 type CalendarProps = {};
 
@@ -53,17 +54,17 @@ export function Calendar() {
      const daysInCurrentMonth = getMonthDays(currentYear, currentMonth);
 
      return (
-          <div className="wrapper">
+          <Wrapper>
                <header>
                     <p className="current-date">
                          {monthsNames[currentMonth]} {currentYear}
                     </p>
-                    <div className="icons">
+                    <Icons>
                          <i className="bi bi-chevron-left" />
                          <i className="bi bi-chevron-right" />
-                    </div>
+                    </Icons>
                </header>
-               <div className="calendar">
+               <CalendarContent>
                     <ul className="weeks">
                          <li>D</li>
                          <li>S</li>
@@ -74,7 +75,7 @@ export function Calendar() {
                          <li>S</li>
                     </ul>
                     <ul className="days"></ul>
-               </div>
-          </div>
+               </CalendarContent>
+          </Wrapper>
      );
 }
