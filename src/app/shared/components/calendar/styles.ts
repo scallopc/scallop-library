@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
      header {
           display: flex;
           align-items: center;
-          padding: 25px 30ps 10px;
+          padding: 25px 30px 10px;
           justify-content: space-between;
 
           P {
@@ -46,9 +46,32 @@ export const CalendarContent = styled.div`
           color: #333;
           width: calc(100% / 7);
           font-size: 1.07rem;
+
+          &:active {
+               color: #fff;
+          }
+          &:inactive {
+               color: #aaa;
+          }
+          &::before {
+               position: absolute;
+               content: "";
+               left: 50%;
+               top: 50%;
+               height: 40px;
+               width: 40px;
+               z-index: -1;
+               border-radius: 50%;
+               transform: translate(-50%, -50%);
+          }
      }
 
      ul {
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          text-align: center;
+
           li {
                font-weight: 500;
                cursor: default;
