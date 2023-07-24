@@ -47,24 +47,57 @@ const monthsNames = [
 ];
 
 export function Calendar() {
-     const currentDate = new Date();
-     const currentYear = currentDate.getFullYear();
-     const currentMonth = currentDate.getMonth();
+     const date = new Date();
+     const currYear = date.getFullYear();
+     const currMonth = date.getMonth();
 
-     const daysInCurrentMonth = getMonthDays(currentYear, currentMonth);
+     //const daysInCurrentMonth = getMonthDays(currentYear, currentMonth);
+
+     const renderCalendar = () => {
+          let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(), // getting first day of month
+               lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), // getting last date of month
+               lastDayofMonth = new Date(
+                    currYear,
+                    currMonth,
+                    lastDateofMonth
+               ).getDay(), // getting last day of month
+               lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate(); // getting last date of previous month
+          let liTag = "";
+          for (let i = firstDayofMonth; i > 0; i--) {
+               // creating li of previous month last days
+               liTag += `<li class="inactive">${
+                    lastDateofLastMonth - i + 1
+               }</li>`;
+          }
+          for (let i = 1; i <= lastDateofMonth; i++) {
+               // creating li of all days of current month
+               // adding active class to li if the current day, month, and year matched
+               let isToday =
+                    i === date.getDate() &&
+                    currMonth === new Date().getMonth() &&
+                    currYear === new Date().getFullYear()
+                         ? "active"
+                         : "";
+               liTag += `<li class="${isToday}">${i}</li>`;
+          }
+          for (let i = lastDayofMonth; i < 6; i++) {
+               // creating li of next month first days
+               liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`;
+          }
+     };
 
      return (
           <Wrapper>
                <header>
                     <p className="current-date">
-                         {monthsNames[currentMonth]} {currentYear}
+                         {monthsNames[currMonth]} {currYear}
                     </p>
                     <Icons>
                          <i className="bi bi-chevron-left" />
                          <i className="bi bi-chevron-right" />
                     </Icons>
                </header>
-               <CalendarContent>
+               <CalendarContent id="calendar">
                     <ul className="weeks">
                          <li>D</li>
                          <li>S</li>
