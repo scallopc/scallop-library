@@ -1,8 +1,6 @@
 import React from "react";
 import { CalendarContent, Icons, Wrapper } from "./styles";
 
-type CalendarProps = {};
-
 type Day = {
      day: number;
      isCurrentMonth: boolean;
