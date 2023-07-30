@@ -106,7 +106,10 @@ export function Calendar() {
                          {monthsNames[currMonth]} {currYear}
                     </p>
                     <Icons>
-                         <i className="bi bi-chevron-left" />
+                         <i
+                              className="bi bi-chevron-left"
+                              onClick={() => getMonthDays}
+                         />
                          <i className="bi bi-chevron-right" />
                     </Icons>
                </header>
