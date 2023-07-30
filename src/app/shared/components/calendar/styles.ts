@@ -47,10 +47,10 @@ export const CalendarContent = styled.div`
           width: calc(100% / 7);
           font-size: 1.07rem;
 
-          &:active {
+          &.active {
                color: #fff;
           }
-          &:inactive {
+          &.inactive {
                color: #aaa;
           }
           &::before {
