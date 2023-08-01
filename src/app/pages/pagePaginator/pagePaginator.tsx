@@ -12,7 +12,7 @@ import {
      TableRow,
 } from "../styles";
 import { Paginator } from "../../shared/components";
-import { getRandomUserService } from "../../shared/service";
+import { getCountriesService } from "../../shared/service";
 import Properties from "../properties/properties";
 
 export function PagePaginator() {
@@ -37,10 +37,11 @@ export function PagePaginator() {
      }, []);
 
      const handleNamesList = () => {
-          getRandomUserService()
+          getCountriesService()
                .then((res: any) => {
-                    const data = res.data.results;
+                    const data = res.data;
                     setNames(data);
+                    console.log(data);
                })
                .catch(() => {});
      };
@@ -115,8 +116,9 @@ export function PagePaginator() {
                               />`}
                                    </pre>
                               </Detail>
+                              {console.log(displayedNames)}
                               {displayedNames?.map((item, i) => {
-                                   return <div key={i}>{item.name.first}</div>;
+                                   return <div key={i}>{item.name}</div>;
                               })}
                               <Paginator
                                    currentPage={currentPage}

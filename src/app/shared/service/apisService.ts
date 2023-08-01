@@ -2,9 +2,9 @@ import axios from "axios";
 
 const HTTP = axios.create();
 
-export const getUsersService = () => {
+export const getCountriesService = () => {
      return new Promise((resolve, reject) => {
-          HTTP.get("https://jsonplaceholder.typicode.com/users")
+          HTTP.get("https://restcountries.com/v2/all")
                .then((data) => {
                     if (!data) {
                          reject("mensagem de error");
