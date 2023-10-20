@@ -20,6 +20,7 @@ import {
      BtnDisabled,
      BtnOnlyIcon,
      BtnWithIcon,
+     BtnDanger
 } from "./buttonsType";
 
 export function PageButtons() {
@@ -95,6 +96,7 @@ export function PageButtons() {
                          <BtnOnlyIcon />
                          <BtnRounded />
                          <BtnDisabled />
+                         <BtnDanger />
                          <br />
                          <Properties data={dataProps} />
                     </DocumentationContainer>

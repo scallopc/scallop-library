@@ -17,7 +17,7 @@ export type IButton = IButtonType &
           onClick?: () => void;
           icon?: any;
           label?: string;
-          isLoading?: boolean;
+          loading?: boolean;
           disabled?: boolean;
           rounded?: boolean;
      };
