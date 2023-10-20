@@ -1,5 +1,5 @@
 import { IButton } from "./buttons.model";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 // Estilos para os diferentes tipos
 const primary = (props: IButton) => css`
@@ -75,9 +75,10 @@ const text = (props: IButton) => css`
 `;
 
 const danger = (props: IButton) => css`
-     color: ${(props) => props.theme.text.focus};
+     color: #fff;
      background-color: #ff3b3b;
      border: none;
+
      &:hover {
           background-color: #de4747;
      }
@@ -125,4 +126,20 @@ export const Container = styled.button<IButton>`
      ${(props) => props.sm && smallStyles}
      ${(props) => props.md && mediumStyles}
      ${(props) => props.lg && largeStyles}
+`;
+
+const spiner = keyframes`
+ 0% {
+   -webkit-transform: rotate(0);
+   transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  `;
+
+export const Load = styled.i`
+  -webkit-animation: ${spiner} 1s linear infinite both;
+  animation: ${spiner} 1s linear infinite both;
 `;

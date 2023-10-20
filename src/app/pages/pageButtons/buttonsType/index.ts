@@ -5,3 +5,4 @@ export * from "./btnPrimary/btnPrimary";
 export * from "./btnRounded/btnRounded";
 export * from "./btnText/btnText";
 export * from "./btnWithIcon/btnWithIcon";
+export * from "./btnDanger/btnDanger";

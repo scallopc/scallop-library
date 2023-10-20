@@ -1,12 +1,12 @@
 import { IconName } from "@fortawesome/fontawesome-svg-core";
-import { Container } from "./styles";
+import { Container, Load } from "./styles";
 import { IButton } from "./buttons.model";
 
 export function Button({
      sm,
      md = true,
      lg,
-     primary = true,
+     primary,
      outline,
      danger,
      text,
@@ -14,7 +14,7 @@ export function Button({
      disabled,
      icon,
      label,
-     isLoading,
+     loading,
      rounded,
 }: IButton) {
      return (
@@ -23,7 +23,7 @@ export function Button({
                label={label}
                icon={icon}
                disabled={disabled}
-               isLoading={isLoading}
+               loading={loading}
                rounded={rounded}
                primary={primary}
                outline={outline}
@@ -33,8 +33,13 @@ export function Button({
                md={md}
                lg={lg}
           >
-               <i className={icon} />
-               <span>{label}</span>
+             {loading && <Load className="fa-solid fa-spinner" />}
+      {!loading && (
+        <>
+          <i className={icon} />
+          <span>{label}</span>
+        </>
+      )}
           </Container>
      );
 }
