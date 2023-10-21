@@ -10,6 +10,7 @@ import {
      PageToggleSwitch,
      PagePaginator,
      PageCalendar,
+     PageToast,
 } from "../pages";
 
 export default function Routes(props) {
@@ -36,6 +37,7 @@ export default function Routes(props) {
                     <Route path="/colorpicker" component={PageColorPicker} />
                     <Route path="/paginator" component={PagePaginator} />
                     <Route path="/table" component={PageTable} />
+                    <Route path="/toast" component={PageToast} />
                     <Route path="/toggle-switch" component={PageToggleSwitch} />
                </Switch>
           </ContainerMain>
