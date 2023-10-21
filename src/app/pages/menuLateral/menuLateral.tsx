@@ -42,6 +42,7 @@ export function MenuLateral(props) {
                          {/* <MenuRoutes title="Progress" to="/progress" /> */}
                          {/* <MenuRoutes title="Radio" to="/radio" /> */}
                          <MenuRoutes title="Table" to="/table" />
+                         <MenuRoutes title="Toast" to="/toast" />
                          {/* <MenuRoutes title="Tabs" to="/tabs" /> */}
                          <MenuRoutes
                               title="Toggle Switch"
