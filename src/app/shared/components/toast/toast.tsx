@@ -5,7 +5,7 @@ import {
      ContentIconText,
      Icon,
      IconClose,
-     TextContainer,
+     MsgContainer,
 } from "./styles";
 
 export interface IToastProps {
@@ -19,24 +19,22 @@ export interface IToastRef {
 
 interface ToastConfig {
      severity: string;
-     summary: string;
-     detail: string;
-     life: number;
+     message: string;
 }
 
 const Toast = (_, ref: React.Ref<IToastRef>) => {
      const [toasts, setToasts] = useState([]); // Lista de toasts
      const [showToast, setShowToast] = useState(false);
 
-     // useEffect(() => {
-     //      if (toasts.length > 0) {
-     //           const timer = setTimeout(() => {
-     //                removeToast(0); // Remove o toast mais antigo após um período de tempo
-     //           }, toasts[0].life);
+     useEffect(() => {
+          if (toasts.length > 0) {
+               const timer = setTimeout(() => {
+                    removeToast(0); // Remove o toast mais antigo após um período de tempo
+               }, 3000);
 
-     //           return () => clearTimeout(timer);
-     //      }
-     // }, [toasts]);
+               return () => clearTimeout(timer);
+          }
+     }, [toasts]);
 
      const removeToast = (index) => {
           setToasts((prevToasts) => prevToasts.filter((_, i) => i !== index));
@@ -60,28 +58,21 @@ const Toast = (_, ref: React.Ref<IToastRef>) => {
                     >
                          <ContentIconText>
                               {toastConfig.severity === "success" && (
-                                   <Icon className="fa-solid fa-check" />
+                                   <Icon className="bi bi-check-circle-fill" />
                               )}
                               {toastConfig.severity === "error" && (
-                                   <Icon className="fa-solid fa-xmark" />
+                                   <Icon className="bi bi-x-circle-fill"></Icon>
                               )}
                               {toastConfig.severity === "warn" && (
-                                   <Icon className="fa-solid fa-triangle-exclamation" />
+                                   <Icon className="bi bi-exclamation-circle-fill" />
                               )}
                               {toastConfig.severity === "info" && (
-                                   <Icon className="fa-solid fa-info" />
+                                   <Icon className="bi bi-info-circle-fill" />
                               )}
-                              <TextContainer>
-                                   <span className="summary">
-                                        {toastConfig.summary}
-                                   </span>
-                                   <span className="detail">
-                                        {toastConfig.detail}
-                                   </span>
-                              </TextContainer>
+                              <MsgContainer>{toastConfig.message}</MsgContainer>
                          </ContentIconText>
                          <IconClose
-                              className="fa-solid fa-xmark"
+                              className="bi bi-x"
                               onClick={() => removeToast(index)}
                          />
                     </Content>

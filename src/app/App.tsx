@@ -31,7 +31,7 @@ export default function App(props) {
 
      return (
           <div>
-               <ThemeProvider theme={light}>
+               <ThemeProvider theme={theme}>
                     <HashRouter>
                          <GlobalStyle />
                          <Routes

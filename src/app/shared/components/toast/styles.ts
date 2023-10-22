@@ -9,6 +9,7 @@ export const Container = styled.div`
      display: flex;
      flex-direction: column;
      gap: 15px;
+     max-width: 500px;
 `;
 
 export const Icon = styled.i`
@@ -16,12 +17,31 @@ export const Icon = styled.i`
      border-radius: 100px;
 `;
 
+export const IconClose = styled.i`
+     padding: 2px;
+     border-radius: 50%;
+     cursor: pointer;
+     font-size: 20px;
+`;
+
+export const MsgContainer = styled.div`
+     display: flex;
+     flex-direction: column;
+     margin-left: 10px;
+     font-weight: 400;
+     font-size: 12px;
+`;
+
+export const ContentIconText = styled.div`
+     display: flex;
+     align-items: center;
+`;
+
 export const Content = styled.div`
      display: flex;
      gap: 10px;
      align-items: center;
      justify-content: space-between;
-     background-color: #fff;
      padding: 15px;
      border-radius: 5px;
      z-index: 1000;
@@ -34,60 +54,82 @@ export const Content = styled.div`
      }
 
      &.success {
-          border-left-color: green;
+          border-left-color: #06c270;
+          background-color: #e3fff1;
+
           ${Icon} {
-               color: green;
+               color: #06c270;
+          }
+
+          ${MsgContainer} {
+               color: #1ecb80;
+          }
+
+          ${IconClose} {
+               color: #1ecb80;
+               &:hover {
+                    background: #cef4e1;
+               }
           }
      }
 
      &.error {
-          border-left-color: red;
+          border-left-color: #ff3b3b;
+          background-color: #ffe6e6;
+
           ${Icon} {
-               color: red;
+               color: #ff3b3b;
+          }
+
+          ${MsgContainer} {
+               color: #ef5656;
+          }
+
+          ${IconClose} {
+               color: #ef5656;
+               &:hover {
+                    background: #fbcdcd;
+               }
           }
      }
 
      &.info {
-          border-left-color: blue;
+          border-left-color: #0063f7;
+          background-color: #e5f0ff;
+
           ${Icon} {
-               color: blue;
+               color: #0063f7;
+          }
+
+          ${MsgContainer} {
+               color: #5590e9;
+          }
+
+          ${IconClose} {
+               color: #5590e9;
+               &:hover {
+                    background-color: #d0e4ff;
+               }
           }
      }
 
      &.warn {
-          border-left-color: yellow;
+          border-left-color: #ff8800;
+          background-color: #fff8e6;
+
           ${Icon} {
-               color: yellow;
+               color: #ff8800;
           }
-     }
-`;
 
-export const TextContainer = styled.div`
-     display: flex;
-     flex-direction: column;
-     margin-left: 10px;
+          ${MsgContainer} {
+               color: #ec9f46;
+          }
 
-     .summary {
-          font-weight: 600;
-          font-size: 14px;
-     }
-
-     .detail {
-          font-weight: 400;
-          font-size: 12px;
-     }
-`;
-
-export const ContentIconText = styled.div`
-     display: flex;
-`;
-
-export const IconClose = styled.i`
-     padding: 3px 5px;
-     border-radius: 50%;
-     cursor: pointer;
-
-     &:hover {
-          background: antiquewhite;
+          ${IconClose} {
+               color: #ec9f46;
+               &:hover {
+                    background-color: #fae9bd;
+               }
+          }
      }
 `;
