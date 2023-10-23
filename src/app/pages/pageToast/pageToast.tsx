@@ -21,54 +21,48 @@ export function PageToast() {
      // const toastRef2 = useRef()
 
      const handleClickSuccess = () => {
-          showSuccess("", "Logged in succesfully");
+          showSuccess("Logged in succesfully");
      };
 
      const handleClickError = () => {
-          showError("ERROR", "Logged in FAILL");
+          showError(
+               "Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+          );
      };
 
      const handleClickInfo = () => {
-          showInfo("Info", "Logged in FAILL");
+          showInfo("Logged in FAILL");
      };
 
      const handleClickWarn = () => {
-          showWarn("Warn", "Logged in FAILL");
+          showWarn("Logged in FAILL");
      };
 
-     const showSuccess = (summary: string, detail: string) => {
+     const showSuccess = (message: string) => {
           toast.current.show({
                severity: "success",
-               summary: summary,
-               detail: detail,
-               life: 3000,
+               message: message,
           });
      };
 
-     const showError = (summary: string, detail: string) => {
+     const showError = (message: string) => {
           toast.current.show({
                severity: "error",
-               summary: summary,
-               detail: detail,
-               life: 3000,
+               message: message,
           });
      };
 
-     const showWarn = (summary: string, detail: string) => {
+     const showWarn = (message: string) => {
           toast.current.show({
                severity: "warn",
-               summary: summary,
-               detail: detail,
-               life: 3000,
+               message: message,
           });
      };
 
-     const showInfo = (summary: string, detail: string) => {
+     const showInfo = (message: string) => {
           toast.current.show({
                severity: "info",
-               summary: summary,
-               detail: detail,
-               life: 3000,
+               message: message,
           });
      };
 
@@ -97,7 +91,7 @@ export function PageToast() {
                <Box>
                     <H5>Documentation</H5>
                     <DocumentationContainer>
-                         <p>Toast details</p>
+                         <p>Toast is used to display messages in an overlay.</p>
                          <Content>
                               <h3>Basic</h3>
                               <Toast ref={toast} />
