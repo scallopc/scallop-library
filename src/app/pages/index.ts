@@ -4,6 +4,6 @@ export * from "./pageColorPicker/pageColorPicker";
 export * from "./pageHome/pageHome";
 export * from "./pagePaginator/pagePaginator";
 export * from "./pageTable/pageTable";
-export * from "./pageToggleSwitch/pageToggleSwitch";
+export * from "./pageToggle/pageToggle";
 export * from "./pageCalendar/pageCalendar";
 export * from "./pageToast/pageToast";

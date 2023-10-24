@@ -8,10 +8,10 @@ import {
      H2,
      H5,
 } from "../styles";
-import { ToggleSwitch } from "../../shared/components";
+import { Toggle } from "../../shared/components";
 import Properties from "../properties/properties";
 
-export function PageToggleSwitch() {
+export function PageToggle() {
      const [isChecked, setIsChecked] = useState(false);
 
      const toggleData = [
@@ -66,7 +66,7 @@ export function PageToggleSwitch() {
                                    </pre>
                               </Detail>
 
-                              <ToggleSwitch
+                              <Toggle
                                    checked={isChecked}
                                    onChange={() => setIsChecked(!isChecked)}
                               />
