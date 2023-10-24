@@ -7,7 +7,7 @@ import {
      PageTable,
      PageColorPicker,
      PageButtons,
-     PageToggleSwitch,
+     PageToggle,
      PagePaginator,
      PageCalendar,
      PageToast,
@@ -38,7 +38,7 @@ export default function Routes(props) {
                     <Route path="/paginator" component={PagePaginator} />
                     <Route path="/table" component={PageTable} />
                     <Route path="/toast" component={PageToast} />
-                    <Route path="/toggle-switch" component={PageToggleSwitch} />
+                    <Route path="/toggle" component={PageToggle} />
                </Switch>
           </ContainerMain>
      );

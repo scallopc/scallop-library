@@ -1,5 +1,5 @@
 import { HashRouter } from "react-router-dom";
-import { MenuRoutes, ToggleSwitch } from "../../shared/components";
+import { MenuRoutes, Toggle } from "../../shared/components";
 import { ContainerMenuLateral, MenuContainer } from "./styles";
 
 export function MenuLateral(props) {
@@ -13,14 +13,11 @@ export function MenuLateral(props) {
                     <MenuContainer>
                          <div className="flex gap-3">
                               <p>Dark</p>
-                              <ToggleSwitch
-                                   checked={check}
-                                   onChange={switchTheme}
-                              />
+                              <Toggle checked={check} onChange={switchTheme} />
                          </div>
                          <div className="flex gap-3">
                               <p>en</p>
-                              <ToggleSwitch
+                              <Toggle
                                    checked={checkLanguage}
                                    onChange={setLanguage}
                               />
@@ -44,10 +41,7 @@ export function MenuLateral(props) {
                          <MenuRoutes title="Table" to="/table" />
                          <MenuRoutes title="Toast" to="/toast" />
                          {/* <MenuRoutes title="Tabs" to="/tabs" /> */}
-                         <MenuRoutes
-                              title="Toggle Switch"
-                              to="/toggle-switch"
-                         />
+                         <MenuRoutes title="Toggle" to="/toggle" />
                     </MenuContainer>
                </ContainerMenuLateral>
           </HashRouter>
