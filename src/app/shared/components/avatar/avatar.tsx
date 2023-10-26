@@ -1,6 +1,3 @@
-import { faUser } from "@fortawesome/pro-regular-svg-icons";
-import { faCamera } from "@fortawesome/pro-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Container,
   HoverChangeImage,
@@ -52,7 +49,7 @@ export default function Avatar({
         </Initials>
       );
     } else {
-      return <FontAwesomeIcon icon={faUser} />;
+      return <i className="bi bi-person" />;
     }
   };
 
@@ -66,7 +63,7 @@ export default function Avatar({
     if (edit) {
       return (
         <HoverChangeImage>
-          <FontAwesomeIcon icon={faCamera} />
+         <i className="bi bi-camera" />
           {/* <input hidden id="uploadImage" name="file" type="file" accept=".jpg, .png, .jpeg, .webp" onChange={(e) => a(e)}/> */}
         </HoverChangeImage>
       );
