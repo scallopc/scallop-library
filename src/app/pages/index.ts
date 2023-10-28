@@ -7,3 +7,4 @@ export * from "./pageTable/pageTable";
 export * from "./pageToggle/pageToggle";
 export * from "./pageCalendar/pageCalendar";
 export * from "./pageToast/pageToast";
+export * from "./pageAvatar/pageAvatar";
