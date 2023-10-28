@@ -24,7 +24,7 @@ export function MenuLateral(props) {
                          </div>
 
                          <MenuRoutes title="Home" to="/home" />
-                         {/* <MenuRoutes title="Avatar" to="/avatar" /> */}
+                     <MenuRoutes title="Avatar" to="/avatar" />
                          {/* <MenuRoutes title="Breadcrumb" to="/breadcrumb" /> */}
                          <MenuRoutes title="Button" to="/button" />
                          <MenuRoutes title="Calendar" to="/calendar" />

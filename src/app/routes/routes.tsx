@@ -11,6 +11,7 @@ import {
      PagePaginator,
      PageCalendar,
      PageToast,
+     PageAvatar
 } from "../pages";
 
 export default function Routes(props) {
@@ -32,6 +33,7 @@ export default function Routes(props) {
                />
                <Switch>
                     <Route path="/home" component={PageHome} />
+                    <Route path="/avatar" component={PageAvatar} />
                     <Route path="/button" component={PageButtons} />
                     <Route path="/calendar" component={PageCalendar} />
                     <Route path="/colorpicker" component={PageColorPicker} />
