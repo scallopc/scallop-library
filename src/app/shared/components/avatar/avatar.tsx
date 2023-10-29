@@ -19,7 +19,7 @@ export type IAvatar = {
   edit?: true;
 };
 
-export default function Avatar({
+export function Avatar({
   size,
   image,
   active,
