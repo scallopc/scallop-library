@@ -84,11 +84,11 @@ export function PageAvatar() {
             <div className="flex align-items-center gap-2">
               <Avatar
                 size="small"
-                image="https://avatars.githubusercontent.com/u/39253660?v=4"
+                image="https://avatars.githubusercontent.com/u/2578009?s=80&v=4"
               />
               <Avatar
                 size="medium"
-                image="https://avatars.githubusercontent.com/u/39253660?v=4"
+                image="https://avatars.githubusercontent.com/u/53920655?v=4"
               />
               <Avatar
                 size="large"
