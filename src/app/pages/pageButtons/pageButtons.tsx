@@ -1,4 +1,4 @@
-import { Button } from "../../shared/components";
+import { Button } from "../../components";
 import Properties from "../properties/properties";
 import {
      Box,

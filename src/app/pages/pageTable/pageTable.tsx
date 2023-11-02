@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Table, Column, TreeTable, Button } from "../../shared/components";
+import { Table, Column, TreeTable, Button } from "../../components";
 import {
      Container,
      Box,

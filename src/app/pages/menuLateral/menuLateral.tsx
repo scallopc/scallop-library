@@ -1,5 +1,5 @@
 import { HashRouter } from "react-router-dom";
-import { MenuRoutes, Toggle } from "../../shared/components";
+import { MenuRoutes, Toggle } from "../../components";
 import { ContainerMenuLateral, MenuContainer } from "./styles";
 
 export function MenuLateral(props) {

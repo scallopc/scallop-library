@@ -8,7 +8,7 @@ import {
      H2,
      H5,
 } from "../styles";
-import { Toggle } from "../../shared/components";
+import { Toggle } from "../../components";
 import Properties from "../properties/properties";
 
 export function PageToggle() {

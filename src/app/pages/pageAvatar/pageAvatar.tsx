@@ -1,4 +1,4 @@
-import { Avatar } from "../../shared/components";
+import { Avatar } from "../../components";
 import Properties from "../properties/properties";
 import {
      Box,

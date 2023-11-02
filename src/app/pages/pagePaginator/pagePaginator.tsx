@@ -11,7 +11,7 @@ import {
      Table,
      TableRow,
 } from "../styles";
-import { Paginator } from "../../shared/components";
+import { Paginator } from "../../components";
 import { getCountriesService } from "../../service";
 import Properties from "../properties/properties";
 

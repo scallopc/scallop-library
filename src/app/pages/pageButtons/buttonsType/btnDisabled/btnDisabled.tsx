@@ -1,6 +1,6 @@
 import React from "react";
 import { Content, Detail, SmallDetail } from "../../../styles";
-import { Button } from "../../../../shared/components";
+import { Button } from "../../../../components";
 
 export function BtnDisabled() {
      return (
