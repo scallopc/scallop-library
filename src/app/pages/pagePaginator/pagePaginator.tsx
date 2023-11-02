@@ -12,7 +12,7 @@ import {
      TableRow,
 } from "../styles";
 import { Paginator } from "../../shared/components";
-import { getCountriesService } from "../../shared/service";
+import { getCountriesService } from "../../service";
 import Properties from "../properties/properties";
 
 export function PagePaginator() {

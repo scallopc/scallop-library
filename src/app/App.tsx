@@ -1,7 +1,7 @@
 import Routes from "./routes/routes";
 import GlobalStyle from "./globalStyles/globalStyle";
 import { dark, light } from "./globalStyles/themes";
-import { usePersistedTheme, usePersistedLanguage } from "./shared/hooks";
+import { usePersistedTheme, usePersistedLanguage } from "./hooks";
 import { ThemeProvider } from "styled-components";
 import { HashRouter } from "react-router-dom";
 import "./i18n/index";

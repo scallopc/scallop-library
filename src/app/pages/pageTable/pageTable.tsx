@@ -16,7 +16,7 @@ import {
      getUserGithubService,
      getBrokersService,
      ProductService,
-} from "../../shared/service";
+} from "../../service";
 import Properties from "../properties/properties";
 
 export function PageTable() {
