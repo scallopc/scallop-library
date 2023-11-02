@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Content, SmallDetail } from "../styles";
-import { Column, Table } from "../../shared/components";
+import { Column, Table } from "../../components";
 
 export default function Properties(props) {
      const { data } = props;

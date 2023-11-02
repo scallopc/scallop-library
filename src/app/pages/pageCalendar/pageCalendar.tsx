@@ -9,7 +9,7 @@ import {
      H5,
 } from "../styles";
 import Properties from "../properties/properties";
-import { Calendar } from "../../shared/components";
+import { Calendar } from "../../components";
 
 export function PageCalendar() {
      return (

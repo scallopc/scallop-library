@@ -10,7 +10,7 @@ import {
 } from "../styles";
 
 import Properties from "../properties/properties";
-import ColorPicker from "../../shared/components/colorPicker/colorPicker";
+import ColorPicker from "../../components/colorPicker/colorPicker";
 
 export function PageColorPicker() {
      const [colorPicked, setColorPicked] = useState<string>("#000000");
