@@ -14,7 +14,7 @@ import {
 import { Button, Paginator } from "../../components";
 import { getCountriesService } from "../../service";
 import Properties from "../properties/properties";
-import Toast from "../../shared/components/toast/toast";
+import Toast from "../../components/toast/toast";
 
 export function PageToast() {
      const toast = useRef(null);
