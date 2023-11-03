@@ -57,7 +57,7 @@ export function PageTable() {
      const handleColStatus = (col) => {
           return (
                <span className="flex gap-1 align-items-center">
-                    {col?.first_name} <i className="fa-regular fa-user" />
+                    {col?.first_name} <i className="bi bi-person" />
                </span>
           );
      };

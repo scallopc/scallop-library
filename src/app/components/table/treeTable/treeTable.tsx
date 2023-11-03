@@ -115,8 +115,8 @@ export function TreeTable({
                                                                                           .data
                                                                                           .id
                                                                                 )
-                                                                                     ? "fa-solid fa-chevron-down"
-                                                                                     : "fa-solid fa-chevron-right"
+                                                                                     ? "bi bi-chevron-down"
+                                                                                     : "bi bi-chevron-right"
                                                                            }
                                                                       />
                                                                  </IconExpander>

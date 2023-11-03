@@ -14,7 +14,7 @@ export function BtnRounded() {
                          {`<Button
                               primary
                               md
-                              icon="fa-regular fa-plus"
+                              icon="bi bi-plus"
                               label="Medium"
                               rounded
                          />`}
@@ -27,7 +27,7 @@ export function BtnRounded() {
                          />`}
                          <br />
                          {`<Button
-                            primary md icon="fa-regular fa-user"
+                            primary md icon="bi bi-person"
                               rounded
                          />`}
                     </pre>
@@ -36,12 +36,12 @@ export function BtnRounded() {
                     <Button
                          primary
                          md
-                         icon="fa-regular fa-plus"
+                         icon="bi bi-plus"
                          label="Medium"
                          rounded
                     />
                     <Button outline md label="Medium" rounded />
-                    <Button primary md icon="fa-regular fa-user" rounded />
+                    <Button primary md icon="bi bi-person" rounded />
                </div>
           </Content>
      );

@@ -16,12 +16,12 @@ export function BtnOnlyIcon() {
                          {` <Button
                     primary
                     md
-                    icon="fa-regular fa-plus"
+                    icon="bi bi-plus"
                />`}
                     </pre>
                </Detail>
                <div className="flex align-items-center gap-2">
-                    <Button primary md icon="fa-regular fa-plus" />
+                    <Button primary md  icon="bi bi-plus" />
                </div>
           </Content>
      );

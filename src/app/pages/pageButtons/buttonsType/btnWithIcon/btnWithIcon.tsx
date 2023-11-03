@@ -15,7 +15,7 @@ export function BtnWithIcon() {
                          {`<Button
                                         outline
                                         md
-                                        icon="fa-regular fa-plus"
+                                        icon="bi bi-plus"
                                         label="Medium"
                                       />`}
                     </pre>
@@ -24,7 +24,7 @@ export function BtnWithIcon() {
                     <Button
                          outline
                          md
-                         icon="fa-regular fa-plus"
+                         icon="bi bi-plus"
                          label="Medium"
                     />
                </div>

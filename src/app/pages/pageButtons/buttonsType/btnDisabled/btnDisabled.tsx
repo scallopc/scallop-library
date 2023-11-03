@@ -12,7 +12,7 @@ export function BtnDisabled() {
                          {`<Button
                               primary
                               md
-                              icon="fa-regular fa-plus"
+                              icon="bi bi-plus"
                               label="Medium"
                               disabled
                               />`}
@@ -26,7 +26,7 @@ export function BtnDisabled() {
                     <Button
                          primary
                          md
-                         icon="fa-regular fa-plus"
+                         icon="bi bi-plus"
                          label="Medium"
                          disabled
                     />

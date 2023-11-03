@@ -1,4 +1,3 @@
-import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { Container, Load } from "./styles";
 import { IButton } from "./buttons.model";
 
@@ -33,7 +32,7 @@ export function Button({
                md={md}
                lg={lg}
           >
-             {loading && <Load className="fa-solid fa-spinner" />}
+             {loading && <Load className="bi bi-circle" />}
       {!loading && (
         <>
           <i className={icon} />

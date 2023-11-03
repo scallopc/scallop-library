@@ -15,9 +15,9 @@ export function Column({
      const [sortDirection, setSortDirection] = useState<"asc" | "desc" | null>(
           null
      );
-     const iconDefault = <i className="fa-solid fa-arrow-right-arrow-left" />;
-     const iconAsc = <i className="fa-solid fa-arrow-up-short-wide" />;
-     const iconDesc = <i className="fa-solid fa-arrow-down-short-wide" />;
+     const iconDefault = <i className="bi bi-arrow-down-up" />;
+     const iconAsc = <i className="bi bi-sort-up" />;
+     const iconDesc = <i className="bi bi-sort-down" />;
 
      if (body) {
           return null; // O componente Column não renderiza nada diretamente se houver um template body definido
