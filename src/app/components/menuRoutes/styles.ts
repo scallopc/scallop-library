@@ -4,6 +4,13 @@ export const IconContainer = styled.i`
      font-size: 18px;
 `;
 
+export const InProgress = styled.span`
+    background-color: #3060f0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+`;
+
 export const Container = styled.div`
      width: fit-content;
      min-height: 30px;

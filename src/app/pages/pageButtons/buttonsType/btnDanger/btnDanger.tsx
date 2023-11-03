@@ -12,7 +12,7 @@ export function BtnDanger() {
                          {`<Button
                               primary
                               md
-                              icon="fa-regular fa-plus"
+                              icon="bi bi-plus"
                               label="Medium"
                               disabled
                               />`}
@@ -25,7 +25,7 @@ export function BtnDanger() {
                <div className="flex align-items-center gap-2">
                     <Button
                          danger
-                         icon="fa-regular fa-trash-can"
+                         icon="bi bi-trash"
                          label="Danger"
                     />
                </div>
