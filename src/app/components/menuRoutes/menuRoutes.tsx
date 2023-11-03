@@ -1,13 +1,14 @@
-import { Container, IconContainer } from "./styles";
+import { Container, IconContainer, InProgress } from "./styles";
 import { Link, useLocation } from "react-router-dom";
 
 export type IMenuRoutes = {
      to: string;
-     icon?: any;
+     icon?: string;
+     inProgress?: boolean;
      title: string;
 };
 
-export function MenuRoutes({ to, icon, title }: IMenuRoutes) {
+export function MenuRoutes({ to, icon, title, inProgress }: IMenuRoutes) {
      const location = useLocation();
      const isActive = location.pathname === to;
      const btnClass = isActive ? "active" : " ";
@@ -17,6 +18,7 @@ export function MenuRoutes({ to, icon, title }: IMenuRoutes) {
                <Container className={btnClass}>
                     <IconContainer className={icon} />
                     <span>{title}</span>
+                    {inProgress &&    <InProgress />}
                </Container>
           </Link>
      );

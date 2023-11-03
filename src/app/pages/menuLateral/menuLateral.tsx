@@ -27,9 +27,9 @@ export function MenuLateral(props) {
                      <MenuRoutes title="Avatar" to="/avatar" />
                          {/* <MenuRoutes title="Breadcrumb" to="/breadcrumb" /> */}
                          <MenuRoutes title="Button" to="/button" />
-                         <MenuRoutes title="Calendar" to="/calendar" />
+                         <MenuRoutes title="Calendar" to="/calendar" inProgress={true}/>
                          {/* <MenuRoutes title="Cards" to="/cards" /> */}
-                         <MenuRoutes title="ColorPicker" to="/colorpicker" />
+                         <MenuRoutes title="ColorPicker" to="/colorpicker" inProgress={true}/>
                          {/* <MenuRoutes title="Colors" to="/colors" /> */}
                          {/* <MenuRoutes title="Dropdown" to="/dropdown" /> */}
                          {/* <MenuRoutes title="Heading" to="/heading" /> */}
@@ -38,7 +38,7 @@ export function MenuLateral(props) {
                          <MenuRoutes title="Paginator" to="/paginator" />
                          {/* <MenuRoutes title="Progress" to="/progress" /> */}
                          {/* <MenuRoutes title="Radio" to="/radio" /> */}
-                         <MenuRoutes title="Table" to="/table" />
+                         <MenuRoutes title="Table" to="/table" inProgress={true}/>
                          <MenuRoutes title="Toast" to="/toast" />
                          {/* <MenuRoutes title="Tabs" to="/tabs" /> */}
                          <MenuRoutes title="Toggle" to="/toggle" />
