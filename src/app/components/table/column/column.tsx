@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ColumnProps } from "../table.model";
-import { HeaderCell, HeaderCellTH } from "../styles";
+import { HeaderCell, HeaderCellTH, IconSort } from "../styles";
 
 export function Column({
      field,
@@ -46,9 +46,9 @@ export function Column({
 
      return (
           <HeaderCellTH onClick={() => handleSortClick()}>
-               <HeaderCell className={sortable ? "flexible" : ""}>
+               <HeaderCell sortable={sortable}>
                     {header}
-                    {sortable && <span>{SortIcon}</span>}
+                    {sortable && <IconSort>{SortIcon}</IconSort>}
                </HeaderCell>
           </HeaderCellTH>
      );

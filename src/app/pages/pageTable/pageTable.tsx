@@ -131,7 +131,6 @@ export function PageTable() {
                                                   key={i}
                                                   field={col.field}
                                                   header={col.header}
-                                                  sortable
                                              />
                                         ))}
                                    </Table>
