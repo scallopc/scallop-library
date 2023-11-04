@@ -20,10 +20,13 @@ export const HeaderCellTH = styled.th`
 export const HeaderCell = styled.div`
      display: flex;
      align-items: center;
+     gap: ${(props) => props.sortable ? '5px' : 0};
+     cursor: ${(props) => props.sortable ? 'pointer' : 'initial'};
 
-     &.flexible {
-          gap: 5px;
-     }
+`;
+
+export const IconSort = styled.span`
+       font-size: 16px;
 `;
 
 export const DataCellTD = styled.td`
