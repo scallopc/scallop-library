@@ -45,11 +45,19 @@ export function Column({
                : iconDefault;
 
      return (
-          <HeaderCellTH onClick={() => handleSortClick()}>
-               <HeaderCell sortable={sortable}>
-                    {header}
-                    {sortable && <IconSort>{SortIcon}</IconSort>}
-               </HeaderCell>
-          </HeaderCellTH>
+          <>
+               {sortable ? (
+                    <HeaderCellTH onClick={() => handleSortClick()}>
+                         <HeaderCell sortable={sortable}>
+                              {header}
+                              {sortable && <IconSort>{SortIcon}</IconSort>}
+                         </HeaderCell>
+                    </HeaderCellTH>
+               ) : (
+                    <HeaderCellTH>
+                         <HeaderCell>{header}</HeaderCell>
+                    </HeaderCellTH>
+               )}
+          </>
      );
 }

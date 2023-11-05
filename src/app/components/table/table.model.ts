@@ -7,6 +7,7 @@ export type ColumnProps = {
      sortField?: any;
      sortDirection?: any;
      sortable?: boolean;
+     selectionMode?: boolean;
      onClick?: () => void;
 };
 
