@@ -1,6 +1,7 @@
 {
     "translation": {
         "welcome": "Welcome to the best library",
-        "button": "Button"
+        "button": "Button",
+        "properties": "Properties"
     }
 }
