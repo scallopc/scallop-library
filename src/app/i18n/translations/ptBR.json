@@ -2,6 +2,7 @@
     "translation": {
         "welcome": "Bem vindo",
         "button": "Botão",
-        "properties": "Propriedades"
+        "properties": "Propriedades",
+        "documentation": "Documento"
     }
 }
