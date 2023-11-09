@@ -8,3 +8,4 @@ export * from "./table";
 export * from "./toast/toast";
 export * from "./toggle/toggle";
 export * from "./properties/properties";
+export * from "./heightComponent/heightComponent";

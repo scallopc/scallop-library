@@ -11,8 +11,10 @@ import {
      PagePaginator,
      PageCalendar,
      PageToast,
-     PageAvatar
+     PageAvatar,
 } from "../pages";
+import { Header } from "../pages/header/header";
+import { HeightComponent } from "../components";
 
 export default function Routes(props) {
      const { theme, isChecked, setLanguage, isLanguageCheck } = props;
@@ -24,24 +26,38 @@ export default function Routes(props) {
      }, []);
 
      return (
-          <ContainerMain>
-               <MenuLateral
-                    isChecked={isChecked}
-                    switchTheme={(e) => theme(e?.checked)}
-                    setLanguage={() => setLanguage()}
-                    isLanguageCheck={isLanguageCheck}
-               />
-               <Switch>
-                    <Route path="/home" component={PageHome} />
-                    <Route path="/avatar" component={PageAvatar} />
-                    <Route path="/button" component={PageButtons} />
-                    <Route path="/calendar" component={PageCalendar} />
-                    <Route path="/colorpicker" component={PageColorPicker} />
-                    <Route path="/paginator" component={PagePaginator} />
-                    <Route path="/table" component={PageTable} />
-                    <Route path="/toast" component={PageToast} />
-                    <Route path="/toggle" component={PageToggle} />
-               </Switch>
-          </ContainerMain>
+          <>
+               <ContainerMain>
+                    <Header />
+                    <MenuLateral
+                         isChecked={isChecked}
+                         switchTheme={(e) => theme(e?.checked)}
+                         setLanguage={() => setLanguage()}
+                         isLanguageCheck={isLanguageCheck}
+                    />
+                    <HeightComponent>
+                         <Switch>
+                              <Route path="/home" component={PageHome} />
+                              <Route path="/avatar" component={PageAvatar} />
+                              <Route path="/button" component={PageButtons} />
+                              <Route
+                                   path="/calendar"
+                                   component={PageCalendar}
+                              />
+                              <Route
+                                   path="/colorpicker"
+                                   component={PageColorPicker}
+                              />
+                              <Route
+                                   path="/paginator"
+                                   component={PagePaginator}
+                              />
+                              <Route path="/table" component={PageTable} />
+                              <Route path="/toast" component={PageToast} />
+                              <Route path="/toggle" component={PageToggle} />
+                         </Switch>
+                    </HeightComponent>
+               </ContainerMain>
+          </>
      );
 }
