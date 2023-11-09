@@ -8,9 +8,7 @@ import {
      H2,
      H5,
 } from "../styles";
-
-import Properties from "../properties/properties";
-import ColorPicker from "../../components/colorPicker/colorPicker";
+import {ColorPicker, Properties}  from "../../components";
 
 export function PageColorPicker() {
      const [colorPicked, setColorPicked] = useState<string>("#000000");

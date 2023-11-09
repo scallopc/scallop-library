@@ -15,7 +15,7 @@ export default createGlobalStyle`
     color: ${(props) => props.theme.default.color};
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
     line-height: 20px;
   }
 

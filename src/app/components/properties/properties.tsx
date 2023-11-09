@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Content, SmallDetail } from "../styles";
-import { Column, Table } from "../../components";
+import { Content, SmallDetail } from "../../pages/styles";
+import { Column, Table } from "..";
 
-export default function Properties(props) {
+export function Properties(props) {
      const { data } = props;
 
      const columnsProps = [

@@ -1,5 +1,4 @@
-import { Button } from "../../components";
-import Properties from "../properties/properties";
+import { Properties } from "../../components";
 import {
      Box,
      Container,

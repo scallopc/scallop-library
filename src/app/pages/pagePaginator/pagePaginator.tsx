@@ -11,9 +11,8 @@ import {
      Table,
      TableRow,
 } from "../styles";
-import { Paginator } from "../../components";
+import { Paginator, Properties } from "../../components";
 import { getCountriesService } from "../../service";
-import Properties from "../properties/properties";
 
 export function PagePaginator() {
      const [names, setNames] = useState<any>([]);

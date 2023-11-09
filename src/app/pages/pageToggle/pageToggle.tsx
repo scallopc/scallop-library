@@ -8,8 +8,7 @@ import {
      H2,
      H5,
 } from "../styles";
-import { Toggle } from "../../components";
-import Properties from "../properties/properties";
+import { Toggle, Properties} from "../../components";
 
 export function PageToggle() {
      const [isChecked, setIsChecked] = useState(false);

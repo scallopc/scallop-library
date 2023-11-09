@@ -11,9 +11,8 @@ import {
      Table,
      TableRow,
 } from "../styles";
-import { Button, Paginator } from "../../components";
+import { Button, Properties } from "../../components";
 import { getCountriesService } from "../../service";
-import Properties from "../properties/properties";
 import Toast from "../../components/toast/toast";
 
 export function PageToast() {

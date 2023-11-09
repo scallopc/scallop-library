@@ -13,7 +13,7 @@ interface ColorPickerComponentProps {
      handleColorSelected(color: string): void;
 }
 
-export default function ColorPicker(props: ColorPickerComponentProps) {
+export function ColorPicker(props: ColorPickerComponentProps) {
      const saturationRef = React.useRef<any>();
      const saturationSelectorRef = useRef<any>();
      const hueRef = useRef<any>();
