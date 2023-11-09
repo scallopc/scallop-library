@@ -28,7 +28,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "sass": "^1.63.6",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "zustand": "^4.4.6"
   },
   "eslintConfig": {
     "extends": [
