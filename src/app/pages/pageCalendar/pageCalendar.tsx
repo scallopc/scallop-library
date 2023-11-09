@@ -8,8 +8,7 @@ import {
      H2,
      H5,
 } from "../styles";
-import Properties from "../properties/properties";
-import { Calendar } from "../../components";
+import { Calendar, Properties } from "../../components";
 
 export function PageCalendar() {
      return (

@@ -30,7 +30,7 @@ export default function App(props) {
      };
 
      return (
-          <div>
+          <>
                <ThemeProvider theme={theme}>
                     <HashRouter>
                          <GlobalStyle />
@@ -43,6 +43,6 @@ export default function App(props) {
                          {children}
                     </HashRouter>
                </ThemeProvider>
-          </div>
+          </>
      );
 }

@@ -1,5 +1,4 @@
-import { Avatar } from "../../components";
-import Properties from "../properties/properties";
+import { Avatar, Properties } from "../../components";
 import {
      Box,
      Container,

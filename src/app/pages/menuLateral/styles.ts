@@ -18,6 +18,11 @@ export const MenuContainer = styled.div`
     box-shadow: 11px 2px 4px 0px ${(props) => props.theme.default.shadow};
     -webkit-box-shadow: 1px 2px 4px 0px ${(props) => props.theme.default.shadow};
     -moz-box-shadow: 1px 2px 4px 0px ${(props) => props.theme.default.shadow};
+
+    z-index: 1;
+    background: antiquewhite;
+    top: 55px;
+    
 `;
 
 export const H4 = styled(Link)`

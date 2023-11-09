@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Table, Column, TreeTable, Button } from "../../components";
+import { Table, Column, TreeTable, Properties } from "../../components";
 import {
      Container,
      Box,
@@ -17,7 +17,6 @@ import {
      getBrokersService,
      ProductService,
 } from "../../service";
-import Properties from "../properties/properties";
 
 export function PageTable() {
      const [dataTable, setDataTable] = useState([]);
