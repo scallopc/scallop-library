@@ -15,8 +15,10 @@ import {
 } from "../pages";
 import { Header } from "../pages/header/header";
 import { HeightComponent } from "../components";
+import { menuStore } from "../store";
 
 export default function Routes(props) {
+     const {setShowMenu, showMenu} = menuStore()
      const { theme, isChecked, setLanguage, isLanguageCheck } = props;
 
      useEffect(() => {
@@ -29,12 +31,13 @@ export default function Routes(props) {
           <>
                <ContainerMain>
                     <Header />
-                    <MenuLateral
+                    {showMenu &&   <MenuLateral
                          isChecked={isChecked}
                          switchTheme={(e) => theme(e?.checked)}
                          setLanguage={() => setLanguage()}
                          isLanguageCheck={isLanguageCheck}
-                    />
+                    />}
+                  
                     <HeightComponent>
                          <Switch>
                               <Route path="/home" component={PageHome} />
