@@ -18,11 +18,13 @@ export const MenuContainer = styled.div`
     box-shadow: 11px 2px 4px 0px ${(props) => props.theme.default.shadow};
     -webkit-box-shadow: 1px 2px 4px 0px ${(props) => props.theme.default.shadow};
     -moz-box-shadow: 1px 2px 4px 0px ${(props) => props.theme.default.shadow};
-
     z-index: 1;
     background: antiquewhite;
     top: 55px;
-    
+    transition: transform 0.3s ease-in-out;
+  transform: ${(props) =>
+    props.showMenu ? "translateX(0px)" : "translateX(-550px)"};
+
 `;
 
 export const H4 = styled(Link)`
