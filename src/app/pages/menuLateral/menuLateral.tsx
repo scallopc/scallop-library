@@ -5,7 +5,7 @@ import { menuStore } from "../../store";
 
 export function MenuLateral(props) {
      const { switchTheme, isChecked, setLanguage, isLanguageCheck } = props;
-     const {setShowMenu, showMenu} = menuStore  ()
+     const {showMenu} = menuStore  ()
      const check = isChecked.title === "dark" ? true : false;
      const checkLanguage = isLanguageCheck === "en" ? true : false;
 
