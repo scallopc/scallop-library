@@ -1,16 +1,18 @@
 import { HashRouter } from "react-router-dom";
 import { MenuRoutes, Toggle } from "../../components";
 import { ContainerMenuLateral, MenuContainer } from "./styles";
+import { menuStore } from "../../store";
 
 export function MenuLateral(props) {
      const { switchTheme, isChecked, setLanguage, isLanguageCheck } = props;
+     const {setShowMenu, showMenu} = menuStore  ()
      const check = isChecked.title === "dark" ? true : false;
      const checkLanguage = isLanguageCheck === "en" ? true : false;
 
      return (
           <HashRouter>
                <ContainerMenuLateral>
-                    <MenuContainer>
+                    <MenuContainer showMenu={showMenu}>
                          <div className="flex gap-3">
                               <p>Dark</p>
                               <Toggle checked={check} onChange={switchTheme} />
