@@ -102,7 +102,7 @@ export function PageToast() {
                               />
                               <Button
                                    onClick={handleClickError}
-                                   outline
+                                   danger
                                    sm
                                    label="Error"
                               />
@@ -114,7 +114,7 @@ export function PageToast() {
                               />
                               <Button
                                    onClick={handleClickInfo}
-                                   outline
+                                   primary
                                    sm
                                    label="Info"
                               />
