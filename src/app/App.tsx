@@ -6,9 +6,11 @@ import { ThemeProvider } from "styled-components";
 import { HashRouter } from "react-router-dom";
 import "./i18n/index";
 import { useTranslation } from "react-i18next";
+import { themeStore } from "./store";
 
 export default function App(props) {
      const { children } = props;
+     //const {theme, setTheme} = themeStore();
      const {
           t,
           i18n: { changeLanguage, language },
