@@ -14,6 +14,10 @@ export function Header() {
                          onClick={() => setShowMenu(!showMenu)}
                          className="bi bi-list"
                     />
+                    <i
+                         onClick={() => setShowMenu(!showMenu)}
+                         className="bi bi-moon"
+                    />
                </div>
           </Container>
      );
