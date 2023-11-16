@@ -12,8 +12,8 @@ import {
      PageCalendar,
      PageToast,
      PageAvatar,
+     Header
 } from "../pages";
-import { Header } from "../pages/header/header";
 import { HeightComponent } from "../components";
 import { menuStore } from "../store";
 
