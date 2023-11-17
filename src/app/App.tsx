@@ -7,10 +7,11 @@ import { HashRouter } from "react-router-dom";
 import "./i18n/index";
 import { useTranslation } from "react-i18next";
 import { themeStore } from "./store";
+import { useEffect } from "react";
 
 export default function App(props) {
      const { children } = props;
-     //const {theme, setTheme} = themeStore();
+     //const { theme, setTheme } = themeStore();
      const {
           t,
           i18n: { changeLanguage, language },
@@ -30,6 +31,10 @@ export default function App(props) {
           changeLanguage(newLanguage);
           setCurrentLanguage(newLanguage);
      };
+
+     useEffect(() => {
+          console.log(theme);
+     }, []);
 
      return (
           <>
