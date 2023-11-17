@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { Container } from "./styles";
-import { menuStore } from "../../store";
+import { menuStore, themeStore } from "../../store";
 
 export function Header() {
      const { setShowMenu, showMenu } = menuStore();
+     const { setTheme, theme } = themeStore();
      const [isMenuOpen, setIsMenuOpen] = useState(false);
 
      return (
           <Container>
                <div>header</div>
-               <div>
+               <div className="flex gap-2">
                     <i
                          onClick={() => setShowMenu(!showMenu)}
-                         className="bi bi-list"
+                         className="bi bi-list text-base"
                     />
                     <i
-                         onClick={() => setShowMenu(!showMenu)}
-                         className="bi bi-moon"
+                         onClick={() => setTheme(!showMenu)}
+                         className="bi bi-moon text-base"
                     />
                </div>
           </Container>
