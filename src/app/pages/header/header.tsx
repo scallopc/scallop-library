@@ -16,11 +16,11 @@ export function Header() {
                          className="bi bi-list text-base"
                     />
                     <i
-                         onClick={() => setTheme(!showMenu)}
+                         onClick={() => console.log('Theme')}
                          className="bi bi-moon text-base"
                     />
                     <i
-                         onClick={() => setTheme(!showMenu)}
+                         onClick={() => console.log('Language')}
                          className="bi bi-translate text-base"
                     />
                </div>
