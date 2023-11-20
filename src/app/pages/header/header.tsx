@@ -19,6 +19,10 @@ export function Header() {
                          onClick={() => setTheme(!showMenu)}
                          className="bi bi-moon text-base"
                     />
+                    <i
+                         onClick={() => setTheme(!showMenu)}
+                         className="bi bi-translate text-base"
+                    />
                </div>
           </Container>
      );
