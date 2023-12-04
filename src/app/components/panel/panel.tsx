@@ -1,12 +1,11 @@
 import React, { ReactNode, useState } from "react";
-import { Header } from "./styles";
+import { ChildrenContainer, Header, IconColapse } from "./styles";
 
 interface PanelProps {
      title?: string;
      children: ReactNode;
      toggleable?: boolean;
-     headerTemplate?: () => React.ReactNode;
-     setToggleable?: () => void;
+     headerTemplate?: () => ReactNode;
 }
 
 export function Panel({
@@ -14,9 +13,8 @@ export function Panel({
      children,
      headerTemplate,
      toggleable,
-     setToggleable,
 }: PanelProps) {
-     const [isCollapsed, setCollapsed] = useState(false);
+     const [isCollapsed, setCollapsed] = useState(true);
 
      const toggleCollapse = () => {
           setCollapsed((prevCollapsed) => !prevCollapsed);
@@ -24,16 +22,31 @@ export function Panel({
 
      return (
           <div>
-               <Header onClick={setToggleable}>
+               <Header onClick={toggleCollapse}>
                     {headerTemplate ? (
-                         headerTemplate()
+                         <>{headerTemplate()}</>
                     ) : (
                          <h2>{title || "Cabeçalho Padrão"}</h2>
                     )}
-                    <span>{toggleable ? "Expandir" : "Recolher"}</span>
+                    {toggleable && (
+                         <span>
+                              {isCollapsed ? (
+                                   <IconColapse className="fa-solid fa-chevron-right" />
+                              ) : (
+                                   <IconColapse className="fa-solid fa-chevron-down" />
+                              )}
+                         </span>
+                    )}
                </Header>
-               {!toggleable && (
-                    <div style={{ padding: "10px" }}>{children}</div>
+               {toggleable ? (
+                    <>
+                         {" "}
+                         {isCollapsed ? null : (
+                              <ChildrenContainer>{children}</ChildrenContainer>
+                         )}
+                    </>
+               ) : (
+                    <ChildrenContainer>{children}</ChildrenContainer>
                )}
           </div>
      );
