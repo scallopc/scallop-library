@@ -29,7 +29,7 @@ export function PagePanel() {
 
      return (
           <Container>
-               <H2>Toggle Switch</H2>
+               <H2>Panel</H2>
                <Box>
                     <H5>Documentation</H5>
                     <DocumentationContainer>
