@@ -17,18 +17,12 @@ export function PagePanel() {
 
      return (
           <Container>
-               <H2>Toggle Switch</H2>
+               <H2>Panel</H2>
                <Box>
                     <H5>Documentation</H5>
                     <DocumentationContainer>
                          <p>
-                              ToggleSwitch is a reusable component that displays
-                              a switch visually represented by a slider. It
-                              allows users to toggle between two states, usually
-                              represented by "on" and "off". The component can
-                              be used in web applications to provide an
-                              intuitive way to enable or disable a
-                              functionality, option or setting.
+                              Panel is a reusable component ..
                          </p>
 
                          <Content>
