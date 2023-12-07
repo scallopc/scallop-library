@@ -8,24 +8,12 @@ import {
      H2,
      H5,
 } from "../styles";
-import { Toggle, Properties} from "../../components";
+import { Toggle, Properties } from "../../components";
 
 export function PagePanel() {
      const [isChecked, setIsChecked] = useState(false);
 
-     const toggleData = [
-          {
-               name: "checked",
-               type: "boolean",
-               description: "true or false",
-          },
-          {
-               name: "onChange",
-               type: "event",
-               description:
-                    "Callback to invoke when there is a change in the switch, the purpose of the event is to bring the new information about the state.",
-          },
-     ];
+     const panelData = [];
 
      return (
           <Container>
@@ -73,7 +61,7 @@ export function PagePanel() {
                          </Content>
 
                          <br />
-                         <Properties data={toggleData} />
+                         <Properties data={panelData} />
                     </DocumentationContainer>
                </Box>
           </Container>
