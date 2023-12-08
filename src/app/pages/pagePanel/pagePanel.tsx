@@ -21,9 +21,7 @@ export function PagePanel() {
                <Box>
                     <H5>Documentation</H5>
                     <DocumentationContainer>
-                         <p>
-                              Panel is a reusable component ..
-                         </p>
+                         <p>Panel is a reusable component ..</p>
 
                          <Content>
                               <h3>Basic</h3>
@@ -40,10 +38,7 @@ export function PagePanel() {
                               </Detail>
                               <Detail>
                                    <pre style={{ whiteSpace: "inherit" }}>
-                                        {` <ToggleSwitch
-                                   checked={isChecked}
-                                   onChange={handleToggle}
-                              />`}
+                                        {` <Panel />`}
                                    </pre>
                               </Detail>
 
