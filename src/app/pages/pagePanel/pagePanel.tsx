@@ -8,24 +8,12 @@ import {
      H2,
      H5,
 } from "../styles";
-import { Toggle, Properties} from "../../components";
+import { Toggle, Properties } from "../../components";
 
 export function PagePanel() {
      const [isChecked, setIsChecked] = useState(false);
 
-     const toggleData = [
-          {
-               name: "checked",
-               type: "boolean",
-               description: "true or false",
-          },
-          {
-               name: "onChange",
-               type: "event",
-               description:
-                    "Callback to invoke when there is a change in the switch, the purpose of the event is to bring the new information about the state.",
-          },
-     ];
+     const panelData = [];
 
      return (
           <Container>
@@ -33,9 +21,7 @@ export function PagePanel() {
                <Box>
                     <H5>Documentation</H5>
                     <DocumentationContainer>
-                         <p>
-                              Panel is a reusable component ..
-                         </p>
+                         <p>Panel is a reusable component ..</p>
 
                          <Content>
                               <h3>Basic</h3>
@@ -52,10 +38,7 @@ export function PagePanel() {
                               </Detail>
                               <Detail>
                                    <pre style={{ whiteSpace: "inherit" }}>
-                                        {` <ToggleSwitch
-                                   checked={isChecked}
-                                   onChange={handleToggle}
-                              />`}
+                                        {` <Panel />`}
                                    </pre>
                               </Detail>
 
@@ -67,7 +50,7 @@ export function PagePanel() {
                          </Content>
 
                          <br />
-                         <Properties data={toggleData} />
+                         <Properties data={panelData} />
                     </DocumentationContainer>
                </Box>
           </Container>
