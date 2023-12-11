@@ -4,6 +4,7 @@
         "button": "Botão",
         "properties": "Propriedades",
         "documentation": "Documento",
-        "favorite": "Favorito"
+        "favorite": "Favorito",
+        "object": "Objeto"
     }
 }
