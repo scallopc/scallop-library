@@ -27,7 +27,7 @@ const active = keyframes`
 
 
 export const MenuContainer = styled.div`
-     position: fixed;
+     position: relative;
      display: flex;
      flex-direction: column;
      gap: 25px;
