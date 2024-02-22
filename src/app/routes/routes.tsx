@@ -12,13 +12,14 @@ import {
      PageCalendar,
      PageToast,
      PageAvatar,
-     Header
+     Header,
+     PageStep,
 } from "../pages";
 import { HeightComponent } from "../components";
 import { menuStore } from "../store";
 
 export default function Routes(props) {
-     const {setShowMenu, showMenu} = menuStore()
+     const { setShowMenu, showMenu } = menuStore();
      const { theme, isChecked, setLanguage, isLanguageCheck } = props;
 
      useEffect(() => {
@@ -31,13 +32,15 @@ export default function Routes(props) {
           <>
                <ContainerMain>
                     <Header />
-                    {showMenu &&   <MenuLateral
-                         isChecked={isChecked}
-                         switchTheme={(e) => theme(e?.checked)}
-                         setLanguage={() => setLanguage()}
-                         isLanguageCheck={isLanguageCheck}
-                    />}
-                  
+                    {showMenu && (
+                         <MenuLateral
+                              isChecked={isChecked}
+                              switchTheme={(e) => theme(e?.checked)}
+                              setLanguage={() => setLanguage()}
+                              isLanguageCheck={isLanguageCheck}
+                         />
+                    )}
+
                     <HeightComponent>
                          <Switch>
                               <Route path="/home" component={PageHome} />
@@ -55,6 +58,7 @@ export default function Routes(props) {
                                    path="/paginator"
                                    component={PagePaginator}
                               />
+                              <Route path="/step" component={PageStep} />
                               <Route path="/table" component={PageTable} />
                               <Route path="/toast" component={PageToast} />
                               <Route path="/toggle" component={PageToggle} />

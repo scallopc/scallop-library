@@ -38,6 +38,7 @@ export function MenuLateral(props) {
                          {/* <MenuRoutes title="Inputs" to="/inputs" /> */}
                          {/* <MenuRoutes title="Line" to="/line" /> */}
                          <MenuRoutes title="Paginator" to="/paginator" />
+                         <MenuRoutes title="Step" to="/step" />
                          {/* <MenuRoutes title="Progress" to="/progress" /> */}
                          {/* <MenuRoutes title="Radio" to="/radio" /> */}
                          <MenuRoutes title="Table" to="/table" inProgress={true}/>
