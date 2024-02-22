@@ -9,3 +9,4 @@ export * from "./pageCalendar/pageCalendar";
 export * from "./pageToast/pageToast";
 export * from "./pageAvatar/pageAvatar";
 export * from "./header/header";
+export * from "./pageStep/pageStep";

@@ -1,7 +1,7 @@
 import {useEffect, useRef, useState} from "react";
+import './styles.css';
 
-
-export function Step(stepsConfig) {
+export function Step({stepsConfig = []}) {
   const [currentStep, setCurrentStep] = useState(1);
   const [isComplete, setIsComplete] = useState(false);
   const [margins, setMargins] = useState({
