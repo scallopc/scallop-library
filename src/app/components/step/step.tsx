@@ -70,10 +70,10 @@ export function Step({stepsConfig = []}) {
             marginRight: margins.marginRight,
           }}
         >
-          {/* <div
+          {<div
             className="progress"
             style={{width: `${calculateProgressBarWidth()}%`}}
-          ></div> */}
+          ></div> }
         </div>
       </div>
 
