@@ -19,11 +19,11 @@ export function PageStep() {
     
      const CHECKOUT_STEPS = [
           {
-            name: "Customer Info",
+            name: "Customer",
             Component: () => <div>Provide your contact details.</div>,
           },
           {
-            name: "Shipping Info",
+            name: "Shipping",
             Component: () => <div>Enter your shipping address.</div>,
           },
           {
