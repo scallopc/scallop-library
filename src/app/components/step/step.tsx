@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 import './styles.css';
+import { Stepper } from "./styles";
 
 export function Step({stepsConfig = []}) {
   const [currentStep, setCurrentStep] = useState(1);
@@ -40,7 +41,7 @@ export function Step({stepsConfig = []}) {
 
   return (
     <>
-      <div className="stepper">
+      <Stepper>
         {stepsConfig.map((step, index) => {
           return (
             <div
@@ -75,7 +76,7 @@ export function Step({stepsConfig = []}) {
             style={{width: `${calculateProgressBarWidth()}%`}}
           ></div> }
         </div>
-      </div>
+      </Stepper>
 
       <ActiveComponent />
 
