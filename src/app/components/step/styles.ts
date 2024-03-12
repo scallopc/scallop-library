@@ -7,3 +7,9 @@ export const Stepper = styled.div`
      align-items: center;
      margin-bottom: 20px;
 `;
+
+export const Step = styled.div`
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+`;
